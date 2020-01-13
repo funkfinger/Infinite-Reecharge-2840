@@ -1,0 +1,95 @@
+See file:///C:/Users/7bit_coder/Documents/GitHub/Infinite-Reecharge-2840/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramDebugExecutableFrcUserProgramCpp.
+compiling Robot.cpp failed.
+In file included from C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:19:0:
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/WPILib.h:14:2: warning: #warning is a GCC extension
+ #warning "Including this header drastically increases compilation times and is bad style. Include only what you use instead."
+  ^~~~~~~
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/WPILib.h:14:2: warning: #warning "Including this header drastically increases compilation times and is bad style. Include only what you use instead." [-Wcpp]
+C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:29:1: error: 'WPI_TalonSRX' does not name a type
+ WPI_TalonSRX frontRight{12}, backRight{14}, backLeft{0};
+ ^~~~~~~~~~~~
+C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:29:28: error: expected unqualified-id before ',' token
+ WPI_TalonSRX frontRight{12}, backRight{14}, backLeft{0};
+                            ^
+C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:29:39: error: expected constructor, destructor, or type conversion before '{' token
+ WPI_TalonSRX frontRight{12}, backRight{14}, backLeft{0};
+                                       ^
+C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:29:43: error: expected unqualified-id before ',' token
+ WPI_TalonSRX frontRight{12}, backRight{14}, backLeft{0};
+                                           ^
+C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:29:53: error: expected constructor, destructor, or type conversion before '{' token
+ WPI_TalonSRX frontRight{12}, backRight{14}, backLeft{0};
+                                                     ^
+C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:32:36: error: 'frontRight' was not declared in this scope
+ frc::RobotDrive myRobot{frontLeft, frontRight, backLeft, backRight};
+                                    ^~~~~~~~~~
+C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:32:36: note: suggested alternative: 'frontLeft'
+ frc::RobotDrive myRobot{frontLeft, frontRight, backLeft, backRight};
+                                    ^~~~~~~~~~
+                                    frontLeft
+C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:32:48: error: 'backLeft' was not declared in this scope
+ frc::RobotDrive myRobot{frontLeft, frontRight, backLeft, backRight};
+                                                ^~~~~~~~
+C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:32:58: error: 'backRight' was not declared in this scope
+ frc::RobotDrive myRobot{frontLeft, frontRight, backLeft, backRight};
+                                                          ^~~~~~~~~
+C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:32:58: note: suggested alternative: 'daylight'
+ frc::RobotDrive myRobot{frontLeft, frontRight, backLeft, backRight};
+                                                          ^~~~~~~~~
+                                                          daylight
+C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:32:67: error: no matching function for call to 'frc::RobotDrive::RobotDrive(<brace-enclosed initializer list>)'
+ frc::RobotDrive myRobot{frontLeft, frontRight, backLeft, backRight};
+                                                                   ^
+In file included from C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/WPILib.h:67:0,
+                 from C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:19:
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:131:3: note: candidate: frc::RobotDrive::RobotDrive(frc::RobotDrive&&)
+   RobotDrive(RobotDrive&&) = default;
+   ^~~~~~~~~~
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:131:3: note:   candidate expects 1 argument, 4 provided
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:124:3: note: candidate: frc::RobotDrive::RobotDrive(std::shared_ptr<frc::SpeedController>, std::shared_ptr<frc::SpeedController>, std::shared_ptr<frc::SpeedController>, std::shared_ptr<frc::SpeedController>)
+   RobotDrive(std::shared_ptr<SpeedController> frontLeftMotor,
+   ^~~~~~~~~~
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:124:3: note:   no known conversion for argument 1 from 'rev::SparkMax' to 'std::shared_ptr<frc::SpeedController>'
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:120:3: note: candidate: frc::RobotDrive::RobotDrive(frc::SpeedController&, frc::SpeedController&, frc::SpeedController&, frc::SpeedController&)
+   RobotDrive(SpeedController& frontLeftMotor, SpeedController& rearLeftMotor,
+   ^~~~~~~~~~
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:120:3: note:   conversion of argument 2 would be ill-formed:
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:116:3: note: candidate: frc::RobotDrive::RobotDrive(frc::SpeedController*, frc::SpeedController*, frc::SpeedController*, frc::SpeedController*)
+   RobotDrive(SpeedController* frontLeftMotor, SpeedController* rearLeftMotor,
+   ^~~~~~~~~~
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:116:3: note:   no known conversion for argument 1 from 'rev::SparkMax' to 'frc::SpeedController*'
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:97:3: note: candidate: frc::RobotDrive::RobotDrive(std::shared_ptr<frc::SpeedController>, std::shared_ptr<frc::SpeedController>)
+   RobotDrive(std::shared_ptr<SpeedController> leftMotor,
+   ^~~~~~~~~~
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:97:3: note:   candidate expects 2 arguments, 4 provided
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:94:3: note: candidate: frc::RobotDrive::RobotDrive(frc::SpeedController&, frc::SpeedController&)
+   RobotDrive(SpeedController& leftMotor, SpeedController& rightMotor);
+   ^~~~~~~~~~
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:94:3: note:   candidate expects 2 arguments, 4 provided
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:91:3: note: candidate: frc::RobotDrive::RobotDrive(frc::SpeedController*, frc::SpeedController*)
+   RobotDrive(SpeedController* leftMotor, SpeedController* rightMotor);
+   ^~~~~~~~~~
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:91:3: note:   candidate expects 2 arguments, 4 provided
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:75:3: note: candidate: frc::RobotDrive::RobotDrive(int, int, int, int)
+   RobotDrive(int frontLeftMotorChannel, int rearLeftMotorChannel,
+   ^~~~~~~~~~
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:75:3: note:   no known conversion for argument 1 from 'rev::SparkMax' to 'int'
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:56:3: note: candidate: frc::RobotDrive::RobotDrive(int, int)
+   RobotDrive(int leftMotorChannel, int rightMotorChannel);
+   ^~~~~~~~~~
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/RobotDrive.h:56:3: note:   candidate expects 2 arguments, 4 provided
+C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:34:22: error: class template argument deduction failed:
+ frc::SendableChooser autoChoice;
+                      ^~~~~~~~~~
+C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:34:22: error: no matching function for call to 'SendableChooser()'
+In file included from C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\include/Robot.h:13:0,
+                 from C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:8:
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/smartdashboard/SendableChooser.h:35:7: note: candidate: template<class T> SendableChooser()-> frc::SendableChooser<T>
+ class SendableChooser : public SendableChooserBase {
+       ^~~~~~~~~~~~~~~
+C:\Users\7bit_coder\.gradle\caches\transforms-2\files-2.1\77aec02c88b6cdbbe6ae1baa0d102dbc\wpilibc-cpp-2020.1.2-headers/frc/smartdashboard/SendableChooser.h:35:7: note:   template argument deduction/substitution failed:
+C:\Users\7bit_coder\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:34:22: note:   couldn't deduce template parameter 'T'
+ frc::SendableChooser autoChoice;
+                      ^~~~~~~~~~
+
+Finished compileFrcUserProgramDebugExecutableFrcUserProgramCpp, see full log file:///C:/Users/7bit_coder/Documents/GitHub/Infinite-Reecharge-2840/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt.
