@@ -26,6 +26,7 @@
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\8a5a6bb337c5b8e2a84ceac01c3c2259\\SparkMax-cpp-1.5.1-headers\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c4c6bbaecccda1163e676653c3ec953c\\SparkMax-driver-1.5.1-headers\\",
+      "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\b6b3c70d6e6f440cb26a09042e35b2c9\\wpilibNewCommands-cpp-2020.1.2-headers\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c063bc61295dc3791e134b3c4f30c5cc\\wpilibOldCommands-cpp-2020.1.2-headers\\",
       "C:\\Users\\7bit_coder\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\759586253259c660302d160693400dda\\wpilibc-cpp-2020.1.2-sources\\",
@@ -35,6 +36,7 @@
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\623cf65fabcd53a3f4611f815ab9386a\\cameraserver-cpp-2020.1.2-sources\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\0778a2eba9cedabec72881de45edc717\\cscore-cpp-2020.1.2-sources\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
+      "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c9c6a5c6a1d2821c1ab2e63dfae9aa44\\wpilibNewCommands-cpp-2020.1.2-sources\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\f8b2910045039cbe9cbf5f2864947406\\wpilibOldCommands-cpp-2020.1.2-sources\\"
     ],
     "allLibSources": [
@@ -45,6 +47,7 @@
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\623cf65fabcd53a3f4611f815ab9386a\\cameraserver-cpp-2020.1.2-sources\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\0778a2eba9cedabec72881de45edc717\\cscore-cpp-2020.1.2-sources\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
+      "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c9c6a5c6a1d2821c1ab2e63dfae9aa44\\wpilibNewCommands-cpp-2020.1.2-sources\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\f8b2910045039cbe9cbf5f2864947406\\wpilibOldCommands-cpp-2020.1.2-sources\\"
     ],
     "allLibHeaders": [
@@ -60,6 +63,7 @@
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\8a5a6bb337c5b8e2a84ceac01c3c2259\\SparkMax-cpp-1.5.1-headers\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c4c6bbaecccda1163e676653c3ec953c\\SparkMax-driver-1.5.1-headers\\",
+      "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\b6b3c70d6e6f440cb26a09042e35b2c9\\wpilibNewCommands-cpp-2020.1.2-headers\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c063bc61295dc3791e134b3c4f30c5cc\\wpilibOldCommands-cpp-2020.1.2-headers\\",
       "C:\\Users\\7bit_coder\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
     ],
@@ -120,6 +124,7 @@
           "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
           "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\8a5a6bb337c5b8e2a84ceac01c3c2259\\SparkMax-cpp-1.5.1-headers\\",
           "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c4c6bbaecccda1163e676653c3ec953c\\SparkMax-driver-1.5.1-headers\\",
+          "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\b6b3c70d6e6f440cb26a09042e35b2c9\\wpilibNewCommands-cpp-2020.1.2-headers\\",
           "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c063bc61295dc3791e134b3c4f30c5cc\\wpilibOldCommands-cpp-2020.1.2-headers\\",
           "C:\\Users\\7bit_coder\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
         ],
@@ -224,6 +229,7 @@
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\8a5a6bb337c5b8e2a84ceac01c3c2259\\SparkMax-cpp-1.5.1-headers\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c4c6bbaecccda1163e676653c3ec953c\\SparkMax-driver-1.5.1-headers\\",
+      "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\b6b3c70d6e6f440cb26a09042e35b2c9\\wpilibNewCommands-cpp-2020.1.2-headers\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c063bc61295dc3791e134b3c4f30c5cc\\wpilibOldCommands-cpp-2020.1.2-headers\\",
       "C:\\Users\\7bit_coder\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\759586253259c660302d160693400dda\\wpilibc-cpp-2020.1.2-sources\\",
@@ -233,6 +239,7 @@
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\623cf65fabcd53a3f4611f815ab9386a\\cameraserver-cpp-2020.1.2-sources\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\0778a2eba9cedabec72881de45edc717\\cscore-cpp-2020.1.2-sources\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
+      "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c9c6a5c6a1d2821c1ab2e63dfae9aa44\\wpilibNewCommands-cpp-2020.1.2-sources\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\f8b2910045039cbe9cbf5f2864947406\\wpilibOldCommands-cpp-2020.1.2-sources\\"
     ],
     "allLibSources": [
@@ -243,6 +250,7 @@
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\623cf65fabcd53a3f4611f815ab9386a\\cameraserver-cpp-2020.1.2-sources\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\0778a2eba9cedabec72881de45edc717\\cscore-cpp-2020.1.2-sources\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
+      "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c9c6a5c6a1d2821c1ab2e63dfae9aa44\\wpilibNewCommands-cpp-2020.1.2-sources\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\f8b2910045039cbe9cbf5f2864947406\\wpilibOldCommands-cpp-2020.1.2-sources\\"
     ],
     "allLibHeaders": [
@@ -258,6 +266,7 @@
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\8a5a6bb337c5b8e2a84ceac01c3c2259\\SparkMax-cpp-1.5.1-headers\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c4c6bbaecccda1163e676653c3ec953c\\SparkMax-driver-1.5.1-headers\\",
+      "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\b6b3c70d6e6f440cb26a09042e35b2c9\\wpilibNewCommands-cpp-2020.1.2-headers\\",
       "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c063bc61295dc3791e134b3c4f30c5cc\\wpilibOldCommands-cpp-2020.1.2-headers\\",
       "C:\\Users\\7bit_coder\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
     ],
@@ -318,6 +327,7 @@
           "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
           "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\8a5a6bb337c5b8e2a84ceac01c3c2259\\SparkMax-cpp-1.5.1-headers\\",
           "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c4c6bbaecccda1163e676653c3ec953c\\SparkMax-driver-1.5.1-headers\\",
+          "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\b6b3c70d6e6f440cb26a09042e35b2c9\\wpilibNewCommands-cpp-2020.1.2-headers\\",
           "C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c063bc61295dc3791e134b3c4f30c5cc\\wpilibOldCommands-cpp-2020.1.2-headers\\",
           "C:\\Users\\7bit_coder\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
         ],

@@ -42,6 +42,8 @@ C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\8a5a6bb337c5b8e
 -I
 C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c4c6bbaecccda1163e676653c3ec953c\\SparkMax-driver-1.5.1-headers
 -I
+C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\b6b3c70d6e6f440cb26a09042e35b2c9\\wpilibNewCommands-cpp-2020.1.2-headers
+-I
 C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c063bc61295dc3791e134b3c4f30c5cc\\wpilibOldCommands-cpp-2020.1.2-headers
 -isystem
 c:\\users\\public\\wpilib\\2020\\roborio\\bin\\..\\arm-frc2020-linux-gnueabi\\usr\\lib\\gcc\\arm-frc2020-linux-gnueabi\\7.3.0\\include

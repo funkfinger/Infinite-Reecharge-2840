@@ -20,39 +20,32 @@
 #include <frc/PowerDistributionPanel.h>
 #include <cameraServer/CameraServer.h>
 #include <frc/smartdashboard/SmartDashboard.h>
+#include <frc/SmartDashboard/SendableChooser.h>
 
 #include "rev/SparkMax.h"
 #include <frc/Talon.h>
 
 #include <math.h>
 
+frc::Talon frontRight{12}, backRight{14}, backLeft{0};
+frc::Joystick stick{0};
+rev::SparkMax frontLeft{0};
+frc::RobotDrive myRobot{frontLeft, frontRight, backLeft, backRight};
+frc::Timer timer;
+//frc::SendableChooser autoChoice;
+
+double speed, turn, sensitivity;
+bool isUpPressed, isDownPressed;
+
 void Robot::RobotInit() {
   m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
+  frc::SmartDashboard::PutNumber("Timer", timer.Get());
 }
 
-/**
- * This function is called every robot packet, no matter the mode. Use
- * this for items like diagnostics that you want ran during disabled,
- * autonomous, teleoperated and test.
- *
- * <p> This runs after the mode specific periodic functions, but before
- * LiveWindow and SmartDashboard integrated updating.
- */
 void Robot::RobotPeriodic() {}
 
-/**
- * This autonomous (along with the chooser code above) shows how to select
- * between different autonomous modes using the dashboard. The sendable chooser
- * code works with the Java SmartDashboard. If you prefer the LabVIEW Dashboard,
- * remove all of the chooser code and uncomment the GetString line to get the
- * auto name from the text box below the Gyro.
- *
- * You can add additional auto modes by adding additional comparisons to the
- * if-else structure below with additional strings. If using the SendableChooser
- * make sure to add them to the chooser code above as well.
- */
 void Robot::AutonomousInit() {
   m_autoSelected = m_chooser.GetSelected();
   // m_autoSelected = SmartDashboard::GetString("Auto Selector",
@@ -74,9 +67,43 @@ void Robot::AutonomousPeriodic() {
   }
 }
 
-void Robot::TeleopInit() {}
+void Robot::TeleopInit() {
+  timer.Reset();
+  timer.Start();
+  turn = 0;
+  speed = 0;
+  sensitivity = 0.5;
+}
 
-void Robot::TeleopPeriodic() {}
+void Robot::TeleopPeriodic() {
+  //increase sensitivity with the right bumper
+  if (stick.GetRawButton(2) && sensitivity < 1.0) {
+    sensitivity += 0.01;
+  }
+  else if (stick.GetRawButton(2)) {
+    sensitivity += 0;
+  }
+  else if (stick.GetRawButton(3) && sensitivity > 0.0) {
+    sensitivity -= 0.01;
+  }
+  else if (stick.GetRawButton(3)) {
+    sensitivity -= 0;
+  }
+  else {
+    sensitivity = sensitivity;
+  }
+  if (sensitivity >= 1.0) {
+    sensitivity = 1.0;
+  }
+  else if (sensitivity <= 0) {
+    sensitivity = 0.0;
+  }
+  else {}
+  //drive with the left joystick
+  turn = stick.GetRawAxis(0) * 0.95;
+  speed = -stick.GetRawAxis(1) * sensitivity;
+  myRobot.ArcadeDrive(speed, turn);
+}
 
 void Robot::TestPeriodic() {}
 
