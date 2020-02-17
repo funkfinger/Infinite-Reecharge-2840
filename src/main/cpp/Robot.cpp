@@ -27,15 +27,16 @@
 
 #include <math.h>
 
-frc::Talon frontRight{12}, backRight{14}, backLeft{0};
 frc::Joystick stick{0};
-rev::SparkMax frontLeft{0};
-frc::RobotDrive myRobot{frontLeft, frontRight, backLeft, backRight};
+frc::Talon Left{0},Right{1};
+rev::SparkMax wheel{2},intake{3},outtake{4};
+frc::DifferentialDrive myRobot{Left, Right};
 frc::Timer timer;
 //frc::SendableChooser autoChoice;
 
-double speed, turn, sensitivity;
+double speed, turn, sensitivity, turnKey;
 bool isUpPressed, isDownPressed;
+double sP,tN;
 
 void Robot::RobotInit() {
   m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
@@ -77,16 +78,16 @@ void Robot::TeleopInit() {
 
 void Robot::TeleopPeriodic() {
   //increase sensitivity with the right bumper
-  if (stick.GetRawButton(2) && sensitivity < 1.0) {
+  if (stick.GetRawButton(6) && sensitivity < 1.0) {
     sensitivity += 0.01;
   }
-  else if (stick.GetRawButton(2)) {
+  else if (stick.GetRawButton(6)) {
     sensitivity += 0;
   }
-  else if (stick.GetRawButton(3) && sensitivity > 0.0) {
+  else if (stick.GetRawButton(5) && sensitivity > 0.0) {
     sensitivity -= 0.01;
   }
-  else if (stick.GetRawButton(3)) {
+  else if (stick.GetRawButton(5)) {
     sensitivity -= 0;
   }
   else {
@@ -99,10 +100,44 @@ void Robot::TeleopPeriodic() {
     sensitivity = 0.0;
   }
   else {}
-  //drive with the left joystick
-  turn = stick.GetRawAxis(0) * 0.95;
-  speed = -stick.GetRawAxis(1) * sensitivity;
-  myRobot.ArcadeDrive(speed, turn);
+  if (stick.GetRawButton(5)) {
+    wheel.Set(0.3);
+  }else{
+    wheel.Set(0);
+
+  }
+  if (stick.GetRawButton(2)) {
+    intake.Set(stick.GetRawAxis(1));
+  }else{
+    intake.Set(0);
+  }
+  //turn with bumpers, too jittery
+  /*if(stick.GetRawButton(7)){
+     turn = (-1 * sensitivity);
+  } else if(stick.GetRawButton(8)){
+     turn = (1 * sensitivity);
+  } else{
+    turn = 0;
+  }
+  */
+  if(stick.GetRawAxis(4)>0.2||stick.GetRawAxis(4)<-0.2){
+			tN=stick.GetRawAxis(4);
+		}else{
+      tN=0;
+    }
+  if(stick.GetRawAxis(1)>0.2||stick.GetRawAxis(1)<-0.2){
+			sP=stick.GetRawAxis(1);
+  }else{
+    sP=0;
+  }
+  speed = -sP * sensitivity;
+  if (speed >= 0) {
+    turn = ((tN * sensitivity)+(speed/4))+0.1;
+  }
+  else {
+    turn = ((tN*sensitivity)-(speed/4))+0.15;
+  }
+  myRobot.ArcadeDrive(speed, -turn);
 }
 
 void Robot::TestPeriodic() {}
