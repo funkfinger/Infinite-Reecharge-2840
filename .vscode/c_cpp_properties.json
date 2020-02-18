@@ -14,7 +14,14 @@
                 "C:/Users/Public/wpilib/2020/roborio/arm-frc2020-linux-gnueabi/usr/include/c++/7.3.0/arm-frc2020-linux-gnueabi",
                 "C:/Users/Public/wpilib/2020/roborio/arm-frc2020-linux-gnueabi/usr/include",
                 "C:/Users/Public/wpilib/2020/roborio/arm-frc2020-linux-gnueabi/usr/include/c++/7.3.0/tr1",
-                "C:/Users/Public/wpilib/2020/roborio/arm-frc2020-linux-gnueabi/usr/include/linux"
+                "C:/Users/Public/wpilib/2020/roborio/arm-frc2020-linux-gnueabi/usr/include/linux",
+                "C:/Users/tomto/OneDrive/Documents/GitHub/Deep-Space-2840/**",
+                "C:/Users/tomto/OneDrive/Documents/GitHub/Deep-Space-2840/src/main/include",
+                "C:/Users/tomto/OneDrive/Documents/GitHub/Deep-Space-2840/build/tmp/expandedArchives/wpilibc-cpp-2019.1.1-headers.zip_bbc5901b0e22ac527e7d642f2ec68009",
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/src/main/include",
+                "${workspaceFolder}/build/tmp/expandedArchives/wpilibc-cpp-2019.1.1-headers.zip_bbc5901b0e22ac527e7d642f2ec68009",
+                "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/include"
             ],
             "defines": [
                 "_DEBUG",
