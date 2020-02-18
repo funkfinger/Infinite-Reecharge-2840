@@ -43,3 +43,4 @@ vendordeps/WPILibNewCommands.json
 vendordeps/WPILibNewCommands.json
 *.json
 .vscode/c_cpp_properties.json
+*.json
