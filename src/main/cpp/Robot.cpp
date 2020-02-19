@@ -87,6 +87,10 @@ void Robot::TeleopInit() {
 
 void Robot::TeleopPeriodic() {
   //increase sensitivity with the right bumper
+  /*
+  piston.Set(true); makes the piston go
+  piston.Set(false); makes the piston not go
+  */
   if (stick.GetRawButton(6) && sensitivity < 1.0) {
     sensitivity += 0.01;
   }
