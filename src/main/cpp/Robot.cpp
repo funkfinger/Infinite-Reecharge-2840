@@ -37,8 +37,8 @@ frc::DifferentialDrive myRobot{Left, Right};
 frc::Timer timer;
 
 //frc::SendableChooser autoChoice;
-Solenoid piston1{0};
-Solenoid piston2{1};
+DoubleSolenoid piston1{0};
+DoubleSolenoid piston2{1};
 Compressor compressor{0};
 double speed, turn, sensitivity, turnKey;
 bool isUpPressed, isDownPressed;
@@ -92,15 +92,16 @@ void Robot::TeleopPeriodic() {
   piston.Set(true); makes the piston go
   piston.Set(false); makes the piston not go
   */
+ //In order to go backwards do piston.Set(DoubleSolenoid::Value::kReverse);
   if(stick.GetRawButton(4)) {
-    piston1.Set(true);
+    piston1.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoom
   }else{
-    piston1.Set(false);
+    piston1.Set(DoubleSolenoid::Value::kOff);//piston1 stop
   }
   if(stick.GetRawButton(5)) {
-    piston2.Set(true);
+    piston2.Set(DoubleSolenoid::Value::kForward);//piston2 go nyoom
   }else{
-    piston2.Set(false);
+    piston2.Set(DoubleSolenoid::Value::kOff);//piston2 stop
   }
   
   if (stick.GetRawButton(6) && sensitivity < 1.0) {
