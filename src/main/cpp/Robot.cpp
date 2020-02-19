@@ -23,17 +23,22 @@
 #include <frc/SmartDashboard/SendableChooser.h>
 
 #include "rev/SparkMax.h"
+#include <frc/Compressor.h>
 #include <frc/Talon.h>
-
+#include <Solenoid.h>
+#include <DoubleSolenoid.h>
 #include <math.h>
-
+using namespace frc;
 frc::Joystick stick{0};
 frc::Talon Left{0},Right{1};
 rev::SparkMax wheel{2},intake{3},outtake{4};
 frc::DifferentialDrive myRobot{Left, Right};
 frc::Timer timer;
-//frc::SendableChooser autoChoice;
 
+//frc::SendableChooser autoChoice;
+Solenoid piston1{0};
+Solenoid piston2{1};
+Compressor compressor{0};
 double speed, turn, sensitivity, turnKey;
 bool isUpPressed, isDownPressed;
 double sP,tN;
@@ -43,6 +48,10 @@ void Robot::RobotInit() {
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
   frc::SmartDashboard::PutNumber("Timer", timer.Get());
+  compressor.SetClosedLoopControl(false);
+  compressor.Start();
+  timer.Reset();
+  timer.Start();
 }
 
 void Robot::RobotPeriodic() {}
