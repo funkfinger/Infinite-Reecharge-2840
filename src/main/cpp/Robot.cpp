@@ -25,10 +25,11 @@
 #include "rev/SparkMax.h"
 #include <frc/Compressor.h>
 #include <frc/Talon.h>
-#include <Solenoid.h>
-#include <DoubleSolenoid.h>
+#include <frc/Solenoid.h>
+#include <frc/DoubleSolenoid.h>
 #include <math.h>
 using namespace frc;
+
 frc::Joystick stick{0};
 frc::Talon Left{0},Right{1};
 rev::SparkMax wheel{2},intake{3},outtake{4};
@@ -91,6 +92,17 @@ void Robot::TeleopPeriodic() {
   piston.Set(true); makes the piston go
   piston.Set(false); makes the piston not go
   */
+  if(stick.GetRawButton(4)) {
+    piston1.Set(true);
+  }else{
+    piston1.Set(false);
+  }
+  if(stick.GetRawButton(5)) {
+    piston2.Set(true);
+  }else{
+    piston2.Set(false);
+  }
+  
   if (stick.GetRawButton(6) && sensitivity < 1.0) {
     sensitivity += 0.01;
   }
@@ -113,17 +125,13 @@ void Robot::TeleopPeriodic() {
     sensitivity = 0.0;
   }
   else {}
-  if (stick.GetRawButton(5)) {
-    wheel.Set(0.3);
-  }else{
-    wheel.Set(0);
+  
+  
+    //wheel.Set(0.3);
+  
 
-  }
-  if (stick.GetRawButton(2)) {
-    intake.Set(stick.GetRawAxis(1));
-  }else{
-    intake.Set(0);
-  }
+  
+
   //turn with bumpers, too jittery
   /*if(stick.GetRawButton(7)){
      turn = (-1 * sensitivity);

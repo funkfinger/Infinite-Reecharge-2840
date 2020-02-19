@@ -36,7 +36,6 @@ C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\93646145e311019
 C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\93646145e3110191cc8e2260e52d7438\\opencv-cpp-3.4.7-2-linuxathena\\linux\\athena\\shared\\libopencv_videostab.so.3.4
 C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\c746920d098bad41f66f127ce1ab3822\\SparkMax-cpp-1.5.1-linuxathenastatic\\linux\\athena\\static\\libSparkMax.a
 C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\4661f739d7485288b02776f450f00130\\SparkMax-driver-1.5.1-linuxathenastatic\\linux\\athena\\static\\libSparkMaxDriver.a
-C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\02e8c434c93079d37608f9637aad70fc\\wpilibNewCommands-cpp-2020.1.2-linuxathena\\linux\\athena\\shared\\libwpilibNewCommands.so
 C:\\Users\\7bit_coder\\.gradle\\caches\\transforms-2\\files-2.1\\fd1269fffc936e8cd4bbd91c71e5f341\\wpilibOldCommands-cpp-2020.1.2-linuxathena\\linux\\athena\\shared\\libwpilibOldCommands.so
 -rdynamic
 -pthread
