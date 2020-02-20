@@ -113,6 +113,12 @@ void Robot::TeleopPeriodic() {
    intake.Set(0);
  }
 
+ if(two.GetRawButton(1)){
+   outtake.Set(1);
+ }else{
+   intake.Set(0);
+ }
+
  if(two.GetRawButton(3)){
    wheel.Set(0.3);
  }else{
