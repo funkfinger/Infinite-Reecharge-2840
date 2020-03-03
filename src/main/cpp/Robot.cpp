@@ -33,7 +33,7 @@ using namespace frc;
 frc::Joystick one{0}, two{1};
 frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0};
 rev::SparkMax intake{4}, outtake{5};
-frc::RobotDrive myRobot{frontLeft, frontRight, backLeft, backRight};
+frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
 frc::Timer timer, shootTimer;
 
 //frc::SendableChooser autoChoice;
@@ -118,6 +118,7 @@ void Robot::TeleopPeriodic() {
  }else{
    outtake.Set(0);
    ballStorage.Set(true);
+   shootTimer.Reset();
  }
 
   if(two.GetRawButton(4)) {
