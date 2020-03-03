@@ -30,15 +30,15 @@
 #include <math.h>
 using namespace frc;
 
-frc::Joystick one{0},two{1};
-frc::Talon Left{0},Right{1};
-rev::SparkMax wheel{2},intake{3},outtake{4};
-frc::DifferentialDrive myRobot{Left, Right};
+frc::Joystick one{0}, two{1};
+frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0};
+rev::SparkMax intake{4}, outtake{5};
+frc::DifferentialDrive myRobot{frontLeft, frontRight, backLeft, backRight};
 frc::Timer timer;
 
 //frc::SendableChooser autoChoice;
-//Solenoid piston1{0};
-DoubleSolenoid piston1{0,1},piston2{2,3};
+Solenoid ballStorage{6};
+DoubleSolenoid intake{2, 3};
 Compressor compressor{0};
 double speed, turn, sensitivity, turnKey;
 bool isUpPressed, isDownPressed;
@@ -83,7 +83,8 @@ void Robot::TeleopInit() {
   timer.Start();
   turn = 0;
   speed = 0;
-  sensitivity = 0.5;
+  sensitivity = -two.GetRawAxis(1);
+  intake.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoo
 }
 
 void Robot::TeleopPeriodic() {
@@ -102,42 +103,43 @@ void Robot::TeleopPeriodic() {
   */
 
  if(one.GetRawButton(3)){
-   intake.Set(-0.4);
+   intake.Set(0.4);
  }else{
    intake.Set(0);
  }
 
  if(one.GetRawButton(1)){
    outtake.Set(1);
+   ballStorage.Set(false);
  }else{
-   intake.Set(0);
- }
-
- if(two.GetRawButton(1)){
-   outtake.Set(1);
- }else{
-   intake.Set(0);
- }
-
- if(two.GetRawButton(3)){
-   wheel.Set(0.3);
- }else{
-   wheel.Set(0);
+   outtake.Set(0);
+   ballStorage.Set(true);
  }
 
   if(two.GetRawButton(4)) {
-    piston1.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoom
-    piston2.Set(DoubleSolenoid::Value::kForward);//piston2 go nyoom
+    intake.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoom
   }
   else if (two.GetRawButton(5)) {
-    piston1.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
-    piston2.Set(DoubleSolenoid::Value::kReverse);//piston2 go shwoop
+    intake.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
   }
   else{
-    piston1.Set(DoubleSolenoid::Value::kOff);//piston1 stop
-    piston2.Set(DoubleSolenoid::Value::kOff);//piston2 stop
+    intake.Set(DoubleSolenoid::Value::kOff);//piston1 stop
   }
-  sensitivity = -two.GetRawAxis(2);
+/*
+  if(one.GetRawButton(4)) {
+    rightArm.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoom
+    leftArm.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoom
+  }
+  else if (one.GetRawButton(5)) {
+    rightArm.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
+    leftArm.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
+  }
+  else{
+    rightArm.Set(DoubleSolenoid::Value::kOff);//piston1 stop
+    leftArm.Set(DoubleSolenoid::Value::kOff);//piston1 stop
+  }
+  sensitivity = -two.GetRawAxis(1);
+  */
   /*
   if (stick.GetRawButton(9) && sensitivity < 1.0) {
     sensitivity += 0.01;
@@ -177,6 +179,8 @@ void Robot::TeleopPeriodic() {
     turn = 0;
   }
   */
+ sensitivity = -two.GetRawAxis(1);
+
   if(one.GetRawAxis(0)>0.2||one.GetRawAxis(0)<-0.2){
 			tN=one.GetRawAxis(0);
 		}else{
