@@ -33,8 +33,8 @@ using namespace frc;
 frc::Joystick one{0}, two{1};
 frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0};
 rev::SparkMax intake{4}, outtake{5};
-frc::DifferentialDrive myRobot{frontLeft, frontRight, backLeft, backRight};
-frc::Timer timer;
+frc::RobotDrive myRobot{frontLeft, frontRight, backLeft, backRight};
+frc::Timer timer, shootTimer;
 
 //frc::SendableChooser autoChoice;
 Solenoid ballStorage{6};
@@ -81,6 +81,7 @@ void Robot::AutonomousPeriodic() {
 void Robot::TeleopInit() {
   timer.Reset();
   timer.Start();
+  shootTimer.Reset();
   turn = 0;
   speed = 0;
   sensitivity = -two.GetRawAxis(1);
@@ -109,8 +110,11 @@ void Robot::TeleopPeriodic() {
  }
 
  if(one.GetRawButton(1)){
+   shootTimer.Start();
    outtake.Set(1);
-   ballStorage.Set(false);
+   if (shootTimer.Get() > 0.2) {
+     ballStorage.Set(true);
+   }
  }else{
    outtake.Set(0);
    ballStorage.Set(true);
@@ -181,7 +185,7 @@ void Robot::TeleopPeriodic() {
   */
  sensitivity = -two.GetRawAxis(1);
 
-  if(one.GetRawAxis(0)>0.2||one.GetRawAxis(0)<-0.2){
+  /*if(one.GetRawAxis(0)>0.2||one.GetRawAxis(0)<-0.2){
 			tN=one.GetRawAxis(0);
 		}else{
       tN=0;
@@ -191,14 +195,18 @@ void Robot::TeleopPeriodic() {
   }else{
     sP=0;
   }
+  */
   speed = -sP * sensitivity;
+  turn = tN * sensitivity;
+  /*
   if (speed >= 0) {
     turn = ((tN * sensitivity)+(speed/4))+0.1;
   }
   else {
     turn = ((tN*sensitivity)-(speed/4))+0.15;
   }
-  myRobot.ArcadeDrive(-speed, turn);
+  */
+  myRobot.ArcadeDrive(speed, turn);
 }
 
 void Robot::TestPeriodic() {}
