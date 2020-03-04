@@ -85,7 +85,8 @@ void Robot::TeleopInit() {
   turn = 0;
   speed = 0;
   sensitivity = -two.GetRawAxis(1);
-  ballCollector.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoo
+  ball1.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoo
+  ball2.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoo
 }
 
 void Robot::TeleopPeriodic() {
