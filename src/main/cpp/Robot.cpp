@@ -38,7 +38,7 @@ frc::Timer timer, shootTimer;
 
 //frc::SendableChooser autoChoice;
 Solenoid ballStorage{6};
-DoubleSolenoid intake{2, 3};
+DoubleSolenoid ball1{2, 3}, ball2{4, 5};
 Compressor compressor{0};
 double speed, turn, sensitivity, turnKey;
 bool isUpPressed, isDownPressed;
@@ -85,7 +85,7 @@ void Robot::TeleopInit() {
   turn = 0;
   speed = 0;
   sensitivity = -two.GetRawAxis(1);
-  intake.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoo
+  ballCollector.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoo
 }
 
 void Robot::TeleopPeriodic() {
@@ -111,24 +111,27 @@ void Robot::TeleopPeriodic() {
 
  if(one.GetRawButton(1)){
    shootTimer.Start();
-   outtake.Set(1);
+   outtake.Set(-1);
    if (shootTimer.Get() > 0.2) {
      ballStorage.Set(true);
    }
  }else{
    outtake.Set(0);
-   ballStorage.Set(true);
+   ballStorage.Set(false);
    shootTimer.Reset();
  }
 
   if(two.GetRawButton(4)) {
-    intake.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoom
+    ball1.Set(DoubleSolenoid::Value::kForward);//piston1 go 
+    ball2.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoom
   }
   else if (two.GetRawButton(5)) {
-    intake.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
+    ball1.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
+    ball2.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
   }
   else{
-    intake.Set(DoubleSolenoid::Value::kOff);//piston1 stop
+    ball1.Set(DoubleSolenoid::Value::kOff);//piston1 stop
+    ball2.Set(DoubleSolenoid::Value::kOff);//piston1 stop
   }
 /*
   if(one.GetRawButton(4)) {
@@ -184,7 +187,7 @@ void Robot::TeleopPeriodic() {
     turn = 0;
   }
   */
- sensitivity = -two.GetRawAxis(1);
+ sensitivity = (-two.GetRawAxis(1) + 1)/2;
 
   /*if(one.GetRawAxis(0)>0.2||one.GetRawAxis(0)<-0.2){
 			tN=one.GetRawAxis(0);
@@ -197,8 +200,8 @@ void Robot::TeleopPeriodic() {
     sP=0;
   }
   */
-  speed = -sP * sensitivity;
-  turn = tN * sensitivity;
+  speed = one.GetRawAxis(1) * sensitivity;
+  turn = one.GetRawAxis(0) * sensitivity;
   /*
   if (speed >= 0) {
     turn = ((tN * sensitivity)+(speed/4))+0.1;
