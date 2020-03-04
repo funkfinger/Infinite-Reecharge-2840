@@ -113,7 +113,7 @@ void Robot::TeleopPeriodic() {
  if(one.GetRawButton(1)){
    shootTimer.Start();
    outtake.Set(-1);
-   if (shootTimer.Get() > 0.2) {
+   if (shootTimer.Get() > .5) {
      ballStorage.Set(false);
    }
  }else{
