@@ -114,11 +114,11 @@ void Robot::TeleopPeriodic() {
    shootTimer.Start();
    outtake.Set(-1);
    if (shootTimer.Get() > 0.2) {
-     ballStorage.Set(true);
+     ballStorage.Set(false);
    }
  }else{
    outtake.Set(0);
-   ballStorage.Set(false);
+   ballStorage.Set(true);
    shootTimer.Reset();
  }
 
