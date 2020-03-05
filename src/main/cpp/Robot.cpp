@@ -37,8 +37,8 @@ frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
 frc::Timer timer, shootTimer;
 
 //frc::SendableChooser autoChoice;
-Solenoid ballStorage{6};
-DoubleSolenoid ball1{2, 3}, ball2{4, 5};
+Solenoid ballStorage{6}, ballUnstuck{0};
+DoubleSolenoid ball1{4, 5};
 Compressor compressor{0};
 double speed, turn, sensitivity, turnKey;
 bool isUpPressed, isDownPressed;
@@ -86,7 +86,7 @@ void Robot::TeleopInit() {
   speed = 0;
   sensitivity = -two.GetRawAxis(1);
   ball1.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoo
-  ball2.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoo
+  //ball2.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoo
 }
 
 void Robot::TeleopPeriodic() {
@@ -104,35 +104,51 @@ void Robot::TeleopPeriodic() {
   }
   */
 
- if(one.GetRawButton(3)){
+ if(two.GetRawButton(1)){
    intake.Set(0.4);
+ }else if(two.GetRawButton(2)){
+   intake.Set(-1);
  }else{
    intake.Set(0);
  }
 
+
+ if(one.GetRawButton(2)){
+   ballUnstuck.Set(true);
+ }else{
+   ballUnstuck.Set(false);
+ }
+
+ double outtakeSpeed = -0.9;
+
  if(one.GetRawButton(1)){
    shootTimer.Start();
-   outtake.Set(-1);
+   outtake.Set(outtakeSpeed);
    if (shootTimer.Get() > .5) {
      ballStorage.Set(false);
    }
- }else{
+ }
+ else if(one.GetRawButton(3)){
+   outtake.Set(1);
+   ballStorage.Set(false);
+ }
+ else {
    outtake.Set(0);
    ballStorage.Set(true);
    shootTimer.Reset();
  }
 
-  if(two.GetRawButton(4)) {
+  if(two.GetRawButton(5)) {
     ball1.Set(DoubleSolenoid::Value::kForward);//piston1 go 
-    ball2.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoom
+    //ball2.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoom
   }
-  else if (two.GetRawButton(5)) {
+  else if (two.GetRawButton(4)) {
     ball1.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
-    ball2.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
+    //ball2.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
   }
   else{
     ball1.Set(DoubleSolenoid::Value::kOff);//piston1 stop
-    ball2.Set(DoubleSolenoid::Value::kOff);//piston1 stop
+    //ball2.Set(DoubleSolenoid::Value::kOff);//piston1 stop
   }
 /*
   if(one.GetRawButton(4)) {
