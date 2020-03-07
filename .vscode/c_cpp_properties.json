@@ -21,7 +21,8 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/src/main/include",
                 "${workspaceFolder}/build/tmp/expandedArchives/wpilibc-cpp-2019.1.1-headers.zip_bbc5901b0e22ac527e7d642f2ec68009",
-                "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/include"
+                "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/include",
+                "C:/Users/7bit_coder/.gradle/caches/transforms-2/files-2.1/8a5a6bb337c5b8e2a84ceac01c3c2259/SparkMax-cpp-1.5.1-headers"
             ],
             "defines": [
                 "_DEBUG",
