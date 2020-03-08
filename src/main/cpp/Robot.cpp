@@ -22,6 +22,7 @@
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <frc/SmartDashboard/SendableChooser.h>
 #include <frc/Servo.h>
+#include <ctre.h>
 
 #include "rev/SparkMax.h"
 #include <frc/Compressor.h>
@@ -41,7 +42,7 @@ frc::Timer timer, shootTimer;
 
 //frc::SendableChooser autoChoice;
 Solenoid ballStorage{6}, ballUnstuck{0};
-DoubleSolenoid ball1{2, 3};
+DoubleSolenoid ballIn{2, 3};
 Compressor compressor{0};
 double speed, turn, sensitivity, turnKey;
 bool isUpPressed, isDownPressed;
@@ -69,23 +70,20 @@ void Robot::RobotInit() {
 void Robot::RobotPeriodic() {}
 
 void Robot::AutonomousInit() {
-  m_autoSelected = m_chooser.GetSelected();
-  // m_autoSelected = SmartDashboard::GetString("Auto Selector",
-  //     kAutoNameDefault);
-  std::cout << "Auto selected: " << m_autoSelected << std::endl;
-
-  if (m_autoSelected == kAutoNameCustom) {
-    // Custom Auto goes here
-  } else {
-    // Default Auto goes here
-  }
+  timer.Reset();
+  timer.Start();
+  shootTimer.Reset();
+  outtake.Set(1.0);
+  ballStorage.Set(false);
 }
 
 void Robot::AutonomousPeriodic() {
-  if (m_autoSelected == kAutoNameCustom) {
-    // Custom Auto goes here
-  } else {
-    // Default Auto goes here
+  if(timer.Get() < 0.2) {
+    myRobot.ArcadeDrive(timer.Get() * 5, 0.0);
+  }
+  else if(timer.Get() < 4) {
+    ballStorage.Set(true);
+    myRobot.ArcadeDrive(1.0, 0.0);
   }
 }
 
@@ -96,7 +94,7 @@ void Robot::TeleopInit() {
   turn = 0;
   speed = 0;
   sensitivity = -two.GetRawAxis(1);
-  ball1.Set(DoubleSolenoid::Value::kOff);//piston1 no go nyoo
+  ballIn.Set(DoubleSolenoid::Value::kOff);//piston1 no go nyoo
   //ball2.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoo
 }
 
@@ -140,7 +138,7 @@ void Robot::TeleopPeriodic() {
    }
  }
  else if(one.GetRawButton(3)){
-   outtake.Set(1);
+   outtake.Set(-outtakeSpeed);
    ballStorage.Set(false);
  }
  else if (!one.GetRawButton(1)&&!one.GetRawButton(3)){
@@ -150,15 +148,15 @@ void Robot::TeleopPeriodic() {
  }
 
   if(two.GetRawButton(5)) {
-    ball1.Set(DoubleSolenoid::Value::kForward);//piston1 go 
+    ballIn.Set(DoubleSolenoid::Value::kForward);//piston1 go 
     //ball2.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoom
   }
   else if (!two.GetRawButton(5)&&two.GetRawButton(4)) {
-    ball1.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
+    ballIn.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
     //ball2.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
   }
   else if (!two.GetRawButton(5)&&!two.GetRawButton(4)){
-    ball1.Set(DoubleSolenoid::Value::kOff);//piston1 stop
+    ballIn.Set(DoubleSolenoid::Value::kOff);//piston1 stop
     //ball2.Set(DoubleSolenoid::Value::kOff);//piston1 stop
   }
 /*
