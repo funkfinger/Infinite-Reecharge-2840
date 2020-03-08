@@ -14,7 +14,8 @@
     "**/.factorypath": true
   },
   "files.associations": {
-    "*.inc": "cpp"
+    "*.inc": "cpp",
+    "xstring": "cpp"
   },
   "C_Cpp.errorSquiggles": "Enabled"
 }

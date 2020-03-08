@@ -15,6 +15,7 @@
 #include <frc/Joystick.h>
 #include <frc/Timer.h>
 #include <frc/Spark.h>
+#include <frc/Talon.h>
 #include <frc/Encoder.h>
 #include <frc/WPILib.h>
 #include <frc/PowerDistributionPanel.h>
@@ -35,7 +36,7 @@
 
 
 frc::Joystick one{0}, two{1};
-frc::Talon frontLeft{0}, frontRight{1}, backLeft{3}, backRight{2};
+frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0};
 rev::SparkMax intake{4}, outtake{5};
 frc::Servo pan{6},tilt{7};
 frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
@@ -45,9 +46,13 @@ frc::Timer timer, shootTimer;
 frc::Solenoid ballStorage{6}, ballUnstuck{0};
 frc::DoubleSolenoid ballIn{2, 3};
 frc::Compressor compressor{0};
+
+ctre::phoenix::sensors::PigeonIMU pigeon{1};
+
 double speed, turn, sensitivity, turnKey;
 bool isUpPressed, isDownPressed;
 double sP,tN;
+int16_t accel[3];
 
 double trueMap(double val, double valHigh, double valLow, double newHigh, double newLow)
 {
@@ -55,6 +60,17 @@ double trueMap(double val, double valHigh, double valLow, double newHigh, double
 	double newMidVal = ((newHigh - newLow) / 2) + newLow;
 	double ratio = (newHigh - newLow) / (valHigh - valLow);
 	return (((val - midVal) * ratio) + newMidVal);
+}
+
+void calibratePigeon() {
+  pigeon.SetAccumZAngle(0);
+  pigeon.SetCompassAngle(0);
+  pigeon.SetCompassDeclination(0);
+  pigeon.SetFusedHeading(0);
+  pigeon.SetFusedHeadingToCompass(0);
+  pigeon.SetYaw(0);
+  pigeon.SetYawToCompass(0);
+  pigeon.EnterCalibrationMode(ctre::phoenix::sensors::PigeonIMU::CalibrationMode::Accelerometer);
 }
 
 void Robot::RobotInit() {
@@ -66,6 +82,7 @@ void Robot::RobotInit() {
   compressor.Start();
   timer.Reset();
   timer.Start();
+  calibratePigeon();
 }
 
 void Robot::RobotPeriodic() {}
@@ -76,15 +93,43 @@ void Robot::AutonomousInit() {
   shootTimer.Reset();
   outtake.Set(1.0);
   ballStorage.Set(false);
+  calibratePigeon();
 }
 
 void Robot::AutonomousPeriodic() {
+  turn = -trueMap(pigeon.GetCompassHeading(), 90, -90, 1.0, -1.0); //set the robot to turn against the strafe
   if(timer.Get() < 0.2) {
-    myRobot.ArcadeDrive(timer.Get() * 5, 0.0);
+    myRobot.ArcadeDrive(timer.Get() * 5, turn);
   }
   else if(timer.Get() < 4) {
     ballStorage.Set(true);
-    myRobot.ArcadeDrive(1.0, 0.0);
+    myRobot.ArcadeDrive(1.0, turn);
+  }
+  else if(timer.Get() < 5) {
+    myRobot.ArcadeDrive(0.5, 0.5 + turn);
+  }
+  else if(timer.Get() < 6) {
+    myRobot.ArcadeDrive(0.5, turn - 0.5);
+  }
+  else if(timer.Get() < 8) {
+    myRobot.ArcadeDrive(0.8, turn);
+    pigeon.GetBiasedAccelerometer(accel);
+    if (accel[0] == 0 && accel[1] == 0) {
+      myRobot.ArcadeDrive(0.0, 0.0);
+    }
+  }
+  else if(timer.Get() < 9.5) {
+    myRobot.ArcadeDrive(0.0, turn);
+    shootTimer.Start();
+    outtake.Set(-1);
+    if(shootTimer.Get() < 0.2) {
+      ballStorage.Set(false);
+    }
+  }
+  else if(timer.Get() < 11) {
+    outtake.Set(0);
+    ballStorage.Set(true);
+    myRobot.ArcadeDrive(-0.8, turn);
   }
 }
 
@@ -96,7 +141,6 @@ void Robot::TeleopInit() {
   speed = 0;
   sensitivity = -two.GetRawAxis(1);
   ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 no go nyoo
-  //ball2.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoo
 }
 
 void Robot::TeleopPeriodic() {
@@ -129,7 +173,7 @@ void Robot::TeleopPeriodic() {
    ballUnstuck.Set(false);
  }
 
- double outtakeSpeed = trueMap(one.GetRawAxis(2),-1,1,-1,0);
+ double outtakeSpeed = -1.0;
 
  if(one.GetRawButton(1)){
    shootTimer.Start();
@@ -150,15 +194,12 @@ void Robot::TeleopPeriodic() {
 
   if(two.GetRawButton(5)) {
     ballIn.Set(frc::DoubleSolenoid::Value::kForward);//piston1 go 
-    //ball2.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoom
   }
   else if (!two.GetRawButton(5)&&two.GetRawButton(4)) {
     ballIn.Set(frc::DoubleSolenoid::Value::kReverse);//piston1 go shwoop
-    //ball2.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
   }
   else if (!two.GetRawButton(5)&&!two.GetRawButton(4)){
     ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 stop
-    //ball2.Set(DoubleSolenoid::Value::kOff);//piston1 stop
   }
 /*
   if(one.GetRawButton(4)) {
@@ -216,7 +257,7 @@ void Robot::TeleopPeriodic() {
   */
  sensitivity = (0.5);
 
-  if(one.GetRawAxis(0)>0.2||one.GetRawAxis(0)<-0.2){
+  /*if(one.GetRawAxis(0)>0.2||one.GetRawAxis(0)<-0.2){
 			tN=one.GetRawAxis(0);
 		}else{
       tN=0;
@@ -226,22 +267,17 @@ void Robot::TeleopPeriodic() {
   }else{
     sP=0;
   }
-  
-  sensitivity = -two.GetRawAxis(2);
-
-  //speed = one.GetRawAxis(1) * sensitivity;
-  //turn = one.GetRawAxis(0) * sensitivity;
-
+  */
   speed = one.GetRawAxis(1) * sensitivity;
-  //turn = one.GetRawAxis(0) * sensitivity;
-  
+  turn = one.GetRawAxis(0) * sensitivity;
+  /*
   if (speed >= 0) {
-    turn = ((tN * sensitivity)+(speed/4));
+    turn = ((tN * sensitivity)+(speed/4))+0.1;
   }
   else {
-    turn = ((tN*sensitivity)-(speed/4))+0.05;
+    turn = ((tN*sensitivity)-(speed/4))+0.15;
   }
-  
+  */
   myRobot.ArcadeDrive(speed, turn);
 
   pan.Set(trueMap(two.GetRawAxis(0),1,-1,1,0));
