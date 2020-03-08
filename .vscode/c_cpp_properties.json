@@ -38,7 +38,9 @@
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/d7bb06314cf59227b33dfbb4b887f30e/wpiutil-cpp-2020.2.2-headers",
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/b97702da5f4ce7738418ef1913e15e56/cscore-cpp-2020.2.2-headers",
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/02da602861f55d5062330df3389e1a19/hal-cpp-2020.2.2-headers",
-                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/82b2ae57b3c67c1c32144726a4d5fc3e/ntcore-cpp-2020.2.2-headers"
+                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/82b2ae57b3c67c1c32144726a4d5fc3e/ntcore-cpp-2020.2.2-headers",
+                "C:/Users/Programming/Documents/Stuff Code Computer is Missing/api-cpp-5.14.1-headers.zip_030289be05cf3375b8caa56d34c0f684/ctre/phoenix/sensors",
+                "C:/Users/Programming/Documents/Stuff Code Computer is Missing/api-cpp-5.14.1-headers.zip_030289be05cf3375b8caa56d34c0f684"
             ],
             "defines": [
                 "_DEBUG",
