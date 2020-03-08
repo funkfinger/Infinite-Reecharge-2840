@@ -33,7 +33,7 @@
 using namespace frc;
 
 frc::Joystick one{0}, two{1};
-frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0};
+frc::Talon frontLeft{0}, frontRight{1}, backLeft{3}, backRight{2};
 rev::SparkMax intake{4}, outtake{5};
 frc::Servo pan{6},tilt{7};
 frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
@@ -130,7 +130,7 @@ void Robot::TeleopPeriodic() {
    ballUnstuck.Set(false);
  }
 
- double outtakeSpeed = -1.0;
+ double outtakeSpeed = trueMap(one.GetRawAxis(2),-1,1,-1,0);
 
  if(one.GetRawButton(1)){
    shootTimer.Start();
@@ -217,7 +217,7 @@ void Robot::TeleopPeriodic() {
   */
  sensitivity = (0.5);
 
-  /*if(one.GetRawAxis(0)>0.2||one.GetRawAxis(0)<-0.2){
+  if(one.GetRawAxis(0)>0.2||one.GetRawAxis(0)<-0.2){
 			tN=one.GetRawAxis(0);
 		}else{
       tN=0;
@@ -227,17 +227,22 @@ void Robot::TeleopPeriodic() {
   }else{
     sP=0;
   }
-  */
+  
+  sensitivity = -two.GetRawAxis(2);
+
+  //speed = one.GetRawAxis(1) * sensitivity;
+  //turn = one.GetRawAxis(0) * sensitivity;
+
   speed = one.GetRawAxis(1) * sensitivity;
-  turn = one.GetRawAxis(0) * sensitivity;
-  /*
+  //turn = one.GetRawAxis(0) * sensitivity;
+  
   if (speed >= 0) {
-    turn = ((tN * sensitivity)+(speed/4))+0.1;
+    turn = ((tN * sensitivity)+(speed/4));
   }
   else {
-    turn = ((tN*sensitivity)-(speed/4))+0.15;
+    turn = ((tN*sensitivity)-(speed/4))+0.05;
   }
-  */
+  
   myRobot.ArcadeDrive(speed, turn);
 
   pan.Set(trueMap(two.GetRawAxis(0),1,-1,1,0));
