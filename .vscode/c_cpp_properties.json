@@ -22,7 +22,14 @@
                 "${workspaceFolder}/src/main/include",
                 "${workspaceFolder}/build/tmp/expandedArchives/wpilibc-cpp-2019.1.1-headers.zip_bbc5901b0e22ac527e7d642f2ec68009",
                 "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/include",
-                "C:/Users/7bit_coder/.gradle/caches/transforms-2/files-2.1/8a5a6bb337c5b8e2a84ceac01c3c2259/SparkMax-cpp-1.5.1-headers"
+                "C:/Users/7bit_coder/.gradle/caches/transforms-2/files-2.1/8a5a6bb337c5b8e2a84ceac01c3c2259/SparkMax-cpp-1.5.1-headers",
+                "C:/Users/tomto/OneDrive/Documents/GitHub/Deep-Space-2840/build/tmp/expandedArchives/cameraserver-cpp-2019.1.1-headers.zip_8e6098f7e4e3b331e0504d2d66cebd71",
+                "C:/Users/tomto/OneDrive/Documents/GitHub/Chairbot/build/tmp/expandedArchives/SparkMax-cpp-1.4.1-headers.zip_8595b63e67372d66eb82559ea85aa4a2/rev",
+                "C:/Users/tomto/OneDrive/Documents/GitHub/Chairbot/build/tmp/expandedArchives/SparkMax-cpp-1.4.1-headers.zip_8595b63e67372d66eb82559ea85aa4a2",
+                "C:/Users/tomto/OneDrive/Documents/GitHub/Deep-Space-2840/build/tmp/expandedArchives/hal-cpp-2019.1.1-sources.zip_7efd4b26972c111bd2d0da91a0d82fbf/athena/ctre",
+                "C:/Users/tomto/OneDrive/Documents/GitHub/Deep-Space-2840/build/tmp/expandedArchives/hal-cpp-2019.1.1-sources.zip_7efd4b26972c111bd2d0da91a0d82fbf/athena/ctre/**",
+                "C:/Users/tomto/OneDrive/Documents/GitHub/Deep-Space-2840/build/tmp/expandedArchives/hal-cpp-2019.1.1-sources.zip_7efd4b26972c111bd2d0da91a0d82fbf/athena",
+                "C:/Users/tomto/OneDrive/Documents/GitHub/Deep-Space-2840/build/tmp/expandedArchives/api-cpp-5.14.0-headers.zip_1976f7544617652bbeb1459f7ccb1ad3/ctre/phoenix/sensors"
             ],
             "defines": [
                 "_DEBUG",
