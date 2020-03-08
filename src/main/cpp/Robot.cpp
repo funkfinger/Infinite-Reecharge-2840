@@ -23,9 +23,7 @@
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <frc/SmartDashboard/SendableChooser.h>
 #include <frc/Servo.h>
-//#include <ctre/Phoenix.h>
 #include <PigeonIMU.h>
-//#include <ctre/ctre.h>
 
 #include "rev/SparkMax.h"
 #include <frc/Compressor.h>
