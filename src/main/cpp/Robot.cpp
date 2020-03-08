@@ -16,7 +16,6 @@
 #include <frc/Timer.h>
 #include <frc/Spark.h>
 #include <frc/Talon.h>
-#include <frc/WPI_TalonSRX.h>
 #include <frc/Encoder.h>
 #include <frc/WPILib.h>
 #include <frc/PowerDistributionPanel.h>
