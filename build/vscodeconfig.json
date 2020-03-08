@@ -24,9 +24,16 @@
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\7efde753c0dd9aec36ed8ab2bd1e5fc2\\cameraserver-cpp-2020.1.2-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\6da1ee272b6a74bff11c1c409cf00b58\\cscore-cpp-2020.1.2-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\1a04beb74206a635e211ae857d0a51b0\\SparkMax-cpp-1.5.1-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\905a87e11075c47b94260b2a135dd1ca\\SparkMax-driver-1.5.1-headers\\",
-      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\c063bc61295dc3791e134b3c4f30c5cc\\wpilibOldCommands-cpp-2020.1.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\b6b3c70d6e6f440cb26a09042e35b2c9\\wpilibNewCommands-cpp-2020.1.2-headers\\",
       "C:\\Users\\tomto\\Desktop\\Infinite Recharge\\Infinite-Reecharge-2840\\src\\main\\include\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\759586253259c660302d160693400dda\\wpilibc-cpp-2020.1.2-sources\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\8e3782711e32b6990b439eebf6958cb7\\ntcore-cpp-2020.1.2-sources\\",
@@ -35,7 +42,7 @@
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\623cf65fabcd53a3f4611f815ab9386a\\cameraserver-cpp-2020.1.2-sources\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\0778a2eba9cedabec72881de45edc717\\cscore-cpp-2020.1.2-sources\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
-      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\f8b2910045039cbe9cbf5f2864947406\\wpilibOldCommands-cpp-2020.1.2-sources\\"
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\c9c6a5c6a1d2821c1ab2e63dfae9aa44\\wpilibNewCommands-cpp-2020.1.2-sources\\"
     ],
     "allLibSources": [
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\759586253259c660302d160693400dda\\wpilibc-cpp-2020.1.2-sources\\",
@@ -45,7 +52,7 @@
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\623cf65fabcd53a3f4611f815ab9386a\\cameraserver-cpp-2020.1.2-sources\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\0778a2eba9cedabec72881de45edc717\\cscore-cpp-2020.1.2-sources\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
-      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\f8b2910045039cbe9cbf5f2864947406\\wpilibOldCommands-cpp-2020.1.2-sources\\"
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\c9c6a5c6a1d2821c1ab2e63dfae9aa44\\wpilibNewCommands-cpp-2020.1.2-sources\\"
     ],
     "allLibHeaders": [
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\77aec02c88b6cdbbe6ae1baa0d102dbc\\wpilibc-cpp-2020.1.2-headers\\",
@@ -58,9 +65,16 @@
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\7efde753c0dd9aec36ed8ab2bd1e5fc2\\cameraserver-cpp-2020.1.2-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\6da1ee272b6a74bff11c1c409cf00b58\\cscore-cpp-2020.1.2-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\1a04beb74206a635e211ae857d0a51b0\\SparkMax-cpp-1.5.1-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\905a87e11075c47b94260b2a135dd1ca\\SparkMax-driver-1.5.1-headers\\",
-      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\c063bc61295dc3791e134b3c4f30c5cc\\wpilibOldCommands-cpp-2020.1.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\b6b3c70d6e6f440cb26a09042e35b2c9\\wpilibNewCommands-cpp-2020.1.2-headers\\",
       "C:\\Users\\tomto\\Desktop\\Infinite Recharge\\Infinite-Reecharge-2840\\src\\main\\include\\"
     ],
     "binaries": [
@@ -118,9 +132,16 @@
           "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\7efde753c0dd9aec36ed8ab2bd1e5fc2\\cameraserver-cpp-2020.1.2-headers\\",
           "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\6da1ee272b6a74bff11c1c409cf00b58\\cscore-cpp-2020.1.2-headers\\",
           "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
           "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\1a04beb74206a635e211ae857d0a51b0\\SparkMax-cpp-1.5.1-headers\\",
           "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\905a87e11075c47b94260b2a135dd1ca\\SparkMax-driver-1.5.1-headers\\",
-          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\c063bc61295dc3791e134b3c4f30c5cc\\wpilibOldCommands-cpp-2020.1.2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\b6b3c70d6e6f440cb26a09042e35b2c9\\wpilibNewCommands-cpp-2020.1.2-headers\\",
           "C:\\Users\\tomto\\Desktop\\Infinite Recharge\\Infinite-Reecharge-2840\\src\\main\\include\\"
         ],
         "sharedLibrary": false,
@@ -222,9 +243,16 @@
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\7efde753c0dd9aec36ed8ab2bd1e5fc2\\cameraserver-cpp-2020.1.2-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\6da1ee272b6a74bff11c1c409cf00b58\\cscore-cpp-2020.1.2-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\1a04beb74206a635e211ae857d0a51b0\\SparkMax-cpp-1.5.1-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\905a87e11075c47b94260b2a135dd1ca\\SparkMax-driver-1.5.1-headers\\",
-      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\c063bc61295dc3791e134b3c4f30c5cc\\wpilibOldCommands-cpp-2020.1.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\b6b3c70d6e6f440cb26a09042e35b2c9\\wpilibNewCommands-cpp-2020.1.2-headers\\",
       "C:\\Users\\tomto\\Desktop\\Infinite Recharge\\Infinite-Reecharge-2840\\src\\main\\include\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\759586253259c660302d160693400dda\\wpilibc-cpp-2020.1.2-sources\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\8e3782711e32b6990b439eebf6958cb7\\ntcore-cpp-2020.1.2-sources\\",
@@ -233,7 +261,7 @@
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\623cf65fabcd53a3f4611f815ab9386a\\cameraserver-cpp-2020.1.2-sources\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\0778a2eba9cedabec72881de45edc717\\cscore-cpp-2020.1.2-sources\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
-      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\f8b2910045039cbe9cbf5f2864947406\\wpilibOldCommands-cpp-2020.1.2-sources\\"
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\c9c6a5c6a1d2821c1ab2e63dfae9aa44\\wpilibNewCommands-cpp-2020.1.2-sources\\"
     ],
     "allLibSources": [
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\759586253259c660302d160693400dda\\wpilibc-cpp-2020.1.2-sources\\",
@@ -243,7 +271,7 @@
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\623cf65fabcd53a3f4611f815ab9386a\\cameraserver-cpp-2020.1.2-sources\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\0778a2eba9cedabec72881de45edc717\\cscore-cpp-2020.1.2-sources\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
-      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\f8b2910045039cbe9cbf5f2864947406\\wpilibOldCommands-cpp-2020.1.2-sources\\"
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\c9c6a5c6a1d2821c1ab2e63dfae9aa44\\wpilibNewCommands-cpp-2020.1.2-sources\\"
     ],
     "allLibHeaders": [
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\77aec02c88b6cdbbe6ae1baa0d102dbc\\wpilibc-cpp-2020.1.2-headers\\",
@@ -256,9 +284,16 @@
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\7efde753c0dd9aec36ed8ab2bd1e5fc2\\cameraserver-cpp-2020.1.2-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\6da1ee272b6a74bff11c1c409cf00b58\\cscore-cpp-2020.1.2-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\1a04beb74206a635e211ae857d0a51b0\\SparkMax-cpp-1.5.1-headers\\",
       "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\905a87e11075c47b94260b2a135dd1ca\\SparkMax-driver-1.5.1-headers\\",
-      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\c063bc61295dc3791e134b3c4f30c5cc\\wpilibOldCommands-cpp-2020.1.2-headers\\",
+      "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\b6b3c70d6e6f440cb26a09042e35b2c9\\wpilibNewCommands-cpp-2020.1.2-headers\\",
       "C:\\Users\\tomto\\Desktop\\Infinite Recharge\\Infinite-Reecharge-2840\\src\\main\\include\\"
     ],
     "binaries": [
@@ -316,9 +351,16 @@
           "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\7efde753c0dd9aec36ed8ab2bd1e5fc2\\cameraserver-cpp-2020.1.2-headers\\",
           "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\6da1ee272b6a74bff11c1c409cf00b58\\cscore-cpp-2020.1.2-headers\\",
           "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
           "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\1a04beb74206a635e211ae857d0a51b0\\SparkMax-cpp-1.5.1-headers\\",
           "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\905a87e11075c47b94260b2a135dd1ca\\SparkMax-driver-1.5.1-headers\\",
-          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\c063bc61295dc3791e134b3c4f30c5cc\\wpilibOldCommands-cpp-2020.1.2-headers\\",
+          "C:\\Users\\tomto\\.gradle\\caches\\transforms-2\\files-2.1\\b6b3c70d6e6f440cb26a09042e35b2c9\\wpilibNewCommands-cpp-2020.1.2-headers\\",
           "C:\\Users\\tomto\\Desktop\\Infinite Recharge\\Infinite-Reecharge-2840\\src\\main\\include\\"
         ],
         "sharedLibrary": false,
