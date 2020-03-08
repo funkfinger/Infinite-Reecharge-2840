@@ -15,7 +15,8 @@
   },
   "files.associations": {
     "*.inc": "cpp",
-    "xstring": "cpp"
+    "xstring": "cpp",
+    "optional": "cpp"
   },
   "C_Cpp.errorSquiggles": "Enabled"
 }

@@ -34,7 +34,7 @@
 
 
 frc::Joystick one{0}, two{1};
-frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
+frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10}, panel{10};
 rev::SparkMax intake{4}, outtake{5};
 frc::Servo pan{6},tilt{7};
 frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
@@ -45,7 +45,7 @@ frc::Solenoid ballStorage{6}, ballUnstuck{0};
 frc::DoubleSolenoid ballIn{2, 3};
 frc::Compressor compressor{0};
 
-ctre::phoenix::sensors::PigeonIMU pigeon{1};
+ctre::phoenix::sensors::PigeonIMU pigeon{10};
 
 double speed, turn, sensitivity, turnKey;
 bool isUpPressed, isDownPressed;
