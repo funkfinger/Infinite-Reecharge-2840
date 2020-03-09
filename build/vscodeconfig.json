@@ -14,68 +14,68 @@
     "systemCMacros": [],
     "systemCArgs": [],
     "allLibFiles": [
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f78589b1f173909e18ca9d5419a0a5fa\\wpilibc-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\82b2ae57b3c67c1c32144726a4d5fc3e\\ntcore-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\02da602861f55d5062330df3389e1a19\\hal-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\d7bb06314cf59227b33dfbb4b887f30e\\wpiutil-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f706b5d5cd4bcea038ba587a522740f2\\chipobject-2020.10.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\5534c65e0992107bcb0c55bf86146863\\netcomm-2020.10.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\74bb0c258eb3df4b65691e2162a6f51e\\visa-2020.10.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\668ed1c1966c97fb577eede7f2896be1\\cameraserver-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\b97702da5f4ce7738418ef1913e15e56\\cscore-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\67dfa2cecda01be6ebdeb2ec8aee08a6\\SparkMax-cpp-1.5.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\49c75a75a886fd43c2e49031aad288c8\\SparkMax-driver-1.5.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f2b80ed8797820c9fb76221f6084ac87\\wpilibNewCommands-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\159dfe66c682bcee6ef291aa4227fdac\\wpilibc-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\46d0b663e76073431492dc9aa53f36e4\\ntcore-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\c6dfc108c539e3bdf6c1b307601783c1\\hal-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6c53a9037ae27e40b492b35dc147e84f\\wpiutil-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\93116fe8da252b04f0a278788c9d12c2\\cameraserver-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\dcf016960a5188e4bdc46a82da13f78a\\cscore-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6f3031a6d0290c43d63c7b4cd982984f\\wpilibNewCommands-cpp-2020.2.2-sources\\"
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f552bdfcf48829b44b720425ab8918af\\wpilibc-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\a0e01bbacdc00e984544145b38aea6d5\\ntcore-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\830ba83b0b15c70d3fb0333398721d08\\hal-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\acb94c46bae1c7c519aed01ec4c532ea\\wpiutil-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f706b5d5cd4bcea038ba587a522740f2\\chipobject-2020.10.1-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\5534c65e0992107bcb0c55bf86146863\\netcomm-2020.10.1-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\74bb0c258eb3df4b65691e2162a6f51e\\visa-2020.10.1-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ff5f6a5506719049f2cbee5ffbe54d77\\cameraserver-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\b6866d5a4eaa82663e7fb988251884ff\\cscore-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\3ac609f0381fc59d3c71c357116e3ccc\\SparkMax-cpp-1.5.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\de76980a9809008a1bf7183e55f91f21\\SparkMax-driver-1.5.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\391c50d77c6e224f4414c0fa643572ed\\wpilibNewCommands-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\Desktop\\Robotics\\Robotics Software\\Robot Code\\Infinite-Reecharge-2840\\src\\main\\include\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\5a49e2aaa39c4776a494c34a3631681c\\wpilibc-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\0235a3a1136d36eb6cf5c7f687155587\\ntcore-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f67ddb0aac72a641d87868ec4ac995df\\hal-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\e14d9fa3ab0c01fa94ffbc870191bcdb\\wpiutil-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\e4239665dd1b0e81f06efb04c17dc13b\\cameraserver-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\b207b68dfe3d69afc239fedc6321d0fa\\cscore-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\28f5ffa28358d3917a44df2590bb45d4\\wpilibNewCommands-cpp-2020.2.2-sources\\"
     ],
     "allLibSources": [
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\159dfe66c682bcee6ef291aa4227fdac\\wpilibc-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\46d0b663e76073431492dc9aa53f36e4\\ntcore-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\c6dfc108c539e3bdf6c1b307601783c1\\hal-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6c53a9037ae27e40b492b35dc147e84f\\wpiutil-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\93116fe8da252b04f0a278788c9d12c2\\cameraserver-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\dcf016960a5188e4bdc46a82da13f78a\\cscore-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6f3031a6d0290c43d63c7b4cd982984f\\wpilibNewCommands-cpp-2020.2.2-sources\\"
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\5a49e2aaa39c4776a494c34a3631681c\\wpilibc-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\0235a3a1136d36eb6cf5c7f687155587\\ntcore-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f67ddb0aac72a641d87868ec4ac995df\\hal-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\e14d9fa3ab0c01fa94ffbc870191bcdb\\wpiutil-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\e4239665dd1b0e81f06efb04c17dc13b\\cameraserver-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\b207b68dfe3d69afc239fedc6321d0fa\\cscore-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\28f5ffa28358d3917a44df2590bb45d4\\wpilibNewCommands-cpp-2020.2.2-sources\\"
     ],
     "allLibHeaders": [
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f78589b1f173909e18ca9d5419a0a5fa\\wpilibc-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\82b2ae57b3c67c1c32144726a4d5fc3e\\ntcore-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\02da602861f55d5062330df3389e1a19\\hal-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\d7bb06314cf59227b33dfbb4b887f30e\\wpiutil-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f706b5d5cd4bcea038ba587a522740f2\\chipobject-2020.10.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\5534c65e0992107bcb0c55bf86146863\\netcomm-2020.10.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\74bb0c258eb3df4b65691e2162a6f51e\\visa-2020.10.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\668ed1c1966c97fb577eede7f2896be1\\cameraserver-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\b97702da5f4ce7738418ef1913e15e56\\cscore-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\67dfa2cecda01be6ebdeb2ec8aee08a6\\SparkMax-cpp-1.5.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\49c75a75a886fd43c2e49031aad288c8\\SparkMax-driver-1.5.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f2b80ed8797820c9fb76221f6084ac87\\wpilibNewCommands-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f552bdfcf48829b44b720425ab8918af\\wpilibc-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\a0e01bbacdc00e984544145b38aea6d5\\ntcore-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\830ba83b0b15c70d3fb0333398721d08\\hal-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\acb94c46bae1c7c519aed01ec4c532ea\\wpiutil-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f706b5d5cd4bcea038ba587a522740f2\\chipobject-2020.10.1-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\5534c65e0992107bcb0c55bf86146863\\netcomm-2020.10.1-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\74bb0c258eb3df4b65691e2162a6f51e\\visa-2020.10.1-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ff5f6a5506719049f2cbee5ffbe54d77\\cameraserver-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\b6866d5a4eaa82663e7fb988251884ff\\cscore-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\3ac609f0381fc59d3c71c357116e3ccc\\SparkMax-cpp-1.5.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\de76980a9809008a1bf7183e55f91f21\\SparkMax-driver-1.5.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\391c50d77c6e224f4414c0fa643572ed\\wpilibNewCommands-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\Desktop\\Robotics\\Robotics Software\\Robot Code\\Infinite-Reecharge-2840\\src\\main\\include\\"
     ],
     "binaries": [
       {
@@ -84,7 +84,7 @@
           {
             "source": {
               "srcDirs": [
-                "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\cpp\\"
+                "C:\\Users\\cohen\\Desktop\\Robotics\\Robotics Software\\Robot Code\\Infinite-Reecharge-2840\\src\\main\\cpp\\"
               ],
               "includes": [
                 "**/*.cpp",
@@ -94,7 +94,7 @@
             },
             "exportedHeaders": {
               "srcDirs": [
-                "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
+                "C:\\Users\\cohen\\Desktop\\Robotics\\Robotics Software\\Robot Code\\Infinite-Reecharge-2840\\src\\main\\include\\"
               ],
               "includes": [
                 "**/*.cpp",
@@ -122,27 +122,27 @@
           }
         ],
         "libHeaders": [
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f78589b1f173909e18ca9d5419a0a5fa\\wpilibc-cpp-2020.2.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\82b2ae57b3c67c1c32144726a4d5fc3e\\ntcore-cpp-2020.2.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\02da602861f55d5062330df3389e1a19\\hal-cpp-2020.2.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\d7bb06314cf59227b33dfbb4b887f30e\\wpiutil-cpp-2020.2.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f706b5d5cd4bcea038ba587a522740f2\\chipobject-2020.10.1-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\5534c65e0992107bcb0c55bf86146863\\netcomm-2020.10.1-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\74bb0c258eb3df4b65691e2162a6f51e\\visa-2020.10.1-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\668ed1c1966c97fb577eede7f2896be1\\cameraserver-cpp-2020.2.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\b97702da5f4ce7738418ef1913e15e56\\cscore-cpp-2020.2.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\67dfa2cecda01be6ebdeb2ec8aee08a6\\SparkMax-cpp-1.5.1-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\49c75a75a886fd43c2e49031aad288c8\\SparkMax-driver-1.5.1-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f2b80ed8797820c9fb76221f6084ac87\\wpilibNewCommands-cpp-2020.2.2-headers\\",
-          "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f552bdfcf48829b44b720425ab8918af\\wpilibc-cpp-2020.2.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\a0e01bbacdc00e984544145b38aea6d5\\ntcore-cpp-2020.2.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\830ba83b0b15c70d3fb0333398721d08\\hal-cpp-2020.2.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\acb94c46bae1c7c519aed01ec4c532ea\\wpiutil-cpp-2020.2.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f706b5d5cd4bcea038ba587a522740f2\\chipobject-2020.10.1-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\5534c65e0992107bcb0c55bf86146863\\netcomm-2020.10.1-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\74bb0c258eb3df4b65691e2162a6f51e\\visa-2020.10.1-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ff5f6a5506719049f2cbee5ffbe54d77\\cameraserver-cpp-2020.2.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\b6866d5a4eaa82663e7fb988251884ff\\cscore-cpp-2020.2.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\3ac609f0381fc59d3c71c357116e3ccc\\SparkMax-cpp-1.5.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\de76980a9809008a1bf7183e55f91f21\\SparkMax-driver-1.5.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\391c50d77c6e224f4414c0fa643572ed\\wpilibNewCommands-cpp-2020.2.2-headers\\",
+          "C:\\Users\\cohen\\Desktop\\Robotics\\Robotics Software\\Robot Code\\Infinite-Reecharge-2840\\src\\main\\include\\"
         ],
         "sharedLibrary": false,
         "executable": true
@@ -152,7 +152,7 @@
       {
         "source": {
           "srcDirs": [
-            "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\cpp\\"
+            "C:\\Users\\cohen\\Desktop\\Robotics\\Robotics Software\\Robot Code\\Infinite-Reecharge-2840\\src\\main\\cpp\\"
           ],
           "includes": [
             "**/*.cpp",
@@ -184,7 +184,7 @@
       {
         "source": {
           "srcDirs": [
-            "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
+            "C:\\Users\\cohen\\Desktop\\Robotics\\Robotics Software\\Robot Code\\Infinite-Reecharge-2840\\src\\main\\include\\"
           ],
           "includes": [
             "**/*.cpp",
@@ -233,68 +233,68 @@
     "systemCMacros": [],
     "systemCArgs": [],
     "allLibFiles": [
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f78589b1f173909e18ca9d5419a0a5fa\\wpilibc-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\82b2ae57b3c67c1c32144726a4d5fc3e\\ntcore-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\02da602861f55d5062330df3389e1a19\\hal-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\d7bb06314cf59227b33dfbb4b887f30e\\wpiutil-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f706b5d5cd4bcea038ba587a522740f2\\chipobject-2020.10.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\5534c65e0992107bcb0c55bf86146863\\netcomm-2020.10.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\74bb0c258eb3df4b65691e2162a6f51e\\visa-2020.10.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\668ed1c1966c97fb577eede7f2896be1\\cameraserver-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\b97702da5f4ce7738418ef1913e15e56\\cscore-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\67dfa2cecda01be6ebdeb2ec8aee08a6\\SparkMax-cpp-1.5.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\49c75a75a886fd43c2e49031aad288c8\\SparkMax-driver-1.5.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f2b80ed8797820c9fb76221f6084ac87\\wpilibNewCommands-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\159dfe66c682bcee6ef291aa4227fdac\\wpilibc-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\46d0b663e76073431492dc9aa53f36e4\\ntcore-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\c6dfc108c539e3bdf6c1b307601783c1\\hal-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6c53a9037ae27e40b492b35dc147e84f\\wpiutil-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\93116fe8da252b04f0a278788c9d12c2\\cameraserver-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\dcf016960a5188e4bdc46a82da13f78a\\cscore-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6f3031a6d0290c43d63c7b4cd982984f\\wpilibNewCommands-cpp-2020.2.2-sources\\"
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f552bdfcf48829b44b720425ab8918af\\wpilibc-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\a0e01bbacdc00e984544145b38aea6d5\\ntcore-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\830ba83b0b15c70d3fb0333398721d08\\hal-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\acb94c46bae1c7c519aed01ec4c532ea\\wpiutil-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f706b5d5cd4bcea038ba587a522740f2\\chipobject-2020.10.1-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\5534c65e0992107bcb0c55bf86146863\\netcomm-2020.10.1-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\74bb0c258eb3df4b65691e2162a6f51e\\visa-2020.10.1-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ff5f6a5506719049f2cbee5ffbe54d77\\cameraserver-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\b6866d5a4eaa82663e7fb988251884ff\\cscore-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\3ac609f0381fc59d3c71c357116e3ccc\\SparkMax-cpp-1.5.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\de76980a9809008a1bf7183e55f91f21\\SparkMax-driver-1.5.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\391c50d77c6e224f4414c0fa643572ed\\wpilibNewCommands-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\Desktop\\Robotics\\Robotics Software\\Robot Code\\Infinite-Reecharge-2840\\src\\main\\include\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\5a49e2aaa39c4776a494c34a3631681c\\wpilibc-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\0235a3a1136d36eb6cf5c7f687155587\\ntcore-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f67ddb0aac72a641d87868ec4ac995df\\hal-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\e14d9fa3ab0c01fa94ffbc870191bcdb\\wpiutil-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\e4239665dd1b0e81f06efb04c17dc13b\\cameraserver-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\b207b68dfe3d69afc239fedc6321d0fa\\cscore-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\28f5ffa28358d3917a44df2590bb45d4\\wpilibNewCommands-cpp-2020.2.2-sources\\"
     ],
     "allLibSources": [
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\159dfe66c682bcee6ef291aa4227fdac\\wpilibc-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\46d0b663e76073431492dc9aa53f36e4\\ntcore-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\c6dfc108c539e3bdf6c1b307601783c1\\hal-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6c53a9037ae27e40b492b35dc147e84f\\wpiutil-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\93116fe8da252b04f0a278788c9d12c2\\cameraserver-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\dcf016960a5188e4bdc46a82da13f78a\\cscore-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6f3031a6d0290c43d63c7b4cd982984f\\wpilibNewCommands-cpp-2020.2.2-sources\\"
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\5a49e2aaa39c4776a494c34a3631681c\\wpilibc-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\0235a3a1136d36eb6cf5c7f687155587\\ntcore-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f67ddb0aac72a641d87868ec4ac995df\\hal-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\e14d9fa3ab0c01fa94ffbc870191bcdb\\wpiutil-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\e4239665dd1b0e81f06efb04c17dc13b\\cameraserver-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\b207b68dfe3d69afc239fedc6321d0fa\\cscore-cpp-2020.2.2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\28f5ffa28358d3917a44df2590bb45d4\\wpilibNewCommands-cpp-2020.2.2-sources\\"
     ],
     "allLibHeaders": [
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f78589b1f173909e18ca9d5419a0a5fa\\wpilibc-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\82b2ae57b3c67c1c32144726a4d5fc3e\\ntcore-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\02da602861f55d5062330df3389e1a19\\hal-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\d7bb06314cf59227b33dfbb4b887f30e\\wpiutil-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f706b5d5cd4bcea038ba587a522740f2\\chipobject-2020.10.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\5534c65e0992107bcb0c55bf86146863\\netcomm-2020.10.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\74bb0c258eb3df4b65691e2162a6f51e\\visa-2020.10.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\668ed1c1966c97fb577eede7f2896be1\\cameraserver-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\b97702da5f4ce7738418ef1913e15e56\\cscore-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\67dfa2cecda01be6ebdeb2ec8aee08a6\\SparkMax-cpp-1.5.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\49c75a75a886fd43c2e49031aad288c8\\SparkMax-driver-1.5.1-headers\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f2b80ed8797820c9fb76221f6084ac87\\wpilibNewCommands-cpp-2020.2.2-headers\\",
-      "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f552bdfcf48829b44b720425ab8918af\\wpilibc-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\a0e01bbacdc00e984544145b38aea6d5\\ntcore-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\830ba83b0b15c70d3fb0333398721d08\\hal-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\acb94c46bae1c7c519aed01ec4c532ea\\wpiutil-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f706b5d5cd4bcea038ba587a522740f2\\chipobject-2020.10.1-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\5534c65e0992107bcb0c55bf86146863\\netcomm-2020.10.1-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\74bb0c258eb3df4b65691e2162a6f51e\\visa-2020.10.1-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ff5f6a5506719049f2cbee5ffbe54d77\\cameraserver-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\b6866d5a4eaa82663e7fb988251884ff\\cscore-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\3ac609f0381fc59d3c71c357116e3ccc\\SparkMax-cpp-1.5.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\de76980a9809008a1bf7183e55f91f21\\SparkMax-driver-1.5.2-headers\\",
+      "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\391c50d77c6e224f4414c0fa643572ed\\wpilibNewCommands-cpp-2020.2.2-headers\\",
+      "C:\\Users\\cohen\\Desktop\\Robotics\\Robotics Software\\Robot Code\\Infinite-Reecharge-2840\\src\\main\\include\\"
     ],
     "binaries": [
       {
@@ -303,7 +303,7 @@
           {
             "source": {
               "srcDirs": [
-                "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\cpp\\"
+                "C:\\Users\\cohen\\Desktop\\Robotics\\Robotics Software\\Robot Code\\Infinite-Reecharge-2840\\src\\main\\cpp\\"
               ],
               "includes": [
                 "**/*.cpp",
@@ -313,7 +313,7 @@
             },
             "exportedHeaders": {
               "srcDirs": [
-                "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
+                "C:\\Users\\cohen\\Desktop\\Robotics\\Robotics Software\\Robot Code\\Infinite-Reecharge-2840\\src\\main\\include\\"
               ],
               "includes": [
                 "**/*.cpp",
@@ -341,27 +341,27 @@
           }
         ],
         "libHeaders": [
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f78589b1f173909e18ca9d5419a0a5fa\\wpilibc-cpp-2020.2.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\82b2ae57b3c67c1c32144726a4d5fc3e\\ntcore-cpp-2020.2.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\02da602861f55d5062330df3389e1a19\\hal-cpp-2020.2.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\d7bb06314cf59227b33dfbb4b887f30e\\wpiutil-cpp-2020.2.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f706b5d5cd4bcea038ba587a522740f2\\chipobject-2020.10.1-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\5534c65e0992107bcb0c55bf86146863\\netcomm-2020.10.1-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\74bb0c258eb3df4b65691e2162a6f51e\\visa-2020.10.1-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\668ed1c1966c97fb577eede7f2896be1\\cameraserver-cpp-2020.2.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\b97702da5f4ce7738418ef1913e15e56\\cscore-cpp-2020.2.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\67dfa2cecda01be6ebdeb2ec8aee08a6\\SparkMax-cpp-1.5.1-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\49c75a75a886fd43c2e49031aad288c8\\SparkMax-driver-1.5.1-headers\\",
-          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f2b80ed8797820c9fb76221f6084ac87\\wpilibNewCommands-cpp-2020.2.2-headers\\",
-          "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f552bdfcf48829b44b720425ab8918af\\wpilibc-cpp-2020.2.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\a0e01bbacdc00e984544145b38aea6d5\\ntcore-cpp-2020.2.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\830ba83b0b15c70d3fb0333398721d08\\hal-cpp-2020.2.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\acb94c46bae1c7c519aed01ec4c532ea\\wpiutil-cpp-2020.2.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\f706b5d5cd4bcea038ba587a522740f2\\chipobject-2020.10.1-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\5534c65e0992107bcb0c55bf86146863\\netcomm-2020.10.1-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\74bb0c258eb3df4b65691e2162a6f51e\\visa-2020.10.1-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ff5f6a5506719049f2cbee5ffbe54d77\\cameraserver-cpp-2020.2.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\b6866d5a4eaa82663e7fb988251884ff\\cscore-cpp-2020.2.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\eed3931469ba7efc2e953f8f3443a673\\opencv-cpp-3.4.7-2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\9db90d49712fd7f8707de21c94059f20\\wpiapi-cpp-5.18.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ddeb1fe31803ebb75be7c7ff81bc8ef1\\api-cpp-5.18.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\ac428c4a4655347f48b737475e270c84\\cci-5.18.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\e1b5df9cc88ab3bc4394be251b5c67fd\\diagnostics-5.18.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\8274b2cc50d53a9d7a331650961891b7\\canutils-5.18.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\962a2c08ad78861ae00def2970206027\\platform-stub-5.18.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\7aa6e4bcf682a12eecc7960ffc7a7438\\core-5.18.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\3ac609f0381fc59d3c71c357116e3ccc\\SparkMax-cpp-1.5.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\de76980a9809008a1bf7183e55f91f21\\SparkMax-driver-1.5.2-headers\\",
+          "C:\\Users\\cohen\\.gradle\\caches\\transforms-2\\files-2.1\\391c50d77c6e224f4414c0fa643572ed\\wpilibNewCommands-cpp-2020.2.2-headers\\",
+          "C:\\Users\\cohen\\Desktop\\Robotics\\Robotics Software\\Robot Code\\Infinite-Reecharge-2840\\src\\main\\include\\"
         ],
         "sharedLibrary": false,
         "executable": true
@@ -371,7 +371,7 @@
       {
         "source": {
           "srcDirs": [
-            "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\cpp\\"
+            "C:\\Users\\cohen\\Desktop\\Robotics\\Robotics Software\\Robot Code\\Infinite-Reecharge-2840\\src\\main\\cpp\\"
           ],
           "includes": [
             "**/*.cpp",
@@ -403,7 +403,7 @@
       {
         "source": {
           "srcDirs": [
-            "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
+            "C:\\Users\\cohen\\Desktop\\Robotics\\Robotics Software\\Robot Code\\Infinite-Reecharge-2840\\src\\main\\include\\"
           ],
           "includes": [
             "**/*.cpp",

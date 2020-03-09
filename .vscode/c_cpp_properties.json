@@ -40,7 +40,20 @@
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/02da602861f55d5062330df3389e1a19/hal-cpp-2020.2.2-headers",
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/82b2ae57b3c67c1c32144726a4d5fc3e/ntcore-cpp-2020.2.2-headers",
                 "C:/Users/Programming/Documents/Stuff Code Computer is Missing/api-cpp-5.14.1-headers.zip_030289be05cf3375b8caa56d34c0f684/ctre/phoenix/sensors",
-                "C:/Users/Programming/Documents/Stuff Code Computer is Missing/api-cpp-5.14.1-headers.zip_030289be05cf3375b8caa56d34c0f684"
+                "C:/Users/Programming/Documents/Stuff Code Computer is Missing/api-cpp-5.14.1-headers.zip_030289be05cf3375b8caa56d34c0f684",
+                "C:/Users/Public/wpilib/2020/roborio/arm-frc2020-linux-gnueabi/usr/include",
+                "C:/Users/Public/wpilib/2020/roborio/arm-frc2020-linux-gnueabi/usr/include/c++/7.3.0/tr1",
+                "C:/Users/Public/wpilib/2020/roborio/arm-frc2020-linux-gnueabi/usr/include/linux",
+                "C:/Users/Public/wpilib/2020/roborio/arm-frc2020-linux-gnueabi/usr/include/**",
+                "C:/Users/cohen/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers",
+                "C:/Users/cohen/.gradle/caches/transforms-2/files-2.1/6052d830a658f522a859cddd6e1e0630/hal-cpp-2020.1.2-headers",
+                "C:/Users/cohen/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers",
+                "C:/Users/cohen/.gradle/caches/transforms-2/files-2.1/603cb3c4292f5c9ad5d0f9e5f496c319/ntcore-cpp-2020.1.2-headers",
+                "C:/Users/cohen/.gradle/caches/transforms-2/files-2.1/7efde753c0dd9aec36ed8ab2bd1e5fc2/cameraserver-cpp-2020.1.2-headers",
+                "C:/Users/cohen/.gradle/caches/transforms-2/files-2.1/6da1ee272b6a74bff11c1c409cf00b58/cscore-cpp-2020.1.2-headers",
+                "C:/Users/cohen/.gradle/caches/transforms-2/files-2.1/ddeb1fe31803ebb75be7c7ff81bc8ef1/api-cpp-5.18.2-headers",
+                "C:/Users/cohen/.gradle/caches/transforms-2/files-2.1/ac428c4a4655347f48b737475e270c84/cci-5.18.2-headers",
+                "C:/Users/cohen/.gradle/caches/transforms-2/files-2.1/7aa6e4bcf682a12eecc7960ffc7a7438/core-5.18.2-headers"
             ],
             "defines": [
                 "_DEBUG",
