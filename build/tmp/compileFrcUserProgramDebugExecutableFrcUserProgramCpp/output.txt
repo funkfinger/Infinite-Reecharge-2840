@@ -1,20 +1,69 @@
-See file:///C:/Users/tomto/Desktop/Infinite%20Recharge/Infinite-Reecharge-2840/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramDebugExecutableFrcUserProgramCpp.
-compiling Robot.cpp successful.
-In file included from C:\Users\tomto\Desktop\Infinite Recharge\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:20:0:
-C:\Users\tomto\.gradle\caches\transforms-2\files-2.1\4c268f258db31e7555a067e86995cefe\wpilibc-cpp-2020.2.2-headers/frc/WPILib.h:14:2: warning: #warning is a GCC extension
+See file:///C:/Users/Programming/Documents/GitHub/Infinite-Reecharge-2840/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramDebugExecutableFrcUserProgramCpp.
+compiling Robot.cpp failed.
+In file included from C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:20:0:
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/WPILib.h:14:2: warning: #warning is a GCC extension
  #warning "Including this header drastically increases compilation times and is bad style. Include only what you use instead."
   ^~~~~~~
-C:\Users\tomto\.gradle\caches\transforms-2\files-2.1\4c268f258db31e7555a067e86995cefe\wpilibc-cpp-2020.2.2-headers/frc/WPILib.h:14:2: warning: #warning "Including this header drastically increases compilation times and is bad style. Include only what you use instead." [-Wcpp]
-C:\Users\tomto\Desktop\Infinite Recharge\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:248:3: warning: "/*" within comment [-Wcomment]
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/WPILib.h:14:2: warning: #warning "Including this header drastically increases compilation times and is bad style. Include only what you use instead." [-Wcpp]
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:250:3: warning: "/*" within comment [-Wcomment]
    /*if(stick.GetRawButton(7)){
     
-C:\Users\tomto\Desktop\Infinite Recharge\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:40:67: warning: 'frc::RobotDrive::RobotDrive(frc::SpeedController&, frc::SpeedController&, frc::SpeedController&, frc::SpeedController&)' is deprecated: Use DifferentialDrive or MecanumDrive classes instead. [-Wdeprecated-declarations]
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:41:25: error: 'frontLeft' was not declared in this scope
+ frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
+                         ^~~~~~~~~
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:41:36: error: 'backLeft' was not declared in this scope
+ frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
+                                    ^~~~~~~~
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:41:46: error: 'frontRight' was not declared in this scope
+ frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
+                                              ^~~~~~~~~~
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:41:58: error: 'backRight' was not declared in this scope
+ frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
+                                                          ^~~~~~~~~
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:41:58: note: suggested alternative: 'daylight'
+ frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
+                                                          ^~~~~~~~~
+                                                          daylight
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:41:67: error: no matching function for call to 'frc::RobotDrive::RobotDrive(<brace-enclosed initializer list>)'
  frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
                                                                    ^
-In file included from C:\Users\tomto\.gradle\caches\transforms-2\files-2.1\4c268f258db31e7555a067e86995cefe\wpilibc-cpp-2020.2.2-headers/frc/WPILib.h:67:0,
-                 from C:\Users\tomto\Desktop\Infinite Recharge\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:20:
-C:\Users\tomto\.gradle\caches\transforms-2\files-2.1\4c268f258db31e7555a067e86995cefe\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:120:3: note: declared here
+In file included from C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/WPILib.h:67:0,
+                 from C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:20:
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:131:3: note: candidate: frc::RobotDrive::RobotDrive(frc::RobotDrive&&)
+   RobotDrive(RobotDrive&&) = default;
+   ^~~~~~~~~~
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:131:3: note:   candidate expects 1 argument, 4 provided
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:124:3: note: candidate: frc::RobotDrive::RobotDrive(std::shared_ptr<frc::SpeedController>, std::shared_ptr<frc::SpeedController>, std::shared_ptr<frc::SpeedController>, std::shared_ptr<frc::SpeedController>)
+   RobotDrive(std::shared_ptr<SpeedController> frontLeftMotor,
+   ^~~~~~~~~~
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:124:3: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:120:3: note: candidate: frc::RobotDrive::RobotDrive(frc::SpeedController&, frc::SpeedController&, frc::SpeedController&, frc::SpeedController&)
    RobotDrive(SpeedController& frontLeftMotor, SpeedController& rearLeftMotor,
    ^~~~~~~~~~
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:120:3: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:116:3: note: candidate: frc::RobotDrive::RobotDrive(frc::SpeedController*, frc::SpeedController*, frc::SpeedController*, frc::SpeedController*)
+   RobotDrive(SpeedController* frontLeftMotor, SpeedController* rearLeftMotor,
+   ^~~~~~~~~~
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:116:3: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:97:3: note: candidate: frc::RobotDrive::RobotDrive(std::shared_ptr<frc::SpeedController>, std::shared_ptr<frc::SpeedController>)
+   RobotDrive(std::shared_ptr<SpeedController> leftMotor,
+   ^~~~~~~~~~
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:97:3: note:   candidate expects 2 arguments, 4 provided
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:94:3: note: candidate: frc::RobotDrive::RobotDrive(frc::SpeedController&, frc::SpeedController&)
+   RobotDrive(SpeedController& leftMotor, SpeedController& rightMotor);
+   ^~~~~~~~~~
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:94:3: note:   candidate expects 2 arguments, 4 provided
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:91:3: note: candidate: frc::RobotDrive::RobotDrive(frc::SpeedController*, frc::SpeedController*)
+   RobotDrive(SpeedController* leftMotor, SpeedController* rightMotor);
+   ^~~~~~~~~~
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:91:3: note:   candidate expects 2 arguments, 4 provided
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:75:3: note: candidate: frc::RobotDrive::RobotDrive(int, int, int, int)
+   RobotDrive(int frontLeftMotorChannel, int rearLeftMotorChannel,
+   ^~~~~~~~~~
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:75:3: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:56:3: note: candidate: frc::RobotDrive::RobotDrive(int, int)
+   RobotDrive(int leftMotorChannel, int rightMotorChannel);
+   ^~~~~~~~~~
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:56:3: note:   candidate expects 2 arguments, 4 provided
 
-Finished compileFrcUserProgramDebugExecutableFrcUserProgramCpp, see full log file:///C:/Users/tomto/Desktop/Infinite%20Recharge/Infinite-Reecharge-2840/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt.
+Finished compileFrcUserProgramDebugExecutableFrcUserProgramCpp, see full log file:///C:/Users/Programming/Documents/GitHub/Infinite-Reecharge-2840/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt.

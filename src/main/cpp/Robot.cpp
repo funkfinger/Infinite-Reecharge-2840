@@ -24,6 +24,7 @@
 #include <frc/SmartDashboard/SendableChooser.h>
 #include <frc/Servo.h>
 #include <ctre/phoenix/sensors/PigeonIMU.h>
+#include <ctre/phoenix/motorcontrol/can/TalonSRX.h>
 
 #include "rev/SparkMax.h"
 #include <frc/Compressor.h>
@@ -34,11 +35,12 @@
 
 
 frc::Joystick one{0}, two{1};
-frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
+//frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
 rev::SparkMax intake{4}, outtake{5};
 frc::Servo pan{6},tilt{7};
 frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
 frc::Timer timer, shootTimer;
+ctre::phoenix::motorcontrol::can::TalonSRX frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
 
 //frc::SendableChooser autoChoice;
 frc::Solenoid ballStorage{6}, ballUnstuck{0};
@@ -266,8 +268,8 @@ void Robot::TeleopPeriodic() {
     sP=0;
   }
   */
-  speed = one.GetRawAxis(1) * sensitivity;
-  turn = one.GetRawAxis(0) * sensitivity;
+  speed = one.GetRawAxis(1);// * sensitivity;
+  turn = one.GetRawAxis(0);// * sensitivity;
   /*
   if (speed >= 0) {
     turn = ((tN * sensitivity)+(speed/4))+0.1;
