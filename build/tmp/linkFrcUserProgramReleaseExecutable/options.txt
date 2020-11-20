@@ -41,6 +41,7 @@ C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\a064d5099e872a
 C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\e9919587dfedabc1fa0e7915e845fd30\\core-5.18.3-linuxathenastatic\\linux\\athena\\static\\libCTRE_PhoenixCore.a
 C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\c62588e5ac20d83c9abb91cf079d1b95\\SparkMax-cpp-1.5.2-linuxathenastatic\\linux\\athena\\static\\libSparkMax.a
 C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\fe7a26d747faec95f3087d66ed401816\\SparkMax-driver-1.5.2-linuxathenastatic\\linux\\athena\\static\\libSparkMaxDriver.a
+C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\d13258208c075e1075f191bf9f5e0f45\\wpilibNewCommands-cpp-2020.2.2-linuxathena\\linux\\athena\\shared\\libwpilibNewCommands.so
 -rdynamic
 -pthread
 -ldl

@@ -33,6 +33,7 @@
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\36a0d11d327d9cf4d6fe2a943b2093b9\\core-5.18.3-headers\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\71f79471acb98aa51d96a972be624b9b\\SparkMax-cpp-1.5.2-headers\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ce6e8b973e9203bcd06adfa287f6510c\\SparkMax-driver-1.5.2-headers\\",
+      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f2b80ed8797820c9fb76221f6084ac87\\wpilibNewCommands-cpp-2020.2.2-headers\\",
       "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\159dfe66c682bcee6ef291aa4227fdac\\wpilibc-cpp-2020.2.2-sources\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\46d0b663e76073431492dc9aa53f36e4\\ntcore-cpp-2020.2.2-sources\\",
@@ -40,7 +41,8 @@
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6c53a9037ae27e40b492b35dc147e84f\\wpiutil-cpp-2020.2.2-sources\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\93116fe8da252b04f0a278788c9d12c2\\cameraserver-cpp-2020.2.2-sources\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\dcf016960a5188e4bdc46a82da13f78a\\cscore-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\"
+      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
+      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6f3031a6d0290c43d63c7b4cd982984f\\wpilibNewCommands-cpp-2020.2.2-sources\\"
     ],
     "allLibSources": [
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\159dfe66c682bcee6ef291aa4227fdac\\wpilibc-cpp-2020.2.2-sources\\",
@@ -49,7 +51,8 @@
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6c53a9037ae27e40b492b35dc147e84f\\wpiutil-cpp-2020.2.2-sources\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\93116fe8da252b04f0a278788c9d12c2\\cameraserver-cpp-2020.2.2-sources\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\dcf016960a5188e4bdc46a82da13f78a\\cscore-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\"
+      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
+      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6f3031a6d0290c43d63c7b4cd982984f\\wpilibNewCommands-cpp-2020.2.2-sources\\"
     ],
     "allLibHeaders": [
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f78589b1f173909e18ca9d5419a0a5fa\\wpilibc-cpp-2020.2.2-headers\\",
@@ -71,6 +74,7 @@
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\36a0d11d327d9cf4d6fe2a943b2093b9\\core-5.18.3-headers\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\71f79471acb98aa51d96a972be624b9b\\SparkMax-cpp-1.5.2-headers\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ce6e8b973e9203bcd06adfa287f6510c\\SparkMax-driver-1.5.2-headers\\",
+      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f2b80ed8797820c9fb76221f6084ac87\\wpilibNewCommands-cpp-2020.2.2-headers\\",
       "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
     ],
     "binaries": [
@@ -137,6 +141,7 @@
           "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\36a0d11d327d9cf4d6fe2a943b2093b9\\core-5.18.3-headers\\",
           "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\71f79471acb98aa51d96a972be624b9b\\SparkMax-cpp-1.5.2-headers\\",
           "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ce6e8b973e9203bcd06adfa287f6510c\\SparkMax-driver-1.5.2-headers\\",
+          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f2b80ed8797820c9fb76221f6084ac87\\wpilibNewCommands-cpp-2020.2.2-headers\\",
           "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
         ],
         "sharedLibrary": false,
@@ -247,6 +252,7 @@
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\36a0d11d327d9cf4d6fe2a943b2093b9\\core-5.18.3-headers\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\71f79471acb98aa51d96a972be624b9b\\SparkMax-cpp-1.5.2-headers\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ce6e8b973e9203bcd06adfa287f6510c\\SparkMax-driver-1.5.2-headers\\",
+      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f2b80ed8797820c9fb76221f6084ac87\\wpilibNewCommands-cpp-2020.2.2-headers\\",
       "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\159dfe66c682bcee6ef291aa4227fdac\\wpilibc-cpp-2020.2.2-sources\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\46d0b663e76073431492dc9aa53f36e4\\ntcore-cpp-2020.2.2-sources\\",
@@ -254,7 +260,8 @@
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6c53a9037ae27e40b492b35dc147e84f\\wpiutil-cpp-2020.2.2-sources\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\93116fe8da252b04f0a278788c9d12c2\\cameraserver-cpp-2020.2.2-sources\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\dcf016960a5188e4bdc46a82da13f78a\\cscore-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\"
+      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
+      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6f3031a6d0290c43d63c7b4cd982984f\\wpilibNewCommands-cpp-2020.2.2-sources\\"
     ],
     "allLibSources": [
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\159dfe66c682bcee6ef291aa4227fdac\\wpilibc-cpp-2020.2.2-sources\\",
@@ -263,7 +270,8 @@
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6c53a9037ae27e40b492b35dc147e84f\\wpiutil-cpp-2020.2.2-sources\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\93116fe8da252b04f0a278788c9d12c2\\cameraserver-cpp-2020.2.2-sources\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\dcf016960a5188e4bdc46a82da13f78a\\cscore-cpp-2020.2.2-sources\\",
-      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\"
+      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6440cf0dee8de0741badf5383075deb7\\opencv-cpp-3.4.7-2-sources\\",
+      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\6f3031a6d0290c43d63c7b4cd982984f\\wpilibNewCommands-cpp-2020.2.2-sources\\"
     ],
     "allLibHeaders": [
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f78589b1f173909e18ca9d5419a0a5fa\\wpilibc-cpp-2020.2.2-headers\\",
@@ -285,6 +293,7 @@
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\36a0d11d327d9cf4d6fe2a943b2093b9\\core-5.18.3-headers\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\71f79471acb98aa51d96a972be624b9b\\SparkMax-cpp-1.5.2-headers\\",
       "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ce6e8b973e9203bcd06adfa287f6510c\\SparkMax-driver-1.5.2-headers\\",
+      "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f2b80ed8797820c9fb76221f6084ac87\\wpilibNewCommands-cpp-2020.2.2-headers\\",
       "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
     ],
     "binaries": [
@@ -351,6 +360,7 @@
           "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\36a0d11d327d9cf4d6fe2a943b2093b9\\core-5.18.3-headers\\",
           "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\71f79471acb98aa51d96a972be624b9b\\SparkMax-cpp-1.5.2-headers\\",
           "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ce6e8b973e9203bcd06adfa287f6510c\\SparkMax-driver-1.5.2-headers\\",
+          "C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f2b80ed8797820c9fb76221f6084ac87\\wpilibNewCommands-cpp-2020.2.2-headers\\",
           "C:\\Users\\Programming\\Documents\\GitHub\\Infinite-Reecharge-2840\\src\\main\\include\\"
         ],
         "sharedLibrary": false,

@@ -55,6 +55,8 @@ C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\36a0d11d327d9c
 C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\71f79471acb98aa51d96a972be624b9b\\SparkMax-cpp-1.5.2-headers
 -I
 C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\ce6e8b973e9203bcd06adfa287f6510c\\SparkMax-driver-1.5.2-headers
+-I
+C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\f2b80ed8797820c9fb76221f6084ac87\\wpilibNewCommands-cpp-2020.2.2-headers
 -isystem
 c:\\users\\public\\wpilib\\2020\\roborio\\bin\\..\\arm-frc2020-linux-gnueabi\\usr\\lib\\gcc\\arm-frc2020-linux-gnueabi\\7.3.0\\include
 -isystem
