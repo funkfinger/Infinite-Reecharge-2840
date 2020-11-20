@@ -111,6 +111,7 @@ void Robot::RobotInit() {
   timer.Reset();
   timer.Start();
   calibratePigeon();
+  sensitivity = 1;
 }
 
 void Robot::RobotPeriodic() {}
