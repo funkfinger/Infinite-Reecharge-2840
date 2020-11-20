@@ -62,7 +62,12 @@
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/c6de527d52937338dd2a0e299b33528b/wpiapi-cpp-5.18.3-headers",
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/6440cf0dee8de0741badf5383075deb7/opencv-cpp-3.4.7-2-sources/modules/imgproc/include",
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/6440cf0dee8de0741badf5383075deb7/opencv-cpp-3.4.7-2-sources/modules/core/include",
-                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/eed3931469ba7efc2e953f8f3443a673/opencv-cpp-3.4.7-2-headers"
+                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/eed3931469ba7efc2e953f8f3443a673/opencv-cpp-3.4.7-2-headers",
+                "C:/Users/tomto/.gradle/caches/transforms-2/files-2.1/ddeb1fe31803ebb75be7c7ff81bc8ef1/api-cpp-5.18.2-headers",
+                "C:/Users/tomto/.gradle/caches/transforms-2/files-2.1/ac428c4a4655347f48b737475e270c84/cci-5.18.2-headers",
+                "C:/Users/tomto/.gradle/caches/transforms-2/files-2.1/7aa6e4bcf682a12eecc7960ffc7a7438/core-5.18.2-headers",
+                "C:/Users/tomto/.gradle/caches/transforms-2/files-2.1/9db90d49712fd7f8707de21c94059f20/wpiapi-cpp-5.18.2-headers",
+                "C:/Users/tomto/.gradle/caches/transforms-2/files-2.1/66380fb4053c0c6308ef9c830f271113/hal-cpp-2020.2.2-headers"
             ],
             "defines": [
                 "_DEBUG",

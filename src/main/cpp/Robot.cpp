@@ -40,7 +40,9 @@
 #include <frc/DoubleSolenoid.h>
 #include <math.h>
 
-
+cs::UsbCamera camera1;
+cs::UsbCamera camera2;
+cs::VideoSink server;
 frc::Joystick one{0}, two{1};
 //frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
 rev::SparkMax intake{4}, outtake{5};
@@ -72,6 +74,8 @@ bool isUpPressed, isDownPressed;
 double sP,tN;
 int16_t accel[3];
 
+
+
 double trueMap(double val, double valHigh, double valLow, double newHigh, double newLow)
 {
 	double midVal = ((valHigh - valLow) / 2) + valLow;
@@ -92,10 +96,11 @@ void calibratePigeon() {
 }
 
 void Robot::RobotInit() {
-  cs::UsbCamera camera = frc::CameraServer::GetInstance()->StartAutomaticCapture();
-  camera.SetResolution(640,480);
-  cs::CvSink cvSink = frc::CameraServer::GetInstance()->GetVideo();
-  cs::CvSource outputStreamStd = frc::CameraServer::GetInstance()->PutVideo("Gray", 640, 480);
+  camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
+  camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
+  server = frc::CameraServer::GetInstance()->GetServer();
+  camera1.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
+  camera2.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
   frc::CameraServer::GetInstance()->StartAutomaticCapture();
   m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
