@@ -40,8 +40,8 @@
 #include <frc/DoubleSolenoid.h>
 #include <math.h>
 
+cs::UsbCamera camera0;
 cs::UsbCamera camera1;
-cs::UsbCamera camera2;
 cs::VideoSink server;
 frc::Joystick one{0}, two{1};
 //frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
@@ -96,11 +96,11 @@ void calibratePigeon() {
 }
 
 void Robot::RobotInit() {
-  camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
-  camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
+  camera0 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
+  camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
   server = frc::CameraServer::GetInstance()->GetServer();
+  camera0.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
   camera1.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
-  camera2.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
   frc::CameraServer::GetInstance()->StartAutomaticCapture();
   m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
