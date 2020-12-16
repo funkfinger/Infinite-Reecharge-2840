@@ -1,20 +1,20 @@
-See file:///C:/Users/tomto/Desktop/Infinite%20Recharge/Infinite-Reecharge-2840/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramDebugExecutableFrcUserProgramCpp.
+See file:///C:/Users/Programming/Documents/GitHub/Infinite-Reecharge-2840/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramDebugExecutableFrcUserProgramCpp.
 compiling Robot.cpp successful.
-In file included from C:\Users\tomto\Desktop\Infinite Recharge\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:20:0:
-C:\Users\tomto\.gradle\caches\transforms-2\files-2.1\4c268f258db31e7555a067e86995cefe\wpilibc-cpp-2020.2.2-headers/frc/WPILib.h:14:2: warning: #warning is a GCC extension
+In file included from C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:20:0:
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\c8e850653c2afd60a8151f1bf737926e\wpilibc-cpp-2020.3.2-headers/frc/WPILib.h:14:2: warning: #warning is a GCC extension
  #warning "Including this header drastically increases compilation times and is bad style. Include only what you use instead."
   ^~~~~~~
-C:\Users\tomto\.gradle\caches\transforms-2\files-2.1\4c268f258db31e7555a067e86995cefe\wpilibc-cpp-2020.2.2-headers/frc/WPILib.h:14:2: warning: #warning "Including this header drastically increases compilation times and is bad style. Include only what you use instead." [-Wcpp]
-C:\Users\tomto\Desktop\Infinite Recharge\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:278:3: warning: "/*" within comment [-Wcomment]
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\c8e850653c2afd60a8151f1bf737926e\wpilibc-cpp-2020.3.2-headers/frc/WPILib.h:14:2: warning: #warning "Including this header drastically increases compilation times and is bad style. Include only what you use instead." [-Wcpp]
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:308:3: warning: "/*" within comment [-Wcomment]
    /*if(stick.GetRawButton(7)){
     
-C:\Users\tomto\Desktop\Infinite Recharge\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:61:71: warning: 'frc::RobotDrive::RobotDrive(frc::SpeedController&, frc::SpeedController&, frc::SpeedController&, frc::SpeedController&)' is deprecated: Use DifferentialDrive or MecanumDrive classes instead. [-Wdeprecated-declarations]
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:62:71: warning: 'frc::RobotDrive::RobotDrive(frc::SpeedController&, frc::SpeedController&, frc::SpeedController&, frc::SpeedController&)' is deprecated: Use DifferentialDrive or MecanumDrive classes instead. [-Wdeprecated-declarations]
  frc::RobotDrive myRobot{*frontLeft, *backLeft, *frontRight, *backRight};
                                                                        ^
-In file included from C:\Users\tomto\.gradle\caches\transforms-2\files-2.1\4c268f258db31e7555a067e86995cefe\wpilibc-cpp-2020.2.2-headers/frc/WPILib.h:67:0,
-                 from C:\Users\tomto\Desktop\Infinite Recharge\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:20:
-C:\Users\tomto\.gradle\caches\transforms-2\files-2.1\4c268f258db31e7555a067e86995cefe\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:120:3: note: declared here
+In file included from C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\c8e850653c2afd60a8151f1bf737926e\wpilibc-cpp-2020.3.2-headers/frc/WPILib.h:67:0,
+                 from C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:20:
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\c8e850653c2afd60a8151f1bf737926e\wpilibc-cpp-2020.3.2-headers/frc/RobotDrive.h:120:3: note: declared here
    RobotDrive(SpeedController& frontLeftMotor, SpeedController& rearLeftMotor,
    ^~~~~~~~~~
 
-Finished compileFrcUserProgramDebugExecutableFrcUserProgramCpp, see full log file:///C:/Users/tomto/Desktop/Infinite%20Recharge/Infinite-Reecharge-2840/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt.
+Finished compileFrcUserProgramDebugExecutableFrcUserProgramCpp, see full log file:///C:/Users/Programming/Documents/GitHub/Infinite-Reecharge-2840/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt.
