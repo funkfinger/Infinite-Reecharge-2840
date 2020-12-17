@@ -52,6 +52,33 @@ bool isUpPressed, isDownPressed;
 double sP,tN;
 int16_t accel[3];
 
+<<<<<<< Updated upstream
+=======
+static constexpr int kLength = 278;
+
+// PWM port 9
+// Must be a PWM header, not MXP or DIO
+frc::AddressableLED m_led{0};
+std::array<frc::AddressableLED::LEDData, kLength> m_ledBuffer;  // Reuse the buffer
+// Store what the last hue of the first pixel is
+int firstPixelHue = 0;
+
+void Rainbow() {
+  // For every pixel
+  for (int i = 0; i < kLength; i++) {
+    // Calculate the hue - hue is easier for rainbows because the color
+    // shape is a circle so only one value needs to process
+    const auto pixelHue = (firstPixelHue + (i * 180 / kLength)) % 180;
+    // Set the value
+    m_ledBuffer[i].SetHSV(pixelHue, 255, 64);
+  }
+  // Increase by to make the rainbow "move"
+  firstPixelHue += 2;
+  // Check bounds
+  firstPixelHue %= 180;
+}
+
+>>>>>>> Stashed changes
 double trueMap(double val, double valHigh, double valLow, double newHigh, double newLow)
 {
 	double midVal = ((valHigh - valLow) / 2) + valLow;
