@@ -53,7 +53,10 @@ double sP,tN;
 int16_t accel[3];
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 static constexpr int kLength = 278;
 
 // PWM port 9
