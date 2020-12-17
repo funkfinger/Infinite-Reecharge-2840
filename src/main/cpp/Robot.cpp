@@ -54,7 +54,10 @@ int16_t accel[3];
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 static constexpr int kLength = 278;
