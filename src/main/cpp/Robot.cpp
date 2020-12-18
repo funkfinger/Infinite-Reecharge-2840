@@ -24,6 +24,7 @@
 #include <frc/SmartDashboard/SendableChooser.h>
 #include <frc/Servo.h>
 #include <ctre/phoenix/sensors/PigeonIMU.h>
+#include <frc/AddressableLED.h>
 
 #include "rev/SparkMax.h"
 #include <frc/Compressor.h>
@@ -52,14 +53,7 @@ bool isUpPressed, isDownPressed;
 double sP,tN;
 int16_t accel[3];
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
 static constexpr int kLength = 278;
 
 // PWM port 9
@@ -84,7 +78,6 @@ void Rainbow() {
   firstPixelHue %= 180;
 }
 
->>>>>>> Stashed changes
 double trueMap(double val, double valHigh, double valLow, double newHigh, double newLow)
 {
 	double midVal = ((valHigh - valLow) / 2) + valLow;
@@ -114,9 +107,15 @@ void Robot::RobotInit() {
   timer.Reset();
   timer.Start();
   calibratePigeon();
+  m_led.SetLength(kLength);
+  m_led.SetData(m_ledBuffer);
+  m_led.Start();
 }
 
-void Robot::RobotPeriodic() {}
+void Robot::RobotPeriodic() {
+  Rainbow();
+  m_led.frc::AddressableLED::SetData(m_ledBuffer);
+}
 
 void Robot::AutonomousInit() {
   timer.Reset();

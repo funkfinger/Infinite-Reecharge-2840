@@ -1,19 +1,19 @@
 See file:///C:/Users/Programming/Documents/GitHub/Infinite-Reecharge-2840/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramReleaseExecutableFrcUserProgramCpp.
 compiling Robot.cpp successful.
 In file included from C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:20:0:
-C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/WPILib.h:14:2: warning: #warning is a GCC extension
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\c8e850653c2afd60a8151f1bf737926e\wpilibc-cpp-2020.3.2-headers/frc/WPILib.h:14:2: warning: #warning is a GCC extension
  #warning "Including this header drastically increases compilation times and is bad style. Include only what you use instead."
   ^~~~~~~
-C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/WPILib.h:14:2: warning: #warning "Including this header drastically increases compilation times and is bad style. Include only what you use instead." [-Wcpp]
-C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:248:3: warning: "/*" within comment [-Wcomment]
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\c8e850653c2afd60a8151f1bf737926e\wpilibc-cpp-2020.3.2-headers/frc/WPILib.h:14:2: warning: #warning "Including this header drastically increases compilation times and is bad style. Include only what you use instead." [-Wcpp]
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:277:3: warning: "/*" within comment [-Wcomment]
    /*if(stick.GetRawButton(7)){
     
-C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:40:67: warning: 'frc::RobotDrive::RobotDrive(frc::SpeedController&, frc::SpeedController&, frc::SpeedController&, frc::SpeedController&)' is deprecated: Use DifferentialDrive or MecanumDrive classes instead. [-Wdeprecated-declarations]
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:41:67: warning: 'frc::RobotDrive::RobotDrive(frc::SpeedController&, frc::SpeedController&, frc::SpeedController&, frc::SpeedController&)' is deprecated: Use DifferentialDrive or MecanumDrive classes instead. [-Wdeprecated-declarations]
  frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
                                                                    ^
-In file included from C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/WPILib.h:67:0,
+In file included from C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\c8e850653c2afd60a8151f1bf737926e\wpilibc-cpp-2020.3.2-headers/frc/WPILib.h:67:0,
                  from C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:20:
-C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\f78589b1f173909e18ca9d5419a0a5fa\wpilibc-cpp-2020.2.2-headers/frc/RobotDrive.h:120:3: note: declared here
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\c8e850653c2afd60a8151f1bf737926e\wpilibc-cpp-2020.3.2-headers/frc/RobotDrive.h:120:3: note: declared here
    RobotDrive(SpeedController& frontLeftMotor, SpeedController& rearLeftMotor,
    ^~~~~~~~~~
 

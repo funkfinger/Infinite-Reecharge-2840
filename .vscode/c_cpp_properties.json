@@ -57,7 +57,10 @@
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/ac428c4a4655347f48b737475e270c84/cci-5.18.2-headers",
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/7aa6e4bcf682a12eecc7960ffc7a7438/core-5.18.2-headers",
                 "C:/USERS/PROGRAMMING/.GRADLE/CACHES/TRANSFORMS-2/FILES-2.1/67DFA2CECDA01BE6EBDEB2EC8AEE08A6/SPARKMAX-CPP-1.5.1-HEADERS",
-                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/71f79471acb98aa51d96a972be624b9b/SparkMax-cpp-1.5.2-headers"
+                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/71f79471acb98aa51d96a972be624b9b/SparkMax-cpp-1.5.2-headers",
+                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/31ff898ac54506e8a436ede8dd5742de/api-cpp-5.18.3-headers",
+                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/25d317bc2ebee32c3b99b3420de6fd8d/cci-5.18.3-headers",
+                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/36a0d11d327d9cf4d6fe2a943b2093b9/core-5.18.3-headers"
             ],
             "defines": [
                 "_DEBUG",
