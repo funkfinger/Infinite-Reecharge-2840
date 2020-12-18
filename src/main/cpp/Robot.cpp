@@ -24,22 +24,44 @@
 #include <frc/SmartDashboard/SendableChooser.h>
 #include <frc/Servo.h>
 #include <ctre/phoenix/sensors/PigeonIMU.h>
-#include <frc/AddressableLED.h>
+#include <ctre/phoenix/motorcontrol/can/TalonSRX.h>
+#include <ctre/phoenix/motorcontrol/can/TalonFX.h>
+#include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
+#include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
+#include <ctre/phoenix/motorcontrol/can/VictorSPX.h>
+#include <cameraserver/CameraServer.h>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/core/core.hpp>
 
 #include "rev/SparkMax.h"
 #include <frc/Compressor.h>
 #include <frc/Talon.h>
 #include <frc/Solenoid.h>
 #include <frc/DoubleSolenoid.h>
+#include <frc/AddressableLED.h>
 #include <math.h>
 
-
+cs::UsbCamera camera0;
+cs::UsbCamera camera1;
+cs::VideoSink server;
 frc::Joystick one{0}, two{1};
-frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
+//frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
 rev::SparkMax intake{4}, outtake{5};
 frc::Servo pan{6},tilt{7};
-frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
+ctre::phoenix::motorcontrol::can::WPI_TalonSRX *frontLeft = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(2);
+ctre::phoenix::motorcontrol::can::WPI_TalonSRX *frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(1);
+ctre::phoenix::motorcontrol::can::WPI_TalonSRX *backLeft= new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(3);
+ctre::phoenix::motorcontrol::can::WPI_TalonSRX *backRight = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(0);
+ctre::phoenix::motorcontrol::can::WPI_TalonSRX *panel = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(10);
+
+//ctre::phoenix::motorcontrol::can::WPI_TalonFX::WPI_TalonFX * frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonFX::WPI_TalonFX(1);
+// WPI_TalonFX * _rghtFollower = new WPI_TalonFX(3);
+// WPI_TalonFX * _leftFront = new WPI_TalonFX(2);
+// WPI_TalonFX * _leftFollower = new WPI_TalonFX(4);
+//ctre::phoenix::motorcontrol::can::VictorSPX frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
+frc::RobotDrive myRobot{*frontLeft, *backLeft, *frontRight, *backRight};
 frc::Timer timer, shootTimer;
+
 
 //frc::SendableChooser autoChoice;
 frc::Solenoid ballStorage{6}, ballUnstuck{0};
@@ -52,7 +74,6 @@ double speed, turn, sensitivity, turnKey;
 bool isUpPressed, isDownPressed;
 double sP,tN;
 int16_t accel[3];
-
 
 static constexpr int kLength = 278;
 
@@ -98,6 +119,12 @@ void calibratePigeon() {
 }
 
 void Robot::RobotInit() {
+  camera0 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
+  camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
+  server = frc::CameraServer::GetInstance()->GetServer();
+  camera0.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
+  camera1.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
+  frc::CameraServer::GetInstance()->StartAutomaticCapture();
   m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
@@ -107,6 +134,7 @@ void Robot::RobotInit() {
   timer.Reset();
   timer.Start();
   calibratePigeon();
+  sensitivity = 1;
   m_led.SetLength(kLength);
   m_led.SetData(m_ledBuffer);
   m_led.Start();
@@ -114,7 +142,7 @@ void Robot::RobotInit() {
 
 void Robot::RobotPeriodic() {
   Rainbow();
-  m_led.frc::AddressableLED::SetData(m_ledBuffer);
+  m_led.SetData(m_ledBuffer);
 }
 
 void Robot::AutonomousInit() {
@@ -273,9 +301,7 @@ void Robot::TeleopPeriodic() {
   
     //wheel.Set(0.3);
     //Solenoid.Set
-
   
-
   //turn with bumpers, too jittery
   /*if(stick.GetRawButton(7)){
      turn = (-1 * sensitivity);
@@ -285,7 +311,7 @@ void Robot::TeleopPeriodic() {
     turn = 0;
   }
   */
- sensitivity = (0.5);
+ sensitivity = one.GetRawAxis(2);
 
   /*if(one.GetRawAxis(0)>0.2||one.GetRawAxis(0)<-0.2){
 			tN=one.GetRawAxis(0);
@@ -298,8 +324,8 @@ void Robot::TeleopPeriodic() {
     sP=0;
   }
   */
-  speed = one.GetRawAxis(1) * sensitivity;
-  turn = one.GetRawAxis(0) * sensitivity;
+  speed = one.GetRawAxis(1)*sensitivity;
+  turn = one.GetRawAxis(0)*sensitivity;
   /*
   if (speed >= 0) {
     turn = ((tN * sensitivity)+(speed/4))+0.1;
