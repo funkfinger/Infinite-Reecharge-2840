@@ -10,6 +10,7 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#include <array>
 
 #include <frc/IterativeRobot.h>
 #include <frc/Joystick.h>
