@@ -64,13 +64,7 @@
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/c6de527d52937338dd2a0e299b33528b/wpiapi-cpp-5.18.3-headers",
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/6440cf0dee8de0741badf5383075deb7/opencv-cpp-3.4.7-2-sources/modules/imgproc/include",
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/6440cf0dee8de0741badf5383075deb7/opencv-cpp-3.4.7-2-sources/modules/core/include",
-                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/eed3931469ba7efc2e953f8f3443a673/opencv-cpp-3.4.7-2-headers",
-                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/c8e850653c2afd60a8151f1bf737926e/wpilibc-cpp-2020.3.2-headers",
-                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/bcaf719eab4760b22c0d3083c34a9489/hal-cpp-2020.3.2-headers",
-                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/d7b3e15668f704aa3914238843a0806f/wpiutil-cpp-2020.3.2-headers",
-                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/b1fe5ca68f822d6bc4a527a53d34e584/ntcore-cpp-2020.3.2-headers",
-                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/366add79bb933bb71ee1877b473b8370/cameraserver-cpp-2020.3.2-headers",
-                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/ad0b4286db3672e9edb225f5461218a3/cscore-cpp-2020.3.2-headers"
+                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/eed3931469ba7efc2e953f8f3443a673/opencv-cpp-3.4.7-2-headers"
             ],
             "defines": [
                 "_DEBUG",
