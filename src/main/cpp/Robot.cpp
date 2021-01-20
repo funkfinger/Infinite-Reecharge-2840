@@ -130,7 +130,7 @@ void Robot::RobotInit() {
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
   frc::SmartDashboard::PutNumber("Timer", timer.Get());
-  compressor.SetClosedLoopControl(false);
+  compressor.SetClosedLoopControl(true);
   compressor.Start();
   timer.Reset();
   timer.Start();
