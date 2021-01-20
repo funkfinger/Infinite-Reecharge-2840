@@ -49,18 +49,20 @@ frc::Joystick one{0}, two{1};
 //frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
 rev::SparkMax intake{4}, outtake{5};
 frc::Servo pan{6},tilt{7};
-ctre::phoenix::motorcontrol::can::WPI_TalonSRX *frontLeft = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(2);
-ctre::phoenix::motorcontrol::can::WPI_TalonSRX *frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(1);
-ctre::phoenix::motorcontrol::can::WPI_TalonSRX *backLeft= new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(3);
-ctre::phoenix::motorcontrol::can::WPI_TalonSRX *backRight = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(0);
-ctre::phoenix::motorcontrol::can::WPI_TalonSRX *panel = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(10);
+frc::Talon frontLeft{0}, frontRight{2}, backRight{3}, backLeft{1};
+
+// ctre::phoenix::motorcontrol::can::WPI_TalonSRX *frontLeft = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(2);
+// ctre::phoenix::motorcontrol::can::WPI_TalonSRX *frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(1);
+// ctre::phoenix::motorcontrol::can::WPI_TalonSRX *backLeft= new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(3);
+// ctre::phoenix::motorcontrol::can::WPI_TalonSRX *backRight = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(0);
+// ctre::phoenix::motorcontrol::can::WPI_TalonSRX *panel = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(10);
 
 //ctre::phoenix::motorcontrol::can::WPI_TalonFX::WPI_TalonFX * frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonFX::WPI_TalonFX(1);
 // WPI_TalonFX * _rghtFollower = new WPI_TalonFX(3);
 // WPI_TalonFX * _leftFront = new WPI_TalonFX(2);
 // WPI_TalonFX * _leftFollower = new WPI_TalonFX(4);
 //ctre::phoenix::motorcontrol::can::VictorSPX frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
-frc::RobotDrive myRobot{*frontLeft, *backLeft, *frontRight, *backRight};
+frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
 frc::Timer timer, shootTimer;
 
 
@@ -203,6 +205,7 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
+  compressor.SetClosedLoopControl(true);
   //increase sensitivity with the right bumper
   /*
   piston.Set(true); makes the piston go
@@ -325,7 +328,7 @@ void Robot::TeleopPeriodic() {
     sP=0;
   }
   */
-  speed = one.GetRawAxis(1)*sensitivity;
+  speed = -one.GetRawAxis(1)*sensitivity;
   turn = one.GetRawAxis(0)*sensitivity;
   /*
   if (speed >= 0) {
