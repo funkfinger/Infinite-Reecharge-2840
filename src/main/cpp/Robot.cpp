@@ -62,7 +62,7 @@ frc::Talon frontLeft{0}, frontRight{2}, backRight{3}, backLeft{1};
 // WPI_TalonFX * _leftFront = new WPI_TalonFX(2);
 // WPI_TalonFX * _leftFollower = new WPI_TalonFX(4);
 //ctre::phoenix::motorcontrol::can::VictorSPX frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
-frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
+frc::RobotDrive myRobot{/*frontLeft, */backLeft, /*frontRight,*/ backRight};
 frc::Timer timer, shootTimer;
 
 
@@ -200,7 +200,7 @@ void Robot::TeleopInit() {
   shootTimer.Reset();
   turn = 0;
   speed = 0;
-  sensitivity = -two.GetRawAxis(1);
+  //sensitivity = -two.GetRawAxis(1);
   ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 no go nyoo
 }
 
@@ -220,47 +220,47 @@ void Robot::TeleopPeriodic() {
   }
   */
 
- if(two.GetRawButton(1)){
+ if(one.GetRawAxis(2)>0.1){
    intake.Set(0.4);
- }else if(two.GetRawButton(2)){
-   intake.Set(-1);
+ }else if(one.GetRawButton(3)){
+   intake.Set(-1.0);
  }else{
-   intake.Set(0);
+   intake.Set(0.0);
  }
 
 
- if(one.GetRawButton(2)){
-   ballUnstuck.Set(true);
- }else{
-   ballUnstuck.Set(false);
- }
+//  if(one.GetRawButton(2)){
+//    ballUnstuck.Set(true);
+//  }else{
+//    ballUnstuck.Set(false);
+//  }
 
  double outtakeSpeed = -1.0;
 
- if(one.GetRawButton(1)){
+ if(one.GetRawAxis(3)>0.1){
    shootTimer.Start();
    outtake.Set(outtakeSpeed);
    if (shootTimer.Get() > .75) {
      ballStorage.Set(false);
    }
  }
- else if(one.GetRawButton(3)){
+ else if(one.GetRawButton(2)){
    outtake.Set(-outtakeSpeed);
    ballStorage.Set(false);
  }
- else if (!one.GetRawButton(1)&&!one.GetRawButton(3)){
+ else if (!(one.GetRawAxis(3)>0.1)&&!one.GetRawButton(3)){
    outtake.Set(0);
    ballStorage.Set(true);
    shootTimer.Reset();
  }
 
-  if(two.GetRawButton(5)) {
+  if(one.GetRawButton(6)) {
     ballIn.Set(frc::DoubleSolenoid::Value::kForward);//piston1 go 
   }
-  else if (!two.GetRawButton(5)&&two.GetRawButton(4)) {
+  else if (!one.GetRawButton(6)&&one.GetRawButton(5)) {
     ballIn.Set(frc::DoubleSolenoid::Value::kReverse);//piston1 go shwoop
   }
-  else if (!two.GetRawButton(5)&&!two.GetRawButton(4)){
+  else if (!one.GetRawButton(6)&&!one.GetRawButton(5)){
     ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 stop
   }
 /*
@@ -315,8 +315,8 @@ void Robot::TeleopPeriodic() {
     turn = 0;
   }
   */
- sensitivity = one.GetRawAxis(2);
-
+ //sensitivity = one.GetRawAxis(2);
+sensitivity = 1.0;
   /*if(one.GetRawAxis(0)>0.2||one.GetRawAxis(0)<-0.2){
 			tN=one.GetRawAxis(0);
 		}else{
@@ -328,8 +328,8 @@ void Robot::TeleopPeriodic() {
     sP=0;
   }
   */
-  speed = -one.GetRawAxis(1)*sensitivity;
-  turn = one.GetRawAxis(0)*sensitivity;
+  speed = -one.GetRawAxis(1)*0.85;
+  turn = one.GetRawAxis(4)*0.85;
   /*
   if (speed >= 0) {
     turn = ((tN * sensitivity)+(speed/4))+0.1;
