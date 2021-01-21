@@ -49,7 +49,7 @@ frc::Joystick one{0}, two{1};
 //frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
 rev::SparkMax intake{4}, outtake{5};
 frc::Servo pan{6},tilt{7};
-frc::Talon frontLeft{0}, frontRight{2}, backRight{3}, backLeft{1};
+frc::Talon frontLeft{2}, frontRight{0}, backRight{3}, backLeft{1};
 
 // ctre::phoenix::motorcontrol::can::WPI_TalonSRX *frontLeft = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(2);
 // ctre::phoenix::motorcontrol::can::WPI_TalonSRX *frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(1);
@@ -62,7 +62,7 @@ frc::Talon frontLeft{0}, frontRight{2}, backRight{3}, backLeft{1};
 // WPI_TalonFX * _leftFront = new WPI_TalonFX(2);
 // WPI_TalonFX * _leftFollower = new WPI_TalonFX(4);
 //ctre::phoenix::motorcontrol::can::VictorSPX frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
-frc::RobotDrive myRobot{/*frontLeft, */backLeft, /*frontRight,*/ backRight};
+frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
 frc::Timer timer, shootTimer;
 
 
@@ -73,7 +73,7 @@ frc::Compressor compressor{0};
 
 ctre::phoenix::sensors::PigeonIMU pigeon{10};
 
-double speed, turn, sensitivity, turnKey;
+double speed, turn, sensitivity = 0.65, turnKey;
 bool isUpPressed, isDownPressed;
 double sP,tN;
 int16_t accel[3];
@@ -82,25 +82,25 @@ static constexpr int kLength = 278;
 
 // PWM port 9
 // Must be a PWM header, not MXP or DIO
-frc::AddressableLED m_led{0};
-std::array<frc::AddressableLED::LEDData, kLength> m_ledBuffer;  // Reuse the buffer
-// Store what the last hue of the first pixel is
-int firstPixelHue = 0;
+//frc::AddressableLED m_led{0};
+// std::array<frc::AddressableLED::LEDData, kLength> m_ledBuffer;  // Reuse the buffer
+// // Store what the last hue of the first pixel is
+// int firstPixelHue = 0;
 
-void Rainbow() {
-  // For every pixel
-  for (int i = 0; i < kLength; i++) {
-    // Calculate the hue - hue is easier for rainbows because the color
-    // shape is a circle so only one value needs to process
-    const auto pixelHue = (firstPixelHue + (i * 180 / kLength)) % 180;
-    // Set the value
-    m_ledBuffer[i].SetHSV(pixelHue, 255, 64);
-  }
-  // Increase by to make the rainbow "move"
-  firstPixelHue += 2;
-  // Check bounds
-  firstPixelHue %= 180;
-}
+// void Rainbow() {
+//   // For every pixel
+//   for (int i = 0; i < kLength; i++) {
+//     // Calculate the hue - hue is easier for rainbows because the color
+//     // shape is a circle so only one value needs to process
+//     const auto pixelHue = (firstPixelHue + (i * 180 / kLength)) % 180;
+//     // Set the value
+//     m_ledBuffer[i].SetHSV(pixelHue, 255, 64);
+//   }
+//   // Increase by to make the rainbow "move"
+//   firstPixelHue += 2;
+//   // Check bounds
+//   firstPixelHue %= 180;
+// }
 
 double trueMap(double val, double valHigh, double valLow, double newHigh, double newLow)
 {
@@ -137,15 +137,15 @@ void Robot::RobotInit() {
   timer.Reset();
   timer.Start();
   calibratePigeon();
-  sensitivity = 1;
-  m_led.SetLength(kLength);
-  m_led.SetData(m_ledBuffer);
-  m_led.Start();
+  sensitivity = 0.5;
+  // m_led.SetLength(kLength);
+  // m_led.SetData(m_ledBuffer);
+  // m_led.Start();
 }
 
 void Robot::RobotPeriodic() {
-  Rainbow();
-  m_led.SetData(m_ledBuffer);
+  // Rainbow();
+  // m_led.SetData(m_ledBuffer);
 }
 
 void Robot::AutonomousInit() {
@@ -316,7 +316,6 @@ void Robot::TeleopPeriodic() {
   }
   */
  //sensitivity = one.GetRawAxis(2);
-sensitivity = 1.0;
   /*if(one.GetRawAxis(0)>0.2||one.GetRawAxis(0)<-0.2){
 			tN=one.GetRawAxis(0);
 		}else{
@@ -328,8 +327,20 @@ sensitivity = 1.0;
     sP=0;
   }
   */
-  speed = -one.GetRawAxis(1)*0.85;
-  turn = one.GetRawAxis(4)*0.85;
+ if (one.GetPOV(0) && sensitivity < 1.0) {
+   sensitivity += 0.01;
+ }
+ else if (one.GetPOV(0) && sensitivity >= 1.0) {
+   sensitivity = 1.0;
+ }
+ else if (one.GetPOV(180) && sensitivity > 0.0) {
+   sensitivity -= 0.01;
+ }
+ else if (one.GetPOV(180) && sensitivity <= 0.0) {
+   sensitivity = 0.0;
+ }
+  speed = one.GetRawAxis(1);
+  turn = one.GetRawAxis(4);
   /*
   if (speed >= 0) {
     turn = ((tN * sensitivity)+(speed/4))+0.1;
@@ -338,11 +349,10 @@ sensitivity = 1.0;
     turn = ((tN*sensitivity)-(speed/4))+0.15;
   }
   */
-  myRobot.ArcadeDrive(speed, turn);
+  myRobot.ArcadeDrive(speed*sensitivity, turn*sensitivity);
 
   pan.Set(trueMap(two.GetRawAxis(0),1,-1,1,0));
   tilt.Set(trueMap(two.GetRawAxis(1),-1,1,1,0));
-
 }
 
 void Robot::TestPeriodic() {}
