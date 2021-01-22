@@ -8,13 +8,13 @@ C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\c8e850653c2afd60a8151
 C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:310:3: warning: "/*" within comment [-Wcomment]
    /*if(stick.GetRawButton(7)){
     
-C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:65:75: warning: 'frc::RobotDrive::RobotDrive(frc::SpeedController&, frc::SpeedController&)' is deprecated: Use DifferentialDrive or MecanumDrive classes instead. [-Wdeprecated-declarations]
- frc::RobotDrive myRobot{/*frontLeft, */backLeft, /*frontRight,*/ backRight};
-                                                                           ^
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:65:67: warning: 'frc::RobotDrive::RobotDrive(frc::SpeedController&, frc::SpeedController&, frc::SpeedController&, frc::SpeedController&)' is deprecated: Use DifferentialDrive or MecanumDrive classes instead. [-Wdeprecated-declarations]
+ frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
+                                                                   ^
 In file included from C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\c8e850653c2afd60a8151f1bf737926e\wpilibc-cpp-2020.3.2-headers/frc/WPILib.h:67:0,
                  from C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:21:
-C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\c8e850653c2afd60a8151f1bf737926e\wpilibc-cpp-2020.3.2-headers/frc/RobotDrive.h:94:3: note: declared here
-   RobotDrive(SpeedController& leftMotor, SpeedController& rightMotor);
+C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\c8e850653c2afd60a8151f1bf737926e\wpilibc-cpp-2020.3.2-headers/frc/RobotDrive.h:120:3: note: declared here
+   RobotDrive(SpeedController& frontLeftMotor, SpeedController& rearLeftMotor,
    ^~~~~~~~~~
 
 Finished compileFrcUserProgramDebugExecutableFrcUserProgramCpp, see full log file:///C:/Users/Programming/Documents/GitHub/Infinite-Reecharge-2840/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt.

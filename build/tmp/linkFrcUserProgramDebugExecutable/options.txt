@@ -34,11 +34,11 @@ C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\8b8270a5b35cf1
 C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\8b8270a5b35cf1e4d13e1762d0743031\\opencv-cpp-3.4.7-2-linuxathenadebug\\linux\\athena\\shared\\libopencv_videod.so.3.4
 C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\8b8270a5b35cf1e4d13e1762d0743031\\opencv-cpp-3.4.7-2-linuxathenadebug\\linux\\athena\\shared\\libopencv_videoiod.so.3.4
 C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\8b8270a5b35cf1e4d13e1762d0743031\\opencv-cpp-3.4.7-2-linuxathenadebug\\linux\\athena\\shared\\libopencv_videostabd.so.3.4
-C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\640b84158e99c681020db4a530101bb1\\wpiapi-cpp-5.18.3-linuxathenastaticdebug\\linux\\athena\\static\\libCTRE_Phoenix_WPI.a
-C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\bab95bb08f18be537b07bd8181e97a96\\api-cpp-5.18.3-linuxathenastaticdebug\\linux\\athena\\static\\libCTRE_Phoenix.a
-C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\eea7ded6d0d79ff7672b3f5d58b90da9\\cci-5.18.3-linuxathenastaticdebug\\linux\\athena\\static\\libCTRE_PhoenixCCI.a
-C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\08e99df65e32223cd39d579ca7de040e\\diagnostics-5.18.3-linuxathenastaticdebug\\linux\\athena\\static\\libCTRE_PhoenixDiagnostics.a
-C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\d0c29eb9b0af1f13c1ee6381d2974e71\\core-5.18.3-linuxathenastaticdebug\\linux\\athena\\static\\libCTRE_PhoenixCore.a
+C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\17bae116c37b56b43b422b6a8810f70e\\wpiapi-cpp-5.18.2-linuxathenastaticdebug\\linux\\athena\\static\\libCTRE_Phoenix_WPI.a
+C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\1da34f3faaca4448de5ae47573ed1e81\\api-cpp-5.18.2-linuxathenastaticdebug\\linux\\athena\\static\\libCTRE_Phoenix.a
+C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\37b651452471865eb1e26397caca0df4\\cci-5.18.2-linuxathenastaticdebug\\linux\\athena\\static\\libCTRE_PhoenixCCI.a
+C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\03a2f675e1f90fdbc1eb7c43f411c3e9\\diagnostics-5.18.2-linuxathenastaticdebug\\linux\\athena\\static\\libCTRE_PhoenixDiagnostics.a
+C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\a034457acf578c1c7819cce6ee8cdbce\\core-5.18.2-linuxathenastaticdebug\\linux\\athena\\static\\libCTRE_PhoenixCore.a
 C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\30ad72e9ebf37bd41fb0c49f2705913f\\SparkMax-cpp-1.5.2-linuxathenastaticdebug\\linux\\athena\\static\\libSparkMax.a
 C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\187360852775f2039635b69395e31be7\\SparkMax-driver-1.5.2-linuxathenastaticdebug\\linux\\athena\\static\\libSparkMaxDriver.a
 C:\\Users\\Programming\\.gradle\\caches\\transforms-2\\files-2.1\\d6997863b2545edd9818146d25c2eb36\\wpilibNewCommands-cpp-2020.3.2-linuxathenadebug\\linux\\athena\\shared\\libwpilibNewCommandsd.so
