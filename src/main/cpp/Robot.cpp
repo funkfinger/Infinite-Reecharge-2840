@@ -46,10 +46,10 @@ cs::UsbCamera camera0;
 cs::UsbCamera camera1;
 cs::VideoSink server;
 frc::Joystick one{0}, two{1};
-//frc::Talon frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
-rev::SparkMax intake{4}, outtake{5};
+//rev::SparkMax intake{4}, outtake{5};
+rev::SparkMax in{5};
 frc::Servo pan{6},tilt{7};
-frc::Talon frontLeft{2}, frontRight{0}, backRight{3}, backLeft{1};
+frc::Talon frontLeft{2}, frontRight{0}, backRight{3}, backLeft{1}, out{8};
 
 // ctre::phoenix::motorcontrol::can::WPI_TalonSRX *frontLeft = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(2);
 // ctre::phoenix::motorcontrol::can::WPI_TalonSRX *frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(1);
@@ -69,7 +69,7 @@ frc::Timer timer, shootTimer;
 //frc::SendableChooser autoChoice;
 frc::Solenoid ballStorage{6}, ballUnstuck{0};
 frc::DoubleSolenoid ballIn{2, 3};
-frc::Compressor compressor{0};
+frc::Compressor *compressor = new frc::Compressor(0);
 
 ctre::phoenix::sensors::PigeonIMU pigeon{10};
 
@@ -132,8 +132,8 @@ void Robot::RobotInit() {
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
   frc::SmartDashboard::PutNumber("Timer", timer.Get());
-  compressor.SetClosedLoopControl(true);
-  compressor.Start();
+  // compressor.SetClosedLoopControl(true);
+  // compressor.Start();
   timer.Reset();
   timer.Start();
   calibratePigeon();
@@ -202,10 +202,11 @@ void Robot::TeleopInit() {
   speed = 0;
   //sensitivity = -two.GetRawAxis(1);
   ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 no go nyoo
+  compressor->Start();
 }
 
 void Robot::TeleopPeriodic() {
-  compressor.SetClosedLoopControl(true);
+  compressor->SetClosedLoopControl(true);
   //increase sensitivity with the right bumper
   /*
   piston.Set(true); makes the piston go
