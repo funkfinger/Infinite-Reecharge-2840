@@ -47,7 +47,7 @@ cs::UsbCamera camera1;
 cs::VideoSink server;
 frc::Joystick one{0}, two{1};
 //rev::SparkMax intake{4}, outtake{5};
-rev::SparkMax in{5};
+rev::SparkMax in{5}, intake{4};
 frc::Servo pan{6},tilt{7};
 frc::Talon frontLeft{2}, frontRight{0}, backRight{3}, backLeft{1}, out{8};
 
@@ -152,7 +152,7 @@ void Robot::AutonomousInit() {
   timer.Reset();
   timer.Start();
   shootTimer.Reset();
-  outtake.Set(1.0);
+  // outtake.Set(1.0);
   ballStorage.Set(false);
   calibratePigeon();
 }
@@ -179,19 +179,19 @@ void Robot::AutonomousPeriodic() {
       myRobot.ArcadeDrive(0.0, 0.0);
     }
   }
-  else if(timer.Get() < 9.5) {
-    myRobot.ArcadeDrive(0.0, turn);
-    shootTimer.Start();
-    outtake.Set(-1);
-    if(shootTimer.Get() < 0.2) {
-      ballStorage.Set(false);
-    }
-  }
-  else if(timer.Get() < 11) {
-    outtake.Set(0);
-    ballStorage.Set(true);
-    myRobot.ArcadeDrive(-0.8, turn);
-  }
+  // else if(timer.Get() < 9.5) {
+  //   myRobot.ArcadeDrive(0.0, turn);
+  //   shootTimer.Start();
+  //   outtake.Set(-1);
+  //   if(shootTimer.Get() < 0.2) {
+  //     ballStorage.Set(false);
+  //   }
+  // }
+  // else if(timer.Get() < 11) {
+  //   outtake.Set(0);
+  //   ballStorage.Set(true);
+  //   myRobot.ArcadeDrive(-0.8, turn);
+  // }
 }
 
 void Robot::TeleopInit() {
@@ -221,7 +221,7 @@ void Robot::TeleopPeriodic() {
   }
   */
 
- if(one.GetRawAxis(2)>0.1){
+ if(one.GetRawAxis(3)>0.1){
    intake.Set(0.4);
  }else if(one.GetRawButton(3)){
    intake.Set(-1.0);
@@ -238,31 +238,37 @@ void Robot::TeleopPeriodic() {
 
  double outtakeSpeed = -1.0;
 
- if(one.GetRawAxis(3)>0.1){
-   shootTimer.Start();
-   outtake.Set(outtakeSpeed);
-   if (shootTimer.Get() > .75) {
-     ballStorage.Set(false);
-   }
- }
- else if(one.GetRawButton(2)){
-   outtake.Set(-outtakeSpeed);
-   ballStorage.Set(false);
- }
- else if (!(one.GetRawAxis(3)>0.1)&&!one.GetRawButton(3)){
-   outtake.Set(0);
-   ballStorage.Set(true);
-   shootTimer.Reset();
- }
+//  if(one.GetRawAxis(3)>0.1){
+//    shootTimer.Start();
+//    outtake.Set(outtakeSpeed);
+//    if (shootTimer.Get() > .75) {
+//      ballStorage.Set(false);
+//    }
+//  }
+//  else if(one.GetRawButton(2)){
+//    outtake.Set(-outtakeSpeed);
+//    ballStorage.Set(false);
+//  }
+//  else if (!(one.GetRawAxis(3)>0.1)&&!one.GetRawButton(3)){
+//    outtake.Set(0);
+//    ballStorage.Set(true);
+//    shootTimer.Reset();
+//  }
 
-  if(one.GetRawButton(6)) {
-    ballIn.Set(frc::DoubleSolenoid::Value::kForward);//piston1 go 
+  if(one.GetRawButton(5)) {
+    in.Set(1.0);
+    out.Set(0.0);
+    //ballIn.Set(frc::DoubleSolenoid::Value::kForward);//piston1 go 
   }
-  else if (!one.GetRawButton(6)&&one.GetRawButton(5)) {
-    ballIn.Set(frc::DoubleSolenoid::Value::kReverse);//piston1 go shwoop
+  else if (!one.GetRawButton(5)&&one.GetRawButton(6)) {
+    in.Set(0.0);
+    out.Set(1.0);
+    //ballIn.Set(frc::DoubleSolenoid::Value::kReverse);//piston1 go shwoop
   }
   else if (!one.GetRawButton(6)&&!one.GetRawButton(5)){
-    ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 stop
+    in.Set(0.0);
+    out.Set(0.0);
+    //ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 stop
   }
 /*
   if(one.GetRawButton(4)) {

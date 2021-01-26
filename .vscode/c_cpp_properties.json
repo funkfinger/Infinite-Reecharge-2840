@@ -70,7 +70,8 @@
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/d7b3e15668f704aa3914238843a0806f/wpiutil-cpp-2020.3.2-headers",
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/b1fe5ca68f822d6bc4a527a53d34e584/ntcore-cpp-2020.3.2-headers",
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/366add79bb933bb71ee1877b473b8370/cameraserver-cpp-2020.3.2-headers",
-                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/ad0b4286db3672e9edb225f5461218a3/cscore-cpp-2020.3.2-headers"
+                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/ad0b4286db3672e9edb225f5461218a3/cscore-cpp-2020.3.2-headers",
+                "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/ddeb1fe31803ebb75be7c7ff81bc8ef1/api-cpp-5.18.2-headers"
             ],
             "defines": [
                 "_DEBUG",
