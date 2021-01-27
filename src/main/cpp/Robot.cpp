@@ -68,7 +68,7 @@ frc::Timer timer, shootTimer;
 
 //frc::SendableChooser autoChoice;
 frc::Solenoid ballUnstuck{0};
-frc::DoubleSolenoid ballIn{3, 4}, ballStorage{1, 2};
+frc::DoubleSolenoid ballIn{3, 4}, ballStorage{2, 1};
 frc::Compressor *compressor = new frc::Compressor(0);
 
 ctre::phoenix::sensors::PigeonIMU pigeon{10};
@@ -203,6 +203,7 @@ void Robot::TeleopInit() {
   //sensitivity = -two.GetRawAxis(1);
   ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 no go nyoo
   compressor->Start();
+  ballStorage.Set(frc::DoubleSolenoid::Value::kReverse);
 }
 
 void Robot::TeleopPeriodic() {
@@ -223,7 +224,7 @@ void Robot::TeleopPeriodic() {
 
  if(one.GetRawAxis(3)>0.1){
    intake.Set(0.4);
- }else if(one.GetRawButton(3)){
+ }else if(one.GetRawButton(1)){
    intake.Set(-1.0);
  }else{
    intake.Set(0.0);
@@ -254,13 +255,14 @@ void Robot::TeleopPeriodic() {
 //    ballStorage.Set(true);
 //    shootTimer.Reset();
 //  }
-  if (one.GetRawAxis(2) > 0.1) {
-    if (ballStorage.Get() == frc::DoubleSolenoid::Value::kReverse || ballStorage.Get() == frc::DoubleSolenoid::Value::kOff){
-      ballStorage.Set(frc::DoubleSolenoid::Value::kForward);
-    }
-    else if (ballStorage.Get() == frc::DoubleSolenoid::Value::kForward) {
-      ballStorage.Set(frc::DoubleSolenoid::Value::kReverse);
-    }
+  if (one.GetRawButton(3)) {
+    ballStorage.Set(frc::DoubleSolenoid::Value::kForward);
+  }
+  else if (one.GetRawButton(4)) {
+    ballStorage.Set(frc::DoubleSolenoid::Value::kReverse);
+  }
+  else if (one.GetRawButton(9)) {
+    ballStorage.Set(frc::DoubleSolenoid::Value::kOff);
   }
   if(one.GetRawButton(5)) {
     in.Set(1.0);
