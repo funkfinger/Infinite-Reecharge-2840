@@ -18,7 +18,7 @@
 #include <frc/Spark.h>
 #include <frc/Talon.h>
 #include <frc/Encoder.h>
-#include <frc/WPILib.h>
+//#include <frc/WPILib.h>
 #include <frc/PowerDistributionPanel.h>
 #include <cameraServer/CameraServer.h>
 #include <frc/smartdashboard/SmartDashboard.h>
@@ -33,6 +33,7 @@
 #include <cameraserver/CameraServer.h>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/core/core.hpp>
+#include <frc/RobotDrive.h>
 
 #include "rev/SparkMax.h"
 #include <frc/Compressor.h>
@@ -49,20 +50,20 @@ frc::Joystick one{0}, two{1};
 //rev::SparkMax intake{4}, outtake{5};
 rev::SparkMax in{5}, intake{4};
 frc::Servo pan{6},tilt{7};
-frc::Talon frontLeft{2}, frontRight{0}, backRight{3}, backLeft{1}, out{8};
+// frc::Talon frontLeft{2}, frontRight{0}, backRight{3}, backLeft{1}, out{8};
 
-// ctre::phoenix::motorcontrol::can::WPI_TalonSRX *frontLeft = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(2);
-// ctre::phoenix::motorcontrol::can::WPI_TalonSRX *frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(1);
-// ctre::phoenix::motorcontrol::can::WPI_TalonSRX *backLeft= new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(3);
-// ctre::phoenix::motorcontrol::can::WPI_TalonSRX *backRight = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(0);
-// ctre::phoenix::motorcontrol::can::WPI_TalonSRX *panel = new ctre::phoenix::motorcontrol::can::WPI_TalonSRX(10);
+ctre::phoenix::motorcontrol::can::WPI_TalonFX *frontLeft = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(2);
+ctre::phoenix::motorcontrol::can::WPI_TalonFX *frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(1);
+ctre::phoenix::motorcontrol::can::WPI_TalonFX *backLeft= new ctre::phoenix::motorcontrol::can::WPI_TalonFX(3);
+ctre::phoenix::motorcontrol::can::WPI_TalonFX *backRight = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(0);
+ctre::phoenix::motorcontrol::can::TalonFX *out = new ctre::phoenix::motorcontrol::can::TalonFX(10);
 
 //ctre::phoenix::motorcontrol::can::WPI_TalonFX::WPI_TalonFX * frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonFX::WPI_TalonFX(1);
 // WPI_TalonFX * _rghtFollower = new WPI_TalonFX(3);
 // WPI_TalonFX * _leftFront = new WPI_TalonFX(2);
 // WPI_TalonFX * _leftFollower = new WPI_TalonFX(4);
 //ctre::phoenix::motorcontrol::can::VictorSPX frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
-frc::RobotDrive myRobot{frontLeft, backLeft, frontRight, backRight};
+frc::RobotDrive myRobot{*frontLeft, *backLeft, *frontRight, *backRight};
 frc::Timer timer, shootTimer;
 
 
@@ -266,17 +267,17 @@ void Robot::TeleopPeriodic() {
   }
   if(one.GetRawButton(5)) {
     in.Set(1.0);
-    out.Set(0.0);
+    out->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput,0.0);
     //ballIn.Set(frc::DoubleSolenoid::Value::kForward);//piston1 go 
   }
   else if (!one.GetRawButton(5)&&one.GetRawButton(6)) {
     in.Set(0.0);
-    out.Set(1.0);
+    out->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 1.0);
     //ballIn.Set(frc::DoubleSolenoid::Value::kReverse);//piston1 go shwoop
   }
   else if (!one.GetRawButton(6)&&!one.GetRawButton(5)){
     in.Set(0.0);
-    out.Set(0.0);
+    out->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
     //ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 stop
   }
 /*
