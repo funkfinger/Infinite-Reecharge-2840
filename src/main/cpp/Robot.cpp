@@ -48,7 +48,7 @@ cs::UsbCamera camera1;
 cs::VideoSink server;
 frc::Joystick one{0}, two{1};
 //rev::SparkMax intake{4}, outtake{5};
-rev::SparkMax in{5}, intake{4};
+rev::SparkMax top{5}, intake{4};
 frc::Servo pan{6},tilt{7};
 // frc::Talon frontLeft{2}, frontRight{0}, backRight{3}, backLeft{1}, out{8};
 
@@ -56,7 +56,7 @@ ctre::phoenix::motorcontrol::can::WPI_TalonFX *frontLeft = new ctre::phoenix::mo
 ctre::phoenix::motorcontrol::can::WPI_TalonFX *frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(1);
 ctre::phoenix::motorcontrol::can::WPI_TalonFX *backLeft= new ctre::phoenix::motorcontrol::can::WPI_TalonFX(3);
 ctre::phoenix::motorcontrol::can::WPI_TalonFX *backRight = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(0);
-ctre::phoenix::motorcontrol::can::TalonFX *out = new ctre::phoenix::motorcontrol::can::TalonFX(10);
+ctre::phoenix::motorcontrol::can::TalonSRX *bottom = new ctre::phoenix::motorcontrol::can::TalonSRX(10);
 
 //ctre::phoenix::motorcontrol::can::WPI_TalonFX::WPI_TalonFX * frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonFX::WPI_TalonFX(1);
 // WPI_TalonFX * _rghtFollower = new WPI_TalonFX(3);
@@ -256,30 +256,44 @@ void Robot::TeleopPeriodic() {
 //    ballStorage.Set(true);
 //    shootTimer.Reset();
 //  }
-  if (one.GetRawButton(3)) {
-    ballStorage.Set(frc::DoubleSolenoid::Value::kForward);
+  // if (one.GetRawButton(3)) {
+  //   ballStorage.Set(frc::DoubleSolenoid::Value::kForward);
+  // }
+  // else if (one.GetRawButton(4)) {
+  //   ballStorage.Set(frc::DoubleSolenoid::Value::kReverse);
+  // }
+  // else if (one.GetRawButton(9)) {
+  //   ballStorage.Set(frc::DoubleSolenoid::Value::kOff);
+  // }
+
+  if (one.GetRawButton(2)) {
+    top.Set(1.0);
+    bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 1.0);
   }
-  else if (one.GetRawButton(4)) {
-    ballStorage.Set(frc::DoubleSolenoid::Value::kReverse);
+  else if (!one.GetRawButton(2)&&one.GetRawButton(3)) {
+    top.Set(0.5);
+    bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.5);
   }
-  else if (one.GetRawButton(9)) {
-    ballStorage.Set(frc::DoubleSolenoid::Value::kOff);
+  else if (!one.GetRawButton(2) && !one.GetRawButton(3)) {
+    top.Set(0.0);
+    bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
   }
-  if(one.GetRawButton(5)) {
-    in.Set(1.0);
-    out->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput,0.0);
-    //ballIn.Set(frc::DoubleSolenoid::Value::kForward);//piston1 go 
-  }
-  else if (!one.GetRawButton(5)&&one.GetRawButton(6)) {
-    in.Set(0.0);
-    out->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 1.0);
-    //ballIn.Set(frc::DoubleSolenoid::Value::kReverse);//piston1 go shwoop
-  }
-  else if (!one.GetRawButton(6)&&!one.GetRawButton(5)){
-    in.Set(0.0);
-    out->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
-    //ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 stop
-  }
+  
+  // if(one.GetRawButton(5)) {
+  //   in.Set(1.0);
+  //   out->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput,0.0);
+  //   //ballIn.Set(frc::DoubleSolenoid::Value::kForward);//piston1 go 
+  // }
+  // else if (!one.GetRawButton(5)&&one.GetRawButton(6)) {
+  //   in.Set(0.0);
+  //   out->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 1.0);
+  //   //ballIn.Set(frc::DoubleSolenoid::Value::kReverse);//piston1 go shwoop
+  // }
+  // else if (!one.GetRawButton(6)&&!one.GetRawButton(5)){
+  //   in.Set(0.0);
+  //   out->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
+  //   //ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 stop
+  // }
 /*
   if(one.GetRawButton(4)) {
     rightArm.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoom
@@ -344,18 +358,18 @@ void Robot::TeleopPeriodic() {
     sP=0;
   }
   */
- if (one.GetPOV(0) && sensitivity < 1.0) {
-   sensitivity += 0.01;
- }
- else if (one.GetPOV(0) && sensitivity >= 1.0) {
-   sensitivity = 1.0;
- }
- else if (one.GetPOV(180) && sensitivity > 0.0) {
-   sensitivity -= 0.01;
- }
- else if (one.GetPOV(180) && sensitivity <= 0.0) {
-   sensitivity = 0.0;
- }
+//  if (one.GetPOV(0) && sensitivity < 1.0) {
+//    sensitivity += 0.01;
+//  }
+//  else if (one.GetPOV(0) && sensitivity >= 1.0) {
+//    sensitivity = 1.0;
+//  }
+//  else if (one.GetPOV(180) && sensitivity > 0.0) {
+//    sensitivity -= 0.01;
+//  }
+//  else if (one.GetPOV(180) && sensitivity <= 0.0) {
+//    sensitivity = 0.0;
+//  }
   speed = one.GetRawAxis(1);
   turn = one.GetRawAxis(4);
   /*
