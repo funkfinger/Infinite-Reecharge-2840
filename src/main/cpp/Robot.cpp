@@ -274,7 +274,11 @@ void Robot::TeleopPeriodic() {
     top.Set(0.5);
     bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.5);
   }
-  else if (!one.GetRawButton(2) && !one.GetRawButton(3)) {
+  else if (!one.GetRawButton(2)&&!one.GetRawButton(3)&&one.GetRawButton(4)) {
+    top.Set(0.1);
+    bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 1.0);
+  }
+  else if (!one.GetRawButton(2) && !one.GetRawButton(3)&&!one.GetRawButton(4)) {
     top.Set(0.0);
     bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
   }
