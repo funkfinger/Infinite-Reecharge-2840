@@ -73,8 +73,8 @@ frc::DoubleSolenoid ballIn{3, 4}, ballStorage{2, 1};
 frc::Compressor *compressor = new frc::Compressor(0);
 
 ctre::phoenix::sensors::PigeonIMU pigeon{10};
-
-double speed, turn, sensitivity = 0.65, turnKey;
+//0.65 is the ideal sensitivity
+double speed, turn, sensitivity = 0.5, turnKey;
 bool isUpPressed, isDownPressed;
 double sP,tN;
 int16_t accel[3];
@@ -138,7 +138,6 @@ void Robot::RobotInit() {
   timer.Reset();
   timer.Start();
   calibratePigeon();
-  sensitivity = 0.5;
   // m_led.SetLength(kLength);
   // m_led.SetData(m_ledBuffer);
   // m_led.Start();
@@ -267,16 +266,16 @@ void Robot::TeleopPeriodic() {
   // }
 
   if (one.GetRawButton(2)) {
-    top.Set(1.0);
-    bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 1.0);
+    top.Set(-0.9);
+    bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, -0.85);
   }
   else if (!one.GetRawButton(2)&&one.GetRawButton(3)) {
-    top.Set(0.5);
-    bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.5);
+    top.Set(-0.68);
+    bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, -0.63);
   }
   else if (!one.GetRawButton(2)&&!one.GetRawButton(3)&&one.GetRawButton(4)) {
-    top.Set(0.1);
-    bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 1.0);
+    top.Set(-1.0);
+    bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, -1.0);
   }
   else if (!one.GetRawButton(2) && !one.GetRawButton(3)&&!one.GetRawButton(4)) {
     top.Set(0.0);
