@@ -72,7 +72,7 @@ frc::Solenoid ballUnstuck{0};
 frc::DoubleSolenoid ballIn{3, 4}, ballStorage{2, 1};
 frc::Compressor *compressor = new frc::Compressor(0);
 
-ctre::phoenix::sensors::PigeonIMU pigeon{10};
+ctre::phoenix::sensors::PigeonIMU pigeon = new ctre::phoenix::sensors::PigeonIMU::PigeonIMU(bottom);
 //0.65 is the ideal sensitivity
 double speed, turn, sensitivity = 0.5, turnKey;
 bool isUpPressed, isDownPressed;
