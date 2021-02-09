@@ -28,7 +28,7 @@
 #include <ctre/phoenix/motorcontrol/can/TalonSRX.h>
 #include <ctre/phoenix/motorcontrol/can/TalonFX.h>
 #include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
-#include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
+//#include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
 #include <C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/bcaf719eab4760b22c0d3083c34a9489/hal-cpp-2020.3.2-headers/mockdata/MockHooks.h>
 #include <C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/bcaf719eab4760b22c0d3083c34a9489/hal-cpp-2020.3.2-headers/mockdata/SimDeviceData.h>
 #include <ctre/phoenix/motorcontrol/can/VictorSPX.h>
@@ -74,7 +74,7 @@ frc::Solenoid ballUnstuck{0};
 frc::DoubleSolenoid ballIn{3, 4}, ballStorage{2, 1};
 frc::Compressor *compressor = new frc::Compressor(0);
 
-ctre::phoenix::sensors::PigeonIMU pigeon = new ctre::phoenix::sensors::PigeonIMU::PigeonIMU(bottom);
+ctre::phoenix::sensors::PigeonIMU pigeon{10};
 //0.65 is the ideal sensitivity
 double speed, turn, sensitivity = 0.5, turnKey;
 bool isUpPressed, isDownPressed;
