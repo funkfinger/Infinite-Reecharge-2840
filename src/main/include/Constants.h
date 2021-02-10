@@ -50,9 +50,10 @@ namespace OIConstants {
     constexpr auto kTrackwidth = 147.3885114349299;
     extern const frc::DifferentialDriveKinematics kDriveKinematics;
 
-    constexpr auto kMaxSpeed;
-    constexpr auto kMaxAcceleration;
+    constexpr auto kMaxSpeed = 3_mps;
+    constexpr auto kMaxAcceleration = 3_mps_sq;
 
-    constexpr double kRamseteB;
-    constexpr double kRamseteZeta;
+
+    constexpr double kRamseteB = 2;
+    constexpr double kRamseteZeta = 0.7;
 }
