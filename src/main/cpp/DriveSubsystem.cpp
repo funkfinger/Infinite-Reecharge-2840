@@ -10,12 +10,12 @@ DriveSubsystem::DriveSubsystem()
       m_left2{kLeftMotor2Port},
       m_right1{kRightMotor1Port},
       m_right2{kRightMotor2Port},
-      m_leftEncoder{kLeftEncoderPorts[0], kLeftEncoderPorts[1]},
-      m_rightEncoder{kRightEncoderPorts[0], kRightEncoderPorts[1]},
+    //   m_leftEncoder{kLeftEncoderPorts[0], kLeftEncoderPorts[1]},
+    //   m_rightEncoder{kRightEncoderPorts[0], kRightEncoderPorts[1]},
       m_odometry{m_gyro.GetRotation2d()} {
   // Set the distance per pulse for the encoders
-  m_leftEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
-  m_rightEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
+//   m_leftEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
+//   m_rightEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
 
   ResetEncoders();
 }
