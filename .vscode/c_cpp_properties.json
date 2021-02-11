@@ -85,7 +85,8 @@
                 "C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/bcaf719eab4760b22c0d3083c34a9489/hal-cpp-2020.3.2-headers/simulation",
                 "C:/Users/Programming/Documents/hal",
                 "C:/Users/Programming/Documents/hal/simulation",
-                "C:/Users/Programming/Documents"
+                "C:/Users/Programming/Documents",
+                "C:/Users/Public/wpilib/2020/vscode/data/extensions/wpilibsuite.vscode-wpilib-2020.3.2/resources/cpp/src/examples/DriveDistanceOffboard/include/subsystems"
             ],
             "defines": [
                 "_DEBUG",
