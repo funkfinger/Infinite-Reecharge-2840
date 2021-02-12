@@ -1,23 +1,40 @@
 See file:///C:/Users/Programming/Documents/GitHub/Infinite-Reecharge-2840/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramReleaseExecutableFrcUserProgramCpp.
+compiling Constants.cpp successful.
+
+compiling DriveSubsystem.cpp successful.
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\DriveSubsystem.cpp: In constructor 'DriveSubsystem::DriveSubsystem()':
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\DriveSubsystem.cpp:12:50: warning: unused variable 'm_left1' [-Wunused-variable]
+   ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left1 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(2);
+                                                  ^~~~~~~
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\DriveSubsystem.cpp:13:50: warning: unused variable 'm_left2' [-Wunused-variable]
+   ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left2 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(1);
+                                                  ^~~~~~~
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\DriveSubsystem.cpp:14:50: warning: unused variable 'm_right1' [-Wunused-variable]
+   ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right1 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(3);
+                                                  ^~~~~~~~
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\DriveSubsystem.cpp:15:50: warning: unused variable 'm_right2' [-Wunused-variable]
+   ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right2 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(0);
+                                                  ^~~~~~~~
+
 compiling Robot.cpp successful.
-C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:346:3: warning: "/*" within comment [-Wcomment]
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:347:3: warning: "/*" within comment [-Wcomment]
    /*if(stick.GetRawButton(7)){
     
-C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:53:20: warning: 'rev::SparkMax::SparkMax(int)' is deprecated: Use the PWMSparkMax class built into WPILib instead [-Wdeprecated-declarations]
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:54:20: warning: 'rev::SparkMax::SparkMax(int)' is deprecated: Use the PWMSparkMax class built into WPILib instead [-Wdeprecated-declarations]
  rev::SparkMax top{5}, intake{4};
                     ^
-In file included from C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:40:0:
+In file included from C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:41:0:
 C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\5cb4a5f90e5c63182e7e6290e73470a2\SparkMax-cpp-1.5.4-headers/rev/SparkMax.h:48:14: note: declared here
      explicit SparkMax(int channel);
               ^~~~~~~~
-C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:53:31: warning: 'rev::SparkMax::SparkMax(int)' is deprecated: Use the PWMSparkMax class built into WPILib instead [-Wdeprecated-declarations]
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:54:31: warning: 'rev::SparkMax::SparkMax(int)' is deprecated: Use the PWMSparkMax class built into WPILib instead [-Wdeprecated-declarations]
  rev::SparkMax top{5}, intake{4};
                                ^
-In file included from C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:40:0:
+In file included from C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:41:0:
 C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\5cb4a5f90e5c63182e7e6290e73470a2\SparkMax-cpp-1.5.4-headers/rev/SparkMax.h:48:14: note: declared here
      explicit SparkMax(int channel);
               ^~~~~~~~
-C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:68:71: warning: 'frc::RobotDrive::RobotDrive(frc::SpeedController&, frc::SpeedController&, frc::SpeedController&, frc::SpeedController&)' is deprecated: Use DifferentialDrive or MecanumDrive classes instead. [-Wdeprecated-declarations]
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:69:71: warning: 'frc::RobotDrive::RobotDrive(frc::SpeedController&, frc::SpeedController&, frc::SpeedController&, frc::SpeedController&)' is deprecated: Use DifferentialDrive or MecanumDrive classes instead. [-Wdeprecated-declarations]
  frc::RobotDrive myRobot{*frontLeft, *backLeft, *frontRight, *backRight};
                                                                        ^
 In file included from C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:38:0:
@@ -25,7 +42,7 @@ C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\c8e850653c2afd60a8151
    RobotDrive(SpeedController& frontLeftMotor, SpeedController& rearLeftMotor,
    ^~~~~~~~~~
 C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp: In member function 'virtual void Robot::TeleopPeriodic()':
-C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:242:9: warning: unused variable 'outtakeSpeed' [-Wunused-variable]
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:243:9: warning: unused variable 'outtakeSpeed' [-Wunused-variable]
   double outtakeSpeed = -1.0;
          ^~~~~~~~~~~~
 

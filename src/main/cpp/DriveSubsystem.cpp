@@ -8,11 +8,6 @@
 using namespace Constants;
 
 
-frc::Rotation2d toRotation(double x) {
-  units::radian_t xRad{(x / 360.0) * 2 * 3.14159265358979323846};
-  return frc::Rotation2d(xRad);
-}
-
 DriveSubsystem::DriveSubsystem() {
   ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left1 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(2);
   ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left2 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(1);
@@ -21,7 +16,7 @@ DriveSubsystem::DriveSubsystem() {
   //   m_leftEncoder{kLeftEncoderPorts[0], kLeftEncoderPorts[1]},
   //   m_rightEncoder{kRightEncoderPorts[0], kRightEncoderPorts[1]},
   //m_odometry.ResetPosition(frc::Pose2d(), toRotation(m_gyro.GetAbsoluteCompassHeading()));
-  m_odometry = frc::DifferentialDriveOdometry(toRotation(m_gyro.GetAbsoluteCompassHeading()), frc::Pose2d());
+  // m_odometry = frc::DifferentialDriveOdometry(toRotation(m_gyro.GetAbsoluteCompassHeading()), frc::Pose2d());
   // m_odometry{toRotation(m_gyro.GetAbsoluteCompassHeading())} {
   //   ResetEncoders();
   // };

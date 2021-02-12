@@ -14,6 +14,11 @@
 
 #include "Constants.h"
 
+frc::Rotation2d toRotation(double x) {
+  units::radian_t xRad{(x / 360.0) * 2 * 3.14159265358979323846};
+  return frc::Rotation2d(xRad);
+}
+
 class DriveSubsystem : public frc2::SubsystemBase {
  public:
   DriveSubsystem();
@@ -115,7 +120,7 @@ class DriveSubsystem : public frc2::SubsystemBase {
   ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right2;// = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(0);
 
   ctre::phoenix::sensors::PigeonIMU m_gyro{10};
-  frc::DifferentialDriveOdometry m_odometry;
+  frc::DifferentialDriveOdometry m_odometry = frc::DifferentialDriveOdometry(toRotation(m_gyro.GetAbsoluteCompassHeading()), frc::Pose2d());
  private:
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.

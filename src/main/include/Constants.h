@@ -58,11 +58,11 @@ namespace Constants {
     constexpr double kRamseteB = 2;
     constexpr double kRamseteZeta = 0.7;
 
-    int kLeftMotor1Port = 2;
-    int kLeftMotor2Port = 3;
-    int kRightMotor1Port = 1;
-    int kRightMotor2Port = 0;
+    // int kLeftMotor1Port = 2;
+    // int kLeftMotor2Port = 3;
+    // int kRightMotor1Port = 1;
+    // int kRightMotor2Port = 0;
 
-    int kLeftEncoderPorts[] = {2, 3};
-    int kRightEncoderPorts[] = {1, 0};
+    // int kLeftEncoderPorts[] = {2, 3};
+    // int kRightEncoderPorts[] = {1, 0};
 }
