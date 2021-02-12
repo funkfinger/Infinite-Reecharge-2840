@@ -71,8 +71,8 @@ void DriveSubsystem::SetMaxOutput(double maxOutput) {
   m_drive.SetMaxOutput(maxOutput);
 }
 
-units::degree_t DriveSubsystem::GetHeading() {
-  return units::degree_t(m_gyro.GetAbsoluteCompassHeading());
+units::degree_t DriveSubsystem::GetHeading() const {
+  return units::degree_t(180 - (const) m_gyro.GetAbsoluteCompassHeading());
 }
 
 double DriveSubsystem::GetTurnRate() {
