@@ -1,6 +1,5 @@
 #include "subsystems/DriveSubsystem.h"
 
-#include <math.h>
 #include <frc/kinematics/DifferentialDriveOdometry.h>
 #include <frc/geometry/Rotation2d.h>
 #include <frc/kinematics/DifferentialDriveWheelSpeeds.h>
@@ -10,25 +9,25 @@ using namespace Constants;
 
 
 frc::Rotation2d toRotation(double x) {
-  units::radian_t xRad{(x / 360.0) * M_PI};
+  units::radian_t xRad{(x / 360.0) * 2 * 3.14159265358979323846};
   return frc::Rotation2d(xRad);
 }
 
-DriveSubsystem::DriveSubsystem()
-    : ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left1 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(2);
+DriveSubsystem::DriveSubsystem() {
+    ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left1 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(2);
     ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left2 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(1);
     ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right1 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(3);
     ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right2 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(0);
     //   m_leftEncoder{kLeftEncoderPorts[0], kLeftEncoderPorts[1]},
     //   m_rightEncoder{kRightEncoderPorts[0], kRightEncoderPorts[1]},
-    m_odometry{m_gyro.GetAbsoluteCompassHeading()} {
+    m_odometry = frc::DifferentialDriveOdometry{toRotation(m_gyro.GetAbsoluteCompassHeading()), frc::Pose2d()}; {
   // Set the distance per pulse for the encoders
 //   m_leftEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
 //   m_rightEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
 
   ResetEncoders();
+  }
 }
-
 void DriveSubsystem::Periodic() {
   // Implementation of subsystem periodic method goes here.
   m_odometry.Update(toRotation(m_gyro.GetAbsoluteCompassHeading()),
@@ -92,5 +91,5 @@ frc::DifferentialDriveWheelSpeeds DriveSubsystem::GetWheelSpeeds() {
 
 void DriveSubsystem::ResetOdometry(frc::Pose2d pose) {
   ResetEncoders();
-  m_odometry.ResetPosition(pose, m_gyro.GetAbsoluteCompassHeading());
+  m_odometry.ResetPosition(pose, toRotation(m_gyro.GetAbsoluteCompassHeading()));
 }
