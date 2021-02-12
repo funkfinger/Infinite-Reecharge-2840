@@ -1,18 +1,26 @@
-#include "DriveSubsystem.h"
+#include "subsystems/DriveSubsystem.h"
 
+#include <math.h>
+#include <frc/kinematics/DifferentialDriveOdometry.h>
 #include <frc/geometry/Rotation2d.h>
 #include <frc/kinematics/DifferentialDriveWheelSpeeds.h>
+#include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
 
 using namespace Constants;
 
+frc::Rotation2d toRotation(double x) {
+  units::radian_t xRad{(x / 360.0) * M_PI};
+  return frc::Rotation2d(xRad);
+}
+
 DriveSubsystem::DriveSubsystem()
-    : m_left1{kLeftMotor1Port},
-      m_left2{kLeftMotor2Port},
-      m_right1{kRightMotor1Port},
-      m_right2{kRightMotor2Port},
+    : ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left1 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(2);
+    ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left2 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(1);
+    ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right1 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(3);
+    ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right2 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(0);
     //   m_leftEncoder{kLeftEncoderPorts[0], kLeftEncoderPorts[1]},
     //   m_rightEncoder{kRightEncoderPorts[0], kRightEncoderPorts[1]},
-      m_odometry{m_gyro.GetRotation2d()} {
+    m_odometry{m_gyro.GetAbsoluteCompassHeading()} {
   // Set the distance per pulse for the encoders
 //   m_leftEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
 //   m_rightEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
@@ -22,9 +30,11 @@ DriveSubsystem::DriveSubsystem()
 
 void DriveSubsystem::Periodic() {
   // Implementation of subsystem periodic method goes here.
-  m_odometry.Update(m_gyro.GetRotation2d(),
-                    units::meter_t(m_leftEncoder.GetDistance()),
-                    units::meter_t(m_rightEncoder.GetDistance()));
+  m_odometry.Update(toRotation(m_gyro.GetAbsoluteCompassHeading()),
+                    //units::meter_t(m_leftEncoder.GetDistance()),
+                    units::meter_t((*m_left1).GetSelectedSensorPosition()),
+                    //units::meter_t(m_rightEncoder.GetDistance()));
+                    units::meter_t((*m_right1).GetSelectedSensorPosition()));
 }
 
 void DriveSubsystem::ArcadeDrive(double fwd, double rot) {
@@ -38,28 +48,30 @@ void DriveSubsystem::TankDriveVolts(units::volt_t left, units::volt_t right) {
 }
 
 void DriveSubsystem::ResetEncoders() {
-  m_leftEncoder.Reset();
-  m_rightEncoder.Reset();
+//   m_leftEncoder.Reset();
+//   m_rightEncoder.Reset();
+    m_left1->SetSelectedSensorPosition(0.0);
+    m_right1->SetSelectedSensorPosition(0.0);
 }
 
 double DriveSubsystem::GetAverageEncoderDistance() {
-  return (m_leftEncoder.GetDistance() + m_rightEncoder.GetDistance()) / 2.0;
+  return (m_left1->GetSelectedSensorPosition() + m_right1->GetSelectedSensorPosition()) / 2.0;
 }
 
-frc::Encoder& DriveSubsystem::GetLeftEncoder() {
-  return m_leftEncoder;
-}
+// frc::Encoder& DriveSubsystem::GetLeftEncoder() {
+//   return m_leftEncoder;
+// }
 
-frc::Encoder& DriveSubsystem::GetRightEncoder() {
-  return m_rightEncoder;
-}
+// frc::Encoder& DriveSubsystem::GetRightEncoder() {
+//   return m_rightEncoder;
+// }
 
 void DriveSubsystem::SetMaxOutput(double maxOutput) {
   m_drive.SetMaxOutput(maxOutput);
 }
 
 units::degree_t DriveSubsystem::GetHeading() const {
-  return m_gyro.GetRotation2d().Degrees();
+  return m_gyro.GetSelectedSensorPosition().Degrees();
 }
 
 double DriveSubsystem::GetTurnRate() {

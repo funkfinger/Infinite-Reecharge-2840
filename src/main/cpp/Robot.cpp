@@ -161,27 +161,27 @@ void Robot::AutonomousInit() {
 }
 
 void Robot::AutonomousPeriodic() {
-  turn = -trueMap(pigeon.GetAbsoluteCompassHeading()-180, 180, -180, 1.0, -1.0); //set the robot to turn against the strafe
-  if(timer.Get() < 0.2) {
-    myRobot.ArcadeDrive(timer.Get() * 5, turn);
-  }
-  else if(timer.Get() < 4) {
-    ballStorage.Set(frc::DoubleSolenoid::Value::kForward);
-    myRobot.ArcadeDrive(1.0, turn);
-  }
-  else if(timer.Get() < 5) {
-    myRobot.ArcadeDrive(0.5, 0.5 + turn);
-  }
-  else if(timer.Get() < 6) {
-    myRobot.ArcadeDrive(0.5, turn - 0.5);
-  }
-  else if(timer.Get() < 8) {
-    myRobot.ArcadeDrive(0.8, turn);
-    pigeon.GetBiasedAccelerometer(accel);
-    if (accel[0] == 0 && accel[1] == 0) {
-      myRobot.ArcadeDrive(0.0, 0.0);
-    }
-  }
+  // turn = -trueMap(pigeon.GetAbsoluteCompassHeading()-180, 180, -180, 1.0, -1.0); //set the robot to turn against the strafe
+  // if(timer.Get() < 0.2) {
+  //   myRobot.ArcadeDrive(timer.Get() * 5, turn);
+  // }
+  // else if(timer.Get() < 4) {
+  //   ballStorage.Set(frc::DoubleSolenoid::Value::kForward);
+  //   myRobot.ArcadeDrive(1.0, turn);
+  // }
+  // else if(timer.Get() < 5) {
+  //   myRobot.ArcadeDrive(0.5, 0.5 + turn);
+  // }
+  // else if(timer.Get() < 6) {
+  //   myRobot.ArcadeDrive(0.5, turn - 0.5);
+  // }
+  // else if(timer.Get() < 8) {
+  //   myRobot.ArcadeDrive(0.8, turn);
+  //   pigeon.GetBiasedAccelerometer(accel);
+  //   if (accel[0] == 0 && accel[1] == 0) {
+  //     myRobot.ArcadeDrive(0.0, 0.0);
+  //   }
+  // }
   // else if(timer.Get() < 9.5) {
   //   myRobot.ArcadeDrive(0.0, turn);
   //   shootTimer.Start();

@@ -7,6 +7,9 @@
 #include <frc/drive/DifferentialDrive.h>
 #include <frc/geometry/Pose2d.h>
 #include <frc/kinematics/DifferentialDriveOdometry.h>
+#include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
+#include <ctre/phoenix/sensors/PigeonIMU.h>
+
 #include <frc2/command/SubsystemBase.h>
 #include <units.h>
 
@@ -107,35 +110,41 @@ class DriveSubsystem : public frc2::SubsystemBase {
    * @param pose The pose to which to set the odometry.
    */
   void ResetOdometry(frc::Pose2d pose);
+ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left1;// = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(2);
+ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left2;// = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(1);
+ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right1;// = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(3);
+ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right2;// = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(0);
 
+ctre::phoenix::sensors::PigeonIMU m_gyro{10};
+frc::DifferentialDriveOdometry m_odometry;
  private:
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
 
   // The motor controllers
-  frc::PWMVictorSPX m_left1;
-  frc::PWMVictorSPX m_left2;
-  frc::PWMVictorSPX m_right1;
-  frc::PWMVictorSPX m_right2;
+//   frc::PWMVictorSPX m_left1;
+//   frc::PWMVictorSPX m_left2;
+//   frc::PWMVictorSPX m_right1;
+//   frc::PWMVictorSPX m_right2;
 
   // The motors on the left side of the drive
-  frc::SpeedControllerGroup m_leftMotors{m_left1, m_left2};
+  frc::SpeedControllerGroup m_leftMotors{*m_left1, *m_left2};
 
   // The motors on the right side of the drive
-  frc::SpeedControllerGroup m_rightMotors{m_right1, m_right2};
+  frc::SpeedControllerGroup m_rightMotors{*m_right1, *m_right2};
 
   // The robot's drive
   frc::DifferentialDrive m_drive{m_leftMotors, m_rightMotors};
 
   // The left-side drive encoder
-  frc::Encoder m_leftEncoder;
+  // frc::Encoder m_leftEncoder;
 
   // The right-side drive encoder
-  frc::Encoder m_rightEncoder;
+  // frc::Encoder m_rightEncoder;
 
   // The gyro sensor
-  frc::ADXRS450_Gyro m_gyro;
-
+  // frc::ADXRS450_Gyro m_gyro;
+  
   // Odometry class for tracking robot pose
-  frc::DifferentialDriveOdometry m_odometry;
+  
 };
