@@ -14,20 +14,24 @@ frc::Rotation2d toRotation(double x) {
 }
 
 DriveSubsystem::DriveSubsystem() {
-    ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left1 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(2);
-    ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left2 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(1);
-    ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right1 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(3);
-    ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right2 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(0);
-    //   m_leftEncoder{kLeftEncoderPorts[0], kLeftEncoderPorts[1]},
-    //   m_rightEncoder{kRightEncoderPorts[0], kRightEncoderPorts[1]},
-    m_odometry = frc::DifferentialDriveOdometry{toRotation(m_gyro.GetAbsoluteCompassHeading()), frc::Pose2d()}; {
+  ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left1 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(2);
+  ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left2 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(1);
+  ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right1 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(3);
+  ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right2 = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(0);
+  //   m_leftEncoder{kLeftEncoderPorts[0], kLeftEncoderPorts[1]},
+  //   m_rightEncoder{kRightEncoderPorts[0], kRightEncoderPorts[1]},
+  //m_odometry.ResetPosition(frc::Pose2d(), toRotation(m_gyro.GetAbsoluteCompassHeading()));
+  //m_odometry = frc::DifferentialDriveOdometry(toRotation(m_gyro.GetAbsoluteCompassHeading()), frc::Pose2d());
+  m_odometry{toRotation(m_gyro.GetAbsoluteCompassHeading())} {
+    m_left1->SetSelectedSensorPosition(0.0);
+    m_right1->SetSelectedSensorPosition(0.0);
+    ResetEncoders();
+  };
   // Set the distance per pulse for the encoders
 //   m_leftEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
 //   m_rightEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
-
-  ResetEncoders();
-  }
 }
+
 void DriveSubsystem::Periodic() {
   // Implementation of subsystem periodic method goes here.
   m_odometry.Update(toRotation(m_gyro.GetAbsoluteCompassHeading()),
@@ -70,8 +74,10 @@ void DriveSubsystem::SetMaxOutput(double maxOutput) {
   m_drive.SetMaxOutput(maxOutput);
 }
 
-units::degree_t DriveSubsystem::GetHeading() const {
-  return units::degree_t(m_gyro.GetAbsoluteCompassHeading());
+units::degree_t DriveSubsystem::GetHeading() {
+  double deg = m_gyro.GetAbsoluteCompassHeading();
+  units::degree_t heading = units::degree_t(deg);
+  return units::degree_t(heading);
 }
 
 double DriveSubsystem::GetTurnRate() {
@@ -85,8 +91,8 @@ frc::Pose2d DriveSubsystem::GetPose() {
 }
 
 frc::DifferentialDriveWheelSpeeds DriveSubsystem::GetWheelSpeeds() {
-  return {units::meters_per_second_t((*m_left1).GetSelectedSensorPosition()),
-          units::meters_per_second_t((*m_right1).GetSelectedSensorPosition())};
+  return {units::meters_per_second_t((*m_left1).GetSelectedSensorVelocity()),
+          units::meters_per_second_t((*m_right1).GetSelectedSensorVelocity())};
 }
 
 void DriveSubsystem::ResetOdometry(frc::Pose2d pose) {
