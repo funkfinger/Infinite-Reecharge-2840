@@ -8,6 +8,7 @@
 
 using namespace Constants;
 
+
 frc::Rotation2d toRotation(double x) {
   units::radian_t xRad{(x / 360.0) * M_PI};
   return frc::Rotation2d(xRad);
@@ -70,12 +71,14 @@ void DriveSubsystem::SetMaxOutput(double maxOutput) {
   m_drive.SetMaxOutput(maxOutput);
 }
 
-units::degree_t DriveSubsystem::GetHeading() const {
-  return m_gyro.GetSelectedSensorPosition().Degrees();
+units::degree_t DriveSubsystem::GetHeading() {
+  return units::degree_t(m_gyro.GetAbsoluteCompassHeading());
 }
 
 double DriveSubsystem::GetTurnRate() {
-  return -m_gyro.GetRate();
+  double xyz_dps[3];
+  m_gyro.GetRawGyro(xyz_dps);
+  return -xyz_dps[2];
 }
 
 frc::Pose2d DriveSubsystem::GetPose() {
@@ -83,11 +86,11 @@ frc::Pose2d DriveSubsystem::GetPose() {
 }
 
 frc::DifferentialDriveWheelSpeeds DriveSubsystem::GetWheelSpeeds() {
-  return {units::meters_per_second_t(m_leftEncoder.GetRate()),
-          units::meters_per_second_t(m_rightEncoder.GetRate())};
+  return {units::meters_per_second_t((*m_left1).GetSelectedSensorPosition()),
+          units::meters_per_second_t((*m_right1).GetSelectedSensorPosition())};
 }
 
 void DriveSubsystem::ResetOdometry(frc::Pose2d pose) {
   ResetEncoders();
-  m_odometry.ResetPosition(pose, m_gyro.GetRotation2d());
+  m_odometry.ResetPosition(pose, m_gyro.GetAbsoluteCompassHeading());
 }

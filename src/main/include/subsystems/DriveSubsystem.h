@@ -1,6 +1,5 @@
 #pragma once
 
-#include <frc/ADXRS450_Gyro.h>
 #include <frc/Encoder.h>
 #include <frc/PWMVictorSPX.h>
 #include <frc/SpeedControllerGroup.h>
@@ -11,7 +10,7 @@
 #include <ctre/phoenix/sensors/PigeonIMU.h>
 
 #include <frc2/command/SubsystemBase.h>
-#include <units.h>
+#include <units/units.h>
 
 #include "Constants.h"
 
@@ -59,14 +58,14 @@ class DriveSubsystem : public frc2::SubsystemBase {
    *
    * @return the left drive encoder
    */
-  frc::Encoder& GetLeftEncoder();
+  // frc::Encoder& GetLeftEncoder();
 
   /**
    * Gets the right drive encoder.
    *
    * @return the right drive encoder
    */
-  frc::Encoder& GetRightEncoder();
+  // frc::Encoder& GetRightEncoder();
 
   /**
    * Sets the max output of the drive.  Useful for scaling the drive to drive
@@ -110,13 +109,13 @@ class DriveSubsystem : public frc2::SubsystemBase {
    * @param pose The pose to which to set the odometry.
    */
   void ResetOdometry(frc::Pose2d pose);
-ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left1;// = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(2);
-ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left2;// = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(1);
-ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right1;// = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(3);
-ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right2;// = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(0);
+  ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left1;// = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(2);
+  ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_left2;// = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(1);
+  ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right1;// = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(3);
+  ctre::phoenix::motorcontrol::can::WPI_TalonFX *m_right2;// = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(0);
 
-ctre::phoenix::sensors::PigeonIMU m_gyro{10};
-frc::DifferentialDriveOdometry m_odometry;
+  ctre::phoenix::sensors::PigeonIMU m_gyro{10};
+  frc::DifferentialDriveOdometry m_odometry;
  private:
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
