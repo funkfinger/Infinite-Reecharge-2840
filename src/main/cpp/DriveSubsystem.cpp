@@ -21,12 +21,10 @@ DriveSubsystem::DriveSubsystem() {
   //   m_leftEncoder{kLeftEncoderPorts[0], kLeftEncoderPorts[1]},
   //   m_rightEncoder{kRightEncoderPorts[0], kRightEncoderPorts[1]},
   //m_odometry.ResetPosition(frc::Pose2d(), toRotation(m_gyro.GetAbsoluteCompassHeading()));
-  //m_odometry = frc::DifferentialDriveOdometry(toRotation(m_gyro.GetAbsoluteCompassHeading()), frc::Pose2d());
-  m_odometry{toRotation(m_gyro.GetAbsoluteCompassHeading())} {
-    m_left1->SetSelectedSensorPosition(0.0);
-    m_right1->SetSelectedSensorPosition(0.0);
-    ResetEncoders();
-  };
+  m_odometry = frc::DifferentialDriveOdometry(toRotation(m_gyro.GetAbsoluteCompassHeading()), frc::Pose2d());
+  // m_odometry{toRotation(m_gyro.GetAbsoluteCompassHeading())} {
+  //   ResetEncoders();
+  // };
   // Set the distance per pulse for the encoders
 //   m_leftEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
 //   m_rightEncoder.SetDistancePerPulse(kEncoderDistancePerPulse);
