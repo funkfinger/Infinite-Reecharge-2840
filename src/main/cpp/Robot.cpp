@@ -50,23 +50,19 @@
 #include <wpi/Path.h>
 #include <wpi/SmallString.h>
 
-//The only reason I'm making this class is to use the constructor to do stuff before main()
-class dDirectory {
-  public:
-  wpi::SmallString<64> *tempDirect;
-  dDirectory() {
-    frc::filesystem::GetDeployDirectory(*tempDirect);
-    wpi::sys::path::append(*tempDirect, "paths");
-    wpi::sys::path::append(*tempDirect, "YourPath.wpilib.json");
-  }
-};
-dDirectory d1;
-wpi::SmallString<64> *deployDirectory = d1.tempDirect;
+dDirectory::dDirectory() {
+  frc::filesystem::GetDeployDirectory(*tempDirect);
+  wpi::sys::path::append(*tempDirect, "paths");
+  wpi::sys::path::append(*tempDirect, "C:/Users/Programming/Documents/GitHub/Infinite-Reecharge-2840/PathWeaver/output/Unnamed.wpilib.json");
+  trajectory = frc::TrajectoryUtil::FromPathweaverJson(*tempDirect);
+}
+frc::Trajectory dDirectory::returnTrajectory() {
+  return trajectory;
+}
 // frc::filesystem::GetDeployDirectory(deployDirectory);
 // wpi::sys::path::append(&deployDirectory, (wpi::Twine)"paths");
 // wpi::sys::path::append(&deployDirectory, (wpi::Twine)"YourPath.wpilib.json");
 
-frc::Trajectory trajectory = frc::TrajectoryUtil::FromPathweaverJson(*deployDirectory);
 
 cs::UsbCamera camera0;
 cs::UsbCamera camera1;

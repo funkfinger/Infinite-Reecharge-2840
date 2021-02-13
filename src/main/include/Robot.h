@@ -11,7 +11,19 @@
 
 #include <frc/TimedRobot.h>
 #include <frc/smartdashboard/SendableChooser.h>
+#include <frc/trajectory/TrajectoryUtil.h>
+#include <frc/Filesystem.h>
+#include <frc/trajectory/TrajectoryUtil.h>
+#include <wpi/Path.h>
+#include <wpi/SmallString.h>
 
+class dDirectory {
+  public:
+    wpi::SmallString<64> *tempDirect;
+    frc::Trajectory trajectory;
+    dDirectory();
+    frc::Trajectory returnTrajectory();
+};
 class Robot : public frc::TimedRobot {
  public:
   void RobotInit() override;
