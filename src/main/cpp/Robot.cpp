@@ -49,6 +49,8 @@
 #include <frc/trajectory/TrajectoryUtil.h>
 #include <wpi/Path.h>
 #include <wpi/SmallString.h>
+#include <frc2/command/CommandScheduler.h>
+
 
 dDirectory::dDirectory() {
   frc::filesystem::GetDeployDirectory(*tempDirect);
@@ -170,12 +172,17 @@ void Robot::RobotPeriodic() {
 }
 
 void Robot::AutonomousInit() {
-  timer.Reset();
-  timer.Start();
-  shootTimer.Reset();
-  // outtake.Set(1.0);
-  ballStorage.Set(frc::DoubleSolenoid::Value::kOff);
-  calibratePigeon();
+  // timer.Reset();
+  // timer.Start();
+  // shootTimer.Reset();
+  // // outtake.Set(1.0);
+  // ballStorage.Set(frc::DoubleSolenoid::Value::kOff);
+  // calibratePigeon();
+  m_autonomousCommand = m_container.GetAutonomousCommand();
+
+  if (m_autonomousCommand != nullptr) {
+    m_autonomousCommand->Schedule();
+  }
 }
 
 void Robot::AutonomousPeriodic() {
