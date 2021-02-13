@@ -37,7 +37,6 @@
 #include <opencv2/core/core.hpp>
 #include <frc/RobotDrive.h>
 
-
 #include "rev/SparkMax.h"
 #include <frc/Compressor.h>
 #include <frc/Talon.h>
@@ -45,6 +44,29 @@
 #include <frc/DoubleSolenoid.h>
 #include <frc/AddressableLED.h>
 #include <math.h>
+
+#include <frc/Filesystem.h>
+#include <frc/trajectory/TrajectoryUtil.h>
+#include <wpi/Path.h>
+#include <wpi/SmallString.h>
+
+//The only reason I'm making this class is to use the constructor to do stuff before main()
+class dDirectory {
+  public:
+  wpi::SmallString<64> *tempDirect;
+  dDirectory() {
+    frc::filesystem::GetDeployDirectory(*tempDirect);
+    wpi::sys::path::append(*tempDirect, "paths");
+    wpi::sys::path::append(*tempDirect, "YourPath.wpilib.json");
+  }
+};
+dDirectory d1;
+wpi::SmallString<64> *deployDirectory = d1.tempDirect;
+// frc::filesystem::GetDeployDirectory(deployDirectory);
+// wpi::sys::path::append(&deployDirectory, (wpi::Twine)"paths");
+// wpi::sys::path::append(&deployDirectory, (wpi::Twine)"YourPath.wpilib.json");
+
+frc::Trajectory trajectory = frc::TrajectoryUtil::FromPathweaverJson(*deployDirectory);
 
 cs::UsbCamera camera0;
 cs::UsbCamera camera1;
