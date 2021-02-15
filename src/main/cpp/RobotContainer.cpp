@@ -59,18 +59,18 @@ frc2::Command* RobotContainer::GetAutonomousCommand() {
   config.AddConstraint(autoVoltageConstraint);
 
   // An example trajectory to follow.  All units in meters.
-//   auto exampleTrajectory = frc::TrajectoryGenerator::GenerateTrajectory(
-//       // Start at the origin facing the +X direction
-//       frc::Pose2d(0_m, 0_m, frc::Rotation2d(0_deg)),
-//       // Pass through these two interior waypoints, making an 's' curve path
-//       {frc::Translation2d(1_m, 1_m), frc::Translation2d(2_m, -1_m)},
-//       // End 3 meters straight ahead of where we started, facing forward
-//       frc::Pose2d(3_m, 0_m, frc::Rotation2d(0_deg)),
-//       // Pass the config
-//       config);
+  auto exampleTrajectory = frc::TrajectoryGenerator::GenerateTrajectory(
+      // Start at the origin facing the +X direction
+      frc::Pose2d(0_m, 0_m, frc::Rotation2d(0_deg)),
+      // Pass through these two interior waypoints, making an 's' curve path
+      {frc::Translation2d(1_m, 1_m), frc::Translation2d(2_m, -1_m)},
+      // End 3 meters straight ahead of where we started, facing forward
+      frc::Pose2d(3_m, 0_m, frc::Rotation2d(0_deg)),
+      // Pass the config
+      config);
 
   frc2::RamseteCommand ramseteCommand(
-      d1.returnTrajectory(), [this]() { return m_drive.GetPose(); },
+      exampleTrajectory, [this]() { return m_drive.GetPose(); },
       frc::RamseteController(Constants::kRamseteB,
                              Constants::kRamseteZeta),
       frc::SimpleMotorFeedforward<units::meters>(
@@ -83,7 +83,7 @@ frc2::Command* RobotContainer::GetAutonomousCommand() {
       {&m_drive});
 
   // Reset odometry to the starting pose of the trajectory.
-  m_drive.ResetOdometry(d1.returnTrajectory().InitialPose());
+  m_drive.ResetOdometry(exampleTrajectory.InitialPose());
 
   // no auto
   return new frc2::SequentialCommandGroup(

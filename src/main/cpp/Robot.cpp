@@ -152,9 +152,9 @@ void Robot::RobotInit() {
   camera0.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
   camera1.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
   frc::CameraServer::GetInstance()->StartAutomaticCapture();
-  m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
-  m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
-  frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
+  // m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
+  // m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
+  // frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
   frc::SmartDashboard::PutNumber("Timer", timer.Get());
   // compressor.SetClosedLoopControl(true);
   // compressor.Start();
@@ -167,6 +167,7 @@ void Robot::RobotInit() {
 }
 
 void Robot::RobotPeriodic() {
+  frc2::CommandScheduler::GetInstance().Run();
   // Rainbow();
   // m_led.SetData(m_ledBuffer);
 }
@@ -232,9 +233,14 @@ void Robot::TeleopInit() {
   ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 no go nyoo
   compressor->Start();
   ballStorage.Set(frc::DoubleSolenoid::Value::kReverse);
+  if (m_autonomousCommand != nullptr) {
+    m_autonomousCommand->Cancel();
+    m_autonomousCommand = nullptr;
+  }
 }
 
 void Robot::TeleopPeriodic() {
+
   compressor->SetClosedLoopControl(true);
   //increase sensitivity with the right bumper
   /*

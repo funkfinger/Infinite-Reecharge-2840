@@ -1,6 +1,6 @@
 See file:///C:/Users/Programming/Documents/GitHub/Infinite-Reecharge-2840/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramReleaseExecutableFrcUserProgramCpp.
 compiling Robot.cpp successful.
-C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:372:3: warning: "/*" within comment [-Wcomment]
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:378:3: warning: "/*" within comment [-Wcomment]
    /*if(stick.GetRawButton(7)){
     
 C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:74:20: warning: 'rev::SparkMax::SparkMax(int)' is deprecated: Use the PWMSparkMax class built into WPILib instead [-Wdeprecated-declarations]
@@ -25,7 +25,7 @@ C:\Users\Programming\.gradle\caches\transforms-2\files-2.1\c8e850653c2afd60a8151
    RobotDrive(SpeedController& frontLeftMotor, SpeedController& rearLeftMotor,
    ^~~~~~~~~~
 C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp: In member function 'virtual void Robot::TeleopPeriodic()':
-C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:268:9: warning: unused variable 'outtakeSpeed' [-Wunused-variable]
+C:\Users\Programming\Documents\GitHub\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:274:9: warning: unused variable 'outtakeSpeed' [-Wunused-variable]
   double outtakeSpeed = -1.0;
          ^~~~~~~~~~~~
 
