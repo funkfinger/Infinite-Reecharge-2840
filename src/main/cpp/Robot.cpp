@@ -26,11 +26,11 @@
 #include <frc/Servo.h>
 #include <ctre/phoenix/sensors/PigeonIMU.h>
 #include <ctre/phoenix/motorcontrol/can/TalonSRX.h>
-#include <ctre/phoenix/motorcontrol/can/TalonFX.h>
+// #include <ctre/phoenix/motorcontrol/can/TalonFX.h>
 #include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
 //#include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
-#include <C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/bcaf719eab4760b22c0d3083c34a9489/hal-cpp-2020.3.2-headers/mockdata/MockHooks.h>
-#include <C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/bcaf719eab4760b22c0d3083c34a9489/hal-cpp-2020.3.2-headers/mockdata/SimDeviceData.h>
+// #include <C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/bcaf719eab4760b22c0d3083c34a9489/hal-cpp-2020.3.2-headers/mockdata/MockHooks.h>
+// #include <C:/Users/Programming/.gradle/caches/transforms-2/files-2.1/bcaf719eab4760b22c0d3083c34a9489/hal-cpp-2020.3.2-headers/mockdata/SimDeviceData.h>
 #include <ctre/phoenix/motorcontrol/can/VictorSPX.h>
 #include <cameraserver/CameraServer.h>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -42,29 +42,8 @@
 #include <frc/Talon.h>
 #include <frc/Solenoid.h>
 #include <frc/DoubleSolenoid.h>
-#include <frc/AddressableLED.h>
+// #include <frc/AddressableLED.h>
 #include <math.h>
-
-#include <frc/Filesystem.h>
-#include <frc/trajectory/TrajectoryUtil.h>
-#include <wpi/Path.h>
-#include <wpi/SmallString.h>
-#include <frc2/command/CommandScheduler.h>
-
-
-dDirectory::dDirectory() {
-  frc::filesystem::GetDeployDirectory(*tempDirect);
-  wpi::sys::path::append(*tempDirect, "paths");
-  wpi::sys::path::append(*tempDirect, "C:/Users/Programming/Documents/GitHub/Infinite-Reecharge-2840/PathWeaver/output/Unnamed.wpilib.json");
-  trajectory = frc::TrajectoryUtil::FromPathweaverJson(*tempDirect);
-}
-frc::Trajectory dDirectory::returnTrajectory() {
-  return trajectory;
-}
-// frc::filesystem::GetDeployDirectory(deployDirectory);
-// wpi::sys::path::append(&deployDirectory, (wpi::Twine)"paths");
-// wpi::sys::path::append(&deployDirectory, (wpi::Twine)"YourPath.wpilib.json");
-
 
 cs::UsbCamera camera0;
 cs::UsbCamera camera1;
@@ -73,6 +52,8 @@ frc::Joystick one{0}, two{1};
 //rev::SparkMax intake{4}, outtake{5};
 rev::SparkMax top{5}, intake{4};
 frc::Servo pan{6},tilt{7};
+int stage = 0;
+double xyz[] = {0.0, 0.0, 0.0};
 // frc::Talon frontLeft{2}, frontRight{0}, backRight{3}, backLeft{1}, out{8};
 
 ctre::phoenix::motorcontrol::can::WPI_TalonFX *frontLeft = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(2);
@@ -92,12 +73,12 @@ frc::Timer timer, shootTimer;
 
 //frc::SendableChooser autoChoice;
 frc::Solenoid ballUnstuck{0};
-frc::DoubleSolenoid ballIn{3, 4}, ballStorage{2, 1};
+frc::DoubleSolenoid ballIn{1, 2}, ballStorage{3, 7};
 frc::Compressor *compressor = new frc::Compressor(0);
 
-ctre::phoenix::sensors::PigeonIMU pigeon{10};
+ctre::phoenix::sensors::PigeonIMU pigeon{bottom};
 //0.65 is the ideal sensitivity
-double speed, turn, sensitivity = 0.5, turnKey;
+double speed = 0.0, turn = 0.0, sensitivity = 1.0, turnKey, avgDist = 0.0, currentTime = 0.0, prevTime = 0.0, maxTime = 0, maxSpeed = 0;
 bool isUpPressed, isDownPressed;
 double sP,tN;
 int16_t accel[3];
@@ -136,13 +117,12 @@ double trueMap(double val, double valHigh, double valLow, double newHigh, double
 
 void calibratePigeon() {
   pigeon.SetAccumZAngle(0);
-  pigeon.SetCompassAngle(0);
+  pigeon.SetCompassAngle(0.0);
   pigeon.SetCompassDeclination(0);
   pigeon.SetFusedHeading(0);
   pigeon.SetFusedHeadingToCompass(0);
   pigeon.SetYaw(0);
   pigeon.SetYawToCompass(0);
-  pigeon.EnterCalibrationMode(ctre::phoenix::sensors::PigeonIMU::CalibrationMode::Accelerometer);
 }
 
 void Robot::RobotInit() {
@@ -152,9 +132,9 @@ void Robot::RobotInit() {
   camera0.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
   camera1.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
   frc::CameraServer::GetInstance()->StartAutomaticCapture();
-  // m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
-  // m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
-  // frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
+  m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
+  m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
+  frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
   frc::SmartDashboard::PutNumber("Timer", timer.Get());
   // compressor.SetClosedLoopControl(true);
   // compressor.Start();
@@ -164,29 +144,78 @@ void Robot::RobotInit() {
   // m_led.SetLength(kLength);
   // m_led.SetData(m_ledBuffer);
   // m_led.Start();
+  frontLeft->SetSelectedSensorPosition(0.0);
+  backLeft->SetSelectedSensorPosition(0.0);
+  frontRight->SetSelectedSensorPosition(0.0);
+  backRight->SetSelectedSensorPosition(0.0);
 }
 
 void Robot::RobotPeriodic() {
-  frc2::CommandScheduler::GetInstance().Run();
+  frc::SmartDashboard::PutNumber("Timer", timer.Get());
+  frc::SmartDashboard::PutNumber("FrontLeft Distance: ", (double)frontLeft->GetSelectedSensorPosition()/6612.5);
+  frc::SmartDashboard::PutNumber("FrontRight Distance: ", (double)frontRight->GetSelectedSensorPosition()/6612.5);
+  frc::SmartDashboard::PutNumber("Backleft Distance: ", (double)backLeft->GetSelectedSensorPosition()/6612.5);
+  frc::SmartDashboard::PutNumber("Backright Distance: ", (double)backRight->GetSelectedSensorPosition()/6612.5);
+  frc::SmartDashboard::PutNumber("FrontLeft Velocity: ", (double)frontLeft->GetSelectedSensorVelocity()/6612.5);
+  frc::SmartDashboard::PutNumber("FrontRight Velocity: ", (double)frontRight->GetSelectedSensorVelocity()/6612.5);
+  frc::SmartDashboard::PutNumber("Backleft Velocity: ", (double)backLeft->GetSelectedSensorVelocity()/6612.5);
+  frc::SmartDashboard::PutNumber("Backright Velocity: ", (double)backRight->GetSelectedSensorVelocity()/6612.5);
+  frc::SmartDashboard::PutNumber("Heading: ",pigeon.GetAbsoluteCompassHeading());
   // Rainbow();
   // m_led.SetData(m_ledBuffer);
 }
 
 void Robot::AutonomousInit() {
-  // timer.Reset();
-  // timer.Start();
-  // shootTimer.Reset();
-  // // outtake.Set(1.0);
-  // ballStorage.Set(frc::DoubleSolenoid::Value::kOff);
-  // calibratePigeon();
-  m_autonomousCommand = m_container.GetAutonomousCommand();
-
-  if (m_autonomousCommand != nullptr) {
-    m_autonomousCommand->Schedule();
-  }
+  timer.Reset();
+  timer.Start();
+  shootTimer.Reset();
+  // outtake.Set(1.0);
+  ballStorage.Set(frc::DoubleSolenoid::Value::kOff);
+  calibratePigeon();
+  currentTime = 0;
+  prevTime = 0;
 }
 
 void Robot::AutonomousPeriodic() {
+  avgDist = ((double)frontLeft->GetSelectedSensorPosition()*-1+(double)backLeft->GetSelectedSensorPosition()*-1+(double)frontRight->GetSelectedSensorPosition()+(double)backRight->GetSelectedSensorPosition())/4.0;
+  avgDist /= 6612.5;
+  frc::SmartDashboard::PutNumber("Timer", timer.Get());
+  frc::SmartDashboard::PutNumber("Average Distance", avgDist);
+  frc::SmartDashboard::PutNumber("Stage Time: ", currentTime-prevTime);
+  frc::SmartDashboard::PutNumber("Stage: ", stage+1);
+  currentTime = timer.Get();
+  if (stage == 0) {
+    if (avgDist < 2.5) {
+      speed = -logf(currentTime-prevTime)/10.0;
+      maxTime = currentTime - prevTime;
+      maxSpeed = speed;
+    }
+    else {
+      speed = maxSpeed + logf(currentTime-prevTime-maxTime)/10.0;
+    }
+    myRobot.ArcadeDrive(speed, 0.0);
+    if (avgDist >= 5.0) {stage++; prevTime = currentTime;}
+  }
+  else if (stage == 1) {
+    myRobot.ArcadeDrive(0.0, 0.0);
+    if (currentTime-prevTime >= 2.0) {stage++; prevTime = currentTime;}
+  }
+  else if (stage == 2) {
+    if (avgDist > 2.5) {
+      speed = logf(currentTime-prevTime)/10.0;
+      maxTime = currentTime - prevTime;
+      maxSpeed = speed;
+    }
+    else {
+      speed = maxSpeed + logf(currentTime-prevTime-maxTime)/10.0;
+    }
+    myRobot.ArcadeDrive(speed, 0.0);
+    if (avgDist <= 0.0) {stage++; prevTime = currentTime;}
+  }
+  else if (stage == 3) {
+    myRobot.ArcadeDrive(0.0, 0.0);
+    if (currentTime-prevTime >= 2.0) {stage = 0; prevTime = currentTime;}
+  }
   // turn = -trueMap(pigeon.GetAbsoluteCompassHeading()-180, 180, -180, 1.0, -1.0); //set the robot to turn against the strafe
   // if(timer.Get() < 0.2) {
   //   myRobot.ArcadeDrive(timer.Get() * 5, turn);
@@ -224,23 +253,27 @@ void Robot::AutonomousPeriodic() {
 }
 
 void Robot::TeleopInit() {
+  frontLeft->SetSelectedSensorPosition(0.0);
+  backLeft->SetSelectedSensorPosition(0.0);
+  frontRight->SetSelectedSensorPosition(0.0);
+  backRight->SetSelectedSensorPosition(0.0);
   timer.Reset();
   timer.Start();
   shootTimer.Reset();
-  turn = 0;
-  speed = 0;
+  turn = 0.0;
+  speed = 0.0;
   //sensitivity = -two.GetRawAxis(1);
   ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 no go nyoo
   compressor->Start();
   ballStorage.Set(frc::DoubleSolenoid::Value::kReverse);
-  if (m_autonomousCommand != nullptr) {
-    m_autonomousCommand->Cancel();
-    m_autonomousCommand = nullptr;
-  }
+  calibratePigeon();
 }
 
 void Robot::TeleopPeriodic() {
-
+  pigeon.GetAccumGyro(xyz);
+  frc::SmartDashboard::PutNumber("Heading x: ", xyz[0]);
+  frc::SmartDashboard::PutNumber("Heading y: ", xyz[1]);
+  frc::SmartDashboard::PutNumber("Heading z: ", xyz[2]);
   compressor->SetClosedLoopControl(true);
   //increase sensitivity with the right bumper
   /*
@@ -423,7 +456,24 @@ void Robot::TeleopPeriodic() {
   tilt.Set(trueMap(two.GetRawAxis(1),-1,1,1,0));
 }
 
-void Robot::TestPeriodic() {}
+void Robot::TestPeriodic() {
+  // avgDist = ((double)frontLeft->GetSelectedSensorPosition()+(double)backLeft->GetSelectedSensorPosition()+(double)frontRight->GetSelectedSensorPosition()+(double)backRight->GetSelectedSensorPosition())/4.0;
+  // frc::SmartDashboard::PutNumber("Timer", timer.Get());
+  // frc::SmartDashboard::PutNumber("Average Distance", avgDist);
+  // frc::SmartDashboard::PutNumber("Stage Time: ", currentTime-prevTime);
+  // currentTime = timer.Get();
+  // if (stage % 3 == 0) {
+  //   myRobot.ArcadeDrive(0.2, 0.0);
+  //   if (avgDist >= 5.0) {stage++; prevTime = currentTime;}
+  // }
+  // else if (stage % 3 == 1) {
+  //   if (currentTime-prevTime >= 2.0) {stage++; prevTime = currentTime;}
+  // }
+  // else if (stage % 3 == 2) {
+  //   myRobot.ArcadeDrive(-0.2, 0.0);
+  //   if (avgDist <= 0.0) {stage = 0; prevTime = currentTime;}
+  // }
+}
 
 #ifndef RUNNING_FRC_TESTS
 int main() { return frc::StartRobot<Robot>(); }

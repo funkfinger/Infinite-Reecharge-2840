@@ -16,15 +16,7 @@
 #include <frc/trajectory/TrajectoryUtil.h>
 #include <wpi/Path.h>
 #include <wpi/SmallString.h>
-#include <RobotContainer.h>
 
-class dDirectory {
-  public:
-    wpi::SmallString<64> *tempDirect;
-    frc::Trajectory trajectory;
-    dDirectory();
-    frc::Trajectory returnTrajectory();
-};
 class Robot : public frc::TimedRobot {
  public:
   void RobotInit() override;
@@ -40,7 +32,4 @@ class Robot : public frc::TimedRobot {
   // const std::string kAutoNameDefault = "Default";
   // const std::string kAutoNameCustom = "My Auto";
   // std::string m_autoSelected;
-  frc2::Command* m_autonomousCommand = nullptr;
-
-  RobotContainer m_container;
 };
