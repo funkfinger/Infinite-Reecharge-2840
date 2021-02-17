@@ -139,9 +139,9 @@ void Robot::RobotInit() {
   camera0.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
   camera1.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
   frc::CameraServer::GetInstance()->StartAutomaticCapture();
-  m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
-  m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
-  frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
+  // m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
+  // m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
+  // frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
   frc::SmartDashboard::PutNumber("Timer", timer.Get());
   // compressor.SetClosedLoopControl(true);
   // compressor.Start();
@@ -186,7 +186,7 @@ void Robot::AutonomousInit() {
 }
 
 void Robot::AutonomousPeriodic() {
-  avgDist = ((double)frontLeft->GetSelectedSensorPosition()*-1+(double)backLeft->GetSelectedSensorPosition()*-1+(double)frontRight->GetSelectedSensorPosition()+(double)backRight->GetSelectedSensorPosition())/4.0;
+  avgDist = (-(double)frontLeft->GetSelectedSensorPosition()-(double)backLeft->GetSelectedSensorPosition()+(double)frontRight->GetSelectedSensorPosition()+(double)backRight->GetSelectedSensorPosition())/4.0;
   avgDist /= 6612.5;
   frc::SmartDashboard::PutNumber("Timer", timer.Get());
   frc::SmartDashboard::PutNumber("Average Distance", avgDist);
