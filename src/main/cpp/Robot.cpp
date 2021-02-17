@@ -107,6 +107,13 @@ static constexpr int kLength = 278;
 //   firstPixelHue %= 180;
 // }
 
+void resetEncoders() {
+  frontLeft->SetSelectedSensorPosition(0);
+  backLeft->SetSelectedSensorPosition(0);
+  frontRight->SetSelectedSensorPosition(0);
+  backRight->SetSelectedSensorPosition(0);
+}
+
 double trueMap(double val, double valHigh, double valLow, double newHigh, double newLow)
 {
 	double midVal = ((valHigh - valLow) / 2) + valLow;
@@ -151,6 +158,7 @@ void Robot::RobotInit() {
 }
 
 void Robot::RobotPeriodic() {
+  pigeon.GetAccumGyro(xyz);
   frc::SmartDashboard::PutNumber("Timer", timer.Get());
   frc::SmartDashboard::PutNumber("FrontLeft Distance: ", (double)frontLeft->GetSelectedSensorPosition()/6612.5);
   frc::SmartDashboard::PutNumber("FrontRight Distance: ", (double)frontRight->GetSelectedSensorPosition()/6612.5);
@@ -174,6 +182,7 @@ void Robot::AutonomousInit() {
   calibratePigeon();
   currentTime = 0;
   prevTime = 0;
+  stage = 0;
 }
 
 void Robot::AutonomousPeriodic() {
@@ -184,38 +193,93 @@ void Robot::AutonomousPeriodic() {
   frc::SmartDashboard::PutNumber("Stage Time: ", currentTime-prevTime);
   frc::SmartDashboard::PutNumber("Stage: ", stage+1);
   currentTime = timer.Get();
-  if (stage == 0) {
-    if (avgDist < 2.5) {
-      speed = -logf(currentTime-prevTime)/10.0;
-      maxTime = currentTime - prevTime;
-      maxSpeed = speed;
-    }
-    else {
-      speed = maxSpeed + logf(currentTime-prevTime-maxTime)/10.0;
-    }
-    myRobot.ArcadeDrive(speed, 0.0);
-    if (avgDist >= 5.0) {stage++; prevTime = currentTime;}
+  myRobot.ArcadeDrive(speed, turn);
+  if (stage == 0) {//arrives at position 2
+    myRobot.ArcadeDrive(1.0, 0.0);
+    if (avgDist >= 10.0) {stage++; prevTime = currentTime; resetEncoders();}
   }
   else if (stage == 1) {
-    myRobot.ArcadeDrive(0.0, 0.0);
-    if (currentTime-prevTime >= 2.0) {stage++; prevTime = currentTime;}
+    myRobot.ArcadeDrive(0.0, 0.7);
+    if ((int)xyz[2] % 360 >= 90.0) {stage++; prevTime = currentTime; resetEncoders();}
   }
-  else if (stage == 2) {
-    if (avgDist > 2.5) {
-      speed = logf(currentTime-prevTime)/10.0;
-      maxTime = currentTime - prevTime;
-      maxSpeed = speed;
-    }
-    else {
-      speed = maxSpeed + logf(currentTime-prevTime-maxTime)/10.0;
-    }
-    myRobot.ArcadeDrive(speed, 0.0);
-    if (avgDist <= 0.0) {stage++; prevTime = currentTime;}
+  else if (stage == 2) {//arrives at position 3
+    myRobot.ArcadeDrive(1.0, 0.0);
+    if (avgDist >= 4.75) {stage++; prevTime = currentTime; resetEncoders();}
   }
   else if (stage == 3) {
-    myRobot.ArcadeDrive(0.0, 0.0);
-    if (currentTime-prevTime >= 2.0) {stage = 0; prevTime = currentTime;}
+    myRobot.ArcadeDrive(0.0, 0.7);
+    if ((int)xyz[2] % 360 >= 180) {stage++; prevTime = currentTime; resetEncoders();}
   }
+  else if (stage == 4) {//arrives at position 4
+    myRobot.ArcadeDrive(1.0, 0.0);
+    if (avgDist >= 2.5) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 5) {
+    myRobot.ArcadeDrive(0.0, 0.7);
+    if ((int)xyz[2] % 360 >= 270) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 6) {//arrives at position 5
+    myRobot.ArcadeDrive(1.0, 0.0);
+    if (avgDist >= 2.5) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 7) {
+    myRobot.ArcadeDrive(0.0, 0.7);
+    if ((int)xyz[2] % 360 <= 10) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 8) {//arrives at position 6
+    myRobot.ArcadeDrive(1.0, 0.0);
+    if (avgDist >= 9.75) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 9) {
+    myRobot.ArcadeDrive(0.0, -0.7);
+    if ((int)xyz[2] % 360 <= 270 && (int)xyz[2] % 360 >= 90) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 10) {//arrives at position 7
+    myRobot.ArcadeDrive(1.0, 0.0);
+    if (avgDist >= 4.25) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 11) {
+    myRobot.ArcadeDrive(0.0, -0.7);
+    if ((int)xyz[2] % 360 <= 180) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 12) {//arrives at position 8
+    myRobot.ArcadeDrive(1.0, 0.0);
+    if (avgDist >= 2.5) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 13) {
+    myRobot.ArcadeDrive(0.0, -0.7);
+    if ((int)xyz[2] % 360 <= 90) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 14) {//arrives at position 9
+    myRobot.ArcadeDrive(1.0, 0.0);
+    if (avgDist >= 7.25) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 15) {
+    myRobot.ArcadeDrive(0.0, -0.7);
+    if ((int)xyz[2] % 360 >= 270) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 16) {//arrives at position 10
+    myRobot.ArcadeDrive(1.0, 0.0);
+    if (avgDist >= 7.5) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 17) {
+    myRobot.ArcadeDrive(0.0, -0.7);
+    if ((int)xyz[2] % 360 >= 270) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 18) {//arrives at position 11
+    myRobot.ArcadeDrive(1.0, 0.0);
+    if (avgDist >= 2.5) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 19) {
+    myRobot.ArcadeDrive(0.0, -0.7);
+    if ((int)xyz[2] % 360 <= 180) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+  else if (stage == 20) {
+    myRobot.ArcadeDrive(1.0, 0.0);
+    if (avgDist > 30) {stage++; prevTime = currentTime; resetEncoders();}
+  }
+
+
   // turn = -trueMap(pigeon.GetAbsoluteCompassHeading()-180, 180, -180, 1.0, -1.0); //set the robot to turn against the strafe
   // if(timer.Get() < 0.2) {
   //   myRobot.ArcadeDrive(timer.Get() * 5, turn);
@@ -270,7 +334,6 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
-  pigeon.GetAccumGyro(xyz);
   frc::SmartDashboard::PutNumber("Heading x: ", xyz[0]);
   frc::SmartDashboard::PutNumber("Heading y: ", xyz[1]);
   frc::SmartDashboard::PutNumber("Heading z: ", xyz[2]);
