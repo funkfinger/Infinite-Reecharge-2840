@@ -50,7 +50,7 @@ cs::UsbCamera camera1;
 cs::VideoSink server;
 frc::Joystick one{0}, two{1};
 //rev::SparkMax intake{4}, outtake{5};
-rev::SparkMax top{5}, intake{4};
+rev::SparkMax top{5}, intake{4}, bottom{8};
 frc::Servo pan{6},tilt{7};
 int stage = 0;
 double xyz[] = {0.0, 0.0, 0.0};
@@ -60,7 +60,7 @@ ctre::phoenix::motorcontrol::can::WPI_TalonFX *frontLeft = new ctre::phoenix::mo
 ctre::phoenix::motorcontrol::can::WPI_TalonFX *frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(1);
 ctre::phoenix::motorcontrol::can::WPI_TalonFX *backLeft= new ctre::phoenix::motorcontrol::can::WPI_TalonFX(3);
 ctre::phoenix::motorcontrol::can::WPI_TalonFX *backRight = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(0);
-ctre::phoenix::motorcontrol::can::TalonSRX *bottom = new ctre::phoenix::motorcontrol::can::TalonSRX(10);
+ctre::phoenix::motorcontrol::can::TalonSRX *talon = new ctre::phoenix::motorcontrol::can::TalonSRX(10);
 
 //ctre::phoenix::motorcontrol::can::WPI_TalonFX::WPI_TalonFX * frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonFX::WPI_TalonFX(1);
 // WPI_TalonFX * _rghtFollower = new WPI_TalonFX(3);
@@ -73,10 +73,10 @@ frc::Timer timer, shootTimer;
 
 //frc::SendableChooser autoChoice;
 frc::Solenoid ballUnstuck{0};
-frc::DoubleSolenoid ballIn{1, 2}, ballStorage{3, 7};
+frc::DoubleSolenoid ballIn{3, 7}, ballStorage{2, 1};
 frc::Compressor *compressor = new frc::Compressor(0);
 
-ctre::phoenix::sensors::PigeonIMU pigeon{bottom};
+ctre::phoenix::sensors::PigeonIMU pigeon{talon};
 //0.65 is the ideal sensitivity
 double speed = 0.0, turn = 0.0, sensitivity = 1.0, turnKey, avgDist = 0.0, currentTime = 0.0, prevTime = 0.0, maxTime = 0, maxSpeed = 0;
 bool isUpPressed, isDownPressed;
@@ -185,6 +185,19 @@ void Robot::AutonomousInit() {
   stage = 0;
 }
 
+int heading() {
+  int z = (int)xyz[2];
+  if (z > 0) {
+    return (z % 360);
+  }
+  else {
+    while (z < 0) {
+      z = z + 360;
+    }
+    return (z % 360);
+  }
+}
+
 void Robot::AutonomousPeriodic() {
   avgDist = (-(double)frontLeft->GetSelectedSensorPosition()-(double)backLeft->GetSelectedSensorPosition()+(double)frontRight->GetSelectedSensorPosition()+(double)backRight->GetSelectedSensorPosition())/4.0;
   avgDist /= 6612.5;
@@ -193,91 +206,115 @@ void Robot::AutonomousPeriodic() {
   frc::SmartDashboard::PutNumber("Stage Time: ", currentTime-prevTime);
   frc::SmartDashboard::PutNumber("Stage: ", stage+1);
   currentTime = timer.Get();
-  myRobot.ArcadeDrive(speed, turn);
-  if (stage == 0) {//arrives at position 2
-    myRobot.ArcadeDrive(1.0, 0.0);
-    if (avgDist >= 10.0) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 1) {
-    myRobot.ArcadeDrive(0.0, 0.7);
-    if ((int)xyz[2] % 360 >= 90.0) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 2) {//arrives at position 3
-    myRobot.ArcadeDrive(1.0, 0.0);
-    if (avgDist >= 4.75) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 3) {
-    myRobot.ArcadeDrive(0.0, 0.7);
-    if ((int)xyz[2] % 360 >= 180) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 4) {//arrives at position 4
-    myRobot.ArcadeDrive(1.0, 0.0);
-    if (avgDist >= 2.5) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 5) {
-    myRobot.ArcadeDrive(0.0, 0.7);
-    if ((int)xyz[2] % 360 >= 270) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 6) {//arrives at position 5
-    myRobot.ArcadeDrive(1.0, 0.0);
-    if (avgDist >= 2.5) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 7) {
-    myRobot.ArcadeDrive(0.0, 0.7);
-    if ((int)xyz[2] % 360 <= 10) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 8) {//arrives at position 6
-    myRobot.ArcadeDrive(1.0, 0.0);
-    if (avgDist >= 9.75) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 9) {
-    myRobot.ArcadeDrive(0.0, -0.7);
-    if ((int)xyz[2] % 360 <= 270 && (int)xyz[2] % 360 >= 90) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 10) {//arrives at position 7
-    myRobot.ArcadeDrive(1.0, 0.0);
-    if (avgDist >= 4.25) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 11) {
-    myRobot.ArcadeDrive(0.0, -0.7);
-    if ((int)xyz[2] % 360 <= 180) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 12) {//arrives at position 8
-    myRobot.ArcadeDrive(1.0, 0.0);
-    if (avgDist >= 2.5) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 13) {
-    myRobot.ArcadeDrive(0.0, -0.7);
-    if ((int)xyz[2] % 360 <= 90) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 14) {//arrives at position 9
-    myRobot.ArcadeDrive(1.0, 0.0);
-    if (avgDist >= 7.25) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 15) {
-    myRobot.ArcadeDrive(0.0, -0.7);
-    if ((int)xyz[2] % 360 >= 270) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 16) {//arrives at position 10
-    myRobot.ArcadeDrive(1.0, 0.0);
-    if (avgDist >= 7.5) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 17) {
-    myRobot.ArcadeDrive(0.0, -0.7);
-    if ((int)xyz[2] % 360 >= 270) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 18) {//arrives at position 11
-    myRobot.ArcadeDrive(1.0, 0.0);
-    if (avgDist >= 2.5) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 19) {
-    myRobot.ArcadeDrive(0.0, -0.7);
-    if ((int)xyz[2] % 360 <= 180) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 20) {
-    myRobot.ArcadeDrive(1.0, 0.0);
-    if (avgDist > 30) {stage++; prevTime = currentTime; resetEncoders();}
-  }
+  
+
+  //The following is the auto for the first Obstacle Course.
+  //Uncomment it only when you're about to use it, then comment it out again.
+  // if (stage == 0) {//arrives at position 2
+  //   myRobot.ArcadeDrive(1.0, 0.0);
+  //   if (avgDist >= 10.0) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 1) {
+  //   myRobot.ArcadeDrive(0.0, 0.7);
+  //   if ((int)xyz[2] % 360 >= 90.0) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 2) {//arrives at position 3
+  //   myRobot.ArcadeDrive(1.0, 0.0);
+  //   if (avgDist >= 4.75) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 3) {
+  //   myRobot.ArcadeDrive(0.0, 0.7);
+  //   if ((int)xyz[2] % 360 >= 180) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 4) {//arrives at position 4
+  //   myRobot.ArcadeDrive(1.0, 0.0);
+  //   if (avgDist >= 2.5) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 5) {
+  //   myRobot.ArcadeDrive(0.0, 0.7);
+  //   if ((int)xyz[2] % 360 >= 270) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 6) {//arrives at position 5
+  //   myRobot.ArcadeDrive(1.0, 0.0);
+  //   if (avgDist >= 2.5) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 7) {
+  //   myRobot.ArcadeDrive(0.0, 0.7);
+  //   if ((int)xyz[2] % 360 <= 10) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 8) {//arrives at position 6
+  //   myRobot.ArcadeDrive(1.0, 0.0);
+  //   if (avgDist >= 9.75) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 9) {
+  //   myRobot.ArcadeDrive(0.0, -0.7);
+  //   if ((int)xyz[2] % 360 <= 270 && (int)xyz[2] % 360 >= 90) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 10) {//arrives at position 7
+  //   myRobot.ArcadeDrive(1.0, 0.0);
+  //   if (avgDist >= 4.25) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 11) {
+  //   myRobot.ArcadeDrive(0.0, -0.7);
+  //   if ((int)xyz[2] % 360 <= 180) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 12) {//arrives at position 8
+  //   myRobot.ArcadeDrive(1.0, 0.0);
+  //   if (avgDist >= 2.5) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 13) {
+  //   myRobot.ArcadeDrive(0.0, -0.7);
+  //   if ((int)xyz[2] % 360 <= 90) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 14) {//arrives at position 9
+  //   myRobot.ArcadeDrive(1.0, 0.0);
+  //   if (avgDist >= 7.25) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 15) {
+  //   myRobot.ArcadeDrive(0.0, -0.7);
+  //   if ((int)xyz[2] % 360 >= 270) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 16) {//arrives at position 10
+  //   myRobot.ArcadeDrive(1.0, 0.0);
+  //   if (avgDist >= 7.5) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 17) {
+  //   myRobot.ArcadeDrive(0.0, -0.7);
+  //   if ((int)xyz[2] % 360 >= 270) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 18) {//arrives at position 11
+  //   myRobot.ArcadeDrive(1.0, 0.0);
+  //   if (avgDist >= 2.5) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 19) {
+  //   myRobot.ArcadeDrive(0.0, -0.7);
+  //   if ((int)xyz[2] % 360 <= 180) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 20) {
+  //   myRobot.ArcadeDrive(1.0, 0.0);
+  //   if (avgDist > 30) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+
+
+
+  //The following is the auto for the second Obstacle Course.
+  //Uncomment it only when you're about to use it, then comment it out again.
+  // if (stage == 0) {
+  //   myRobot.ArcadeDrive(0.0, 0.7); //turn left 30 degrees
+  //   if (heading() >= 30) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 1) {
+  //   myRobot.ArcadeDrive(1.0, 0.0);
+  //   if (avgDist >= 5.15) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 2) {
+  //   myRobot.ArcadeDrive(0.0, -0.7);
+  //   if (heading() >= 270) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 3) {
+  //   myRobot.ArcadeDrive(1.0, 0,0);
+  //   if (avgDist >= 12.607) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
 
 
   // turn = -trueMap(pigeon.GetAbsoluteCompassHeading()-180, 180, -180, 1.0, -1.0); //set the robot to turn against the strafe
@@ -351,10 +388,16 @@ void Robot::TeleopPeriodic() {
     piston1.Set(false);
   }
   */
+ if (one.GetRawButton(8)) {
+   ballStorage.Set(frc::DoubleSolenoid::Value::kForward);
+ }
+ else {
+   ballStorage.Set(frc::DoubleSolenoid::Value::kReverse);
+ }
 
  if(one.GetRawAxis(3)>0.1){
    intake.Set(0.4);
- }else if(one.GetRawButton(1)){
+ }else if(one.GetRawAxis(2)>0.1){
    intake.Set(-1.0);
  }else{
    intake.Set(0.0);
@@ -397,51 +440,32 @@ void Robot::TeleopPeriodic() {
 
   if (one.GetRawButton(2)) {
     top.Set(-0.9);
-    bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, -0.85);
+    bottom.Set(0.85);
   }
   else if (!one.GetRawButton(2)&&one.GetRawButton(3)) {
     top.Set(-0.68);
-    bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, -0.63);
+    bottom.Set(0.63);
   }
   else if (!one.GetRawButton(2)&&!one.GetRawButton(3)&&one.GetRawButton(4)) {
     top.Set(-1.0);
-    bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, -1.0);
+    bottom.Set(1.0);
   }
   else if (!one.GetRawButton(2) && !one.GetRawButton(3)&&!one.GetRawButton(4)) {
     top.Set(0.0);
-    bottom->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
+    bottom.Set(0.0);
   }
   
-  // if(one.GetRawButton(5)) {
-  //   in.Set(1.0);
-  //   out->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput,0.0);
-  //   //ballIn.Set(frc::DoubleSolenoid::Value::kForward);//piston1 go 
-  // }
-  // else if (!one.GetRawButton(5)&&one.GetRawButton(6)) {
-  //   in.Set(0.0);
-  //   out->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 1.0);
-  //   //ballIn.Set(frc::DoubleSolenoid::Value::kReverse);//piston1 go shwoop
-  // }
-  // else if (!one.GetRawButton(6)&&!one.GetRawButton(5)){
-  //   in.Set(0.0);
-  //   out->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
-  //   //ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 stop
-  // }
-/*
-  if(one.GetRawButton(4)) {
-    rightArm.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoom
-    leftArm.Set(DoubleSolenoid::Value::kForward);//piston1 go nyoom
+  if(one.GetRawButton(6)) {
+    ballIn.Set(frc::DoubleSolenoid::Value::kForward);//piston1 go 
   }
-  else if (one.GetRawButton(5)) {
-    rightArm.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
-    leftArm.Set(DoubleSolenoid::Value::kReverse);//piston1 go shwoop
+  else if (!one.GetRawButton(6)&&one.GetRawButton(5)) {
+    ballIn.Set(frc::DoubleSolenoid::Value::kReverse);//piston1 go shwoop
   }
-  else{
-    rightArm.Set(DoubleSolenoid::Value::kOff);//piston1 stop
-    leftArm.Set(DoubleSolenoid::Value::kOff);//piston1 stop
+  else if (!one.GetRawButton(6)&&!one.GetRawButton(5)){
+    ballIn.Set(frc::DoubleSolenoid::Value::kOff);//piston1 stop
   }
-  sensitivity = -two.GetRawAxis(1);
-  */
+  //sensitivity = -two.GetRawAxis(1);
+  
   /*
   if (stick.GetRawButton(9) && sensitivity < 1.0) {
     sensitivity += 0.01;
