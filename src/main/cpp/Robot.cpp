@@ -62,11 +62,6 @@ ctre::phoenix::motorcontrol::can::WPI_TalonFX *backLeft= new ctre::phoenix::moto
 ctre::phoenix::motorcontrol::can::WPI_TalonFX *backRight = new ctre::phoenix::motorcontrol::can::WPI_TalonFX(0);
 ctre::phoenix::motorcontrol::can::TalonSRX *talon = new ctre::phoenix::motorcontrol::can::TalonSRX(10);
 
-//ctre::phoenix::motorcontrol::can::WPI_TalonFX::WPI_TalonFX * frontRight = new ctre::phoenix::motorcontrol::can::WPI_TalonFX::WPI_TalonFX(1);
-// WPI_TalonFX * _rghtFollower = new WPI_TalonFX(3);
-// WPI_TalonFX * _leftFront = new WPI_TalonFX(2);
-// WPI_TalonFX * _leftFollower = new WPI_TalonFX(4);
-//ctre::phoenix::motorcontrol::can::VictorSPX frontLeft{2}, frontRight{1}, backLeft{3}, backRight{0}, panel{10};
 frc::RobotDrive myRobot{*frontLeft, *backLeft, *frontRight, *backRight};
 frc::Timer timer, shootTimer;
 
@@ -143,8 +138,6 @@ void Robot::RobotInit() {
   // m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
   // frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
   frc::SmartDashboard::PutNumber("Timer", timer.Get());
-  // compressor.SetClosedLoopControl(true);
-  // compressor.Start();
   timer.Reset();
   timer.Start();
   calibratePigeon();
@@ -212,6 +205,7 @@ void Robot::AutonomousPeriodic() {
   //The following is the auto for the first Obstacle Course.
   //Uncomment it only when you're about to use it, then comment it out again.
   //Start at (3.625, 8.875) with heading 0
+  /*
   if (stage == 0) {//arrives at position 2 (14.125, 8.875) with heading 0
     myRobot.ArcadeDrive(0.5, 0.0);
     if (avgDist >= 10.5) {stage++; prevTime = currentTime; resetEncoders();}
@@ -296,7 +290,7 @@ void Robot::AutonomousPeriodic() {
     myRobot.ArcadeDrive(0.5, 0.0);
     if (avgDist > 30) {stage++; prevTime = currentTime; resetEncoders();}
   }
-
+*/
 
 
   // The following is the auto for the second Obstacle Course.
@@ -374,42 +368,6 @@ void Robot::AutonomousPeriodic() {
   //   myRobot.ArcadeDrive(-1.0, 0.0);
   //   if (avgDist >= 9) {stage++; prevTime = currentTime; resetEncoders();}
   // }
-
-
-  // turn = -trueMap(pigeon.GetAbsoluteCompassHeading()-180, 180, -180, 1.0, -1.0); //set the robot to turn against the strafe
-  // if(timer.Get() < 0.2) {
-  //   myRobot.ArcadeDrive(timer.Get() * 5, turn);
-  // }
-  // else if(timer.Get() < 4) {
-  //   ballStorage.Set(frc::DoubleSolenoid::Value::kForward);
-  //   myRobot.ArcadeDrive(1.0, turn);
-  // }
-  // else if(timer.Get() < 5) {
-  //   myRobot.ArcadeDrive(0.5, 0.5 + turn);
-  // }
-  // else if(timer.Get() < 6) {
-  //   myRobot.ArcadeDrive(0.5, turn - 0.5);
-  // }
-  // else if(timer.Get() < 8) {
-  //   myRobot.ArcadeDrive(0.8, turn);
-  //   pigeon.GetBiasedAccelerometer(accel);
-  //   if (accel[0] == 0 && accel[1] == 0) {
-  //     myRobot.ArcadeDrive(0.0, 0.0);
-  //   }
-  // }
-  // else if(timer.Get() < 9.5) {
-  //   myRobot.ArcadeDrive(0.0, turn);
-  //   shootTimer.Start();
-  //   outtake.Set(-1);
-  //   if(shootTimer.Get() < 0.2) {
-  //     ballStorage.Set(false);
-  //   }
-  // }
-  // else if(timer.Get() < 11) {
-  //   outtake.Set(0);
-  //   ballStorage.Set(true);
-  //   myRobot.ArcadeDrive(-0.8, turn);
-  // }
 }
 
 void Robot::TeleopInit() {
@@ -435,25 +393,13 @@ void Robot::TeleopPeriodic() {
   frc::SmartDashboard::PutNumber("Heading z: ", xyz[2]);
   compressor->SetClosedLoopControl(true);
   //increase sensitivity with the right bumper
-  /*
-  piston.Set(true); makes the piston go
-  piston.Set(false); makes the piston not go
-  */
  //In order to go backwards do piston.Set(DoubleSolenoid::Value::kReverse);
- /*if(stick.GetRawButton(3)) {
-    piston1.Set(true);
-  }
-  else{
-    piston1.Set(false);
-  }
-  */
  if (one.GetRawButton(8)) {
    ballStorage.Set(frc::DoubleSolenoid::Value::kForward);
  }
  else {
    ballStorage.Set(frc::DoubleSolenoid::Value::kReverse);
  }
-
  if(one.GetRawAxis(3)>0.1){
    intake.Set(0.4);
  }else if(one.GetRawAxis(2)>0.1){
@@ -471,22 +417,6 @@ void Robot::TeleopPeriodic() {
 
  double outtakeSpeed = -1.0;
 
-//  if(one.GetRawAxis(2)>0.1){
-//    shootTimer.Start();
-//    outtake.Set(outtakeSpeed);
-//    if (shootTimer.Get() > .75) {
-//      ballStorage.Set(false);
-//    }
-//  }
-//  else if(one.GetRawButton(2)){
-//    outtake.Set(-outtakeSpeed);
-//    ballStorage.Set(false);
-//  }
-//  else if (!(one.GetRawAxis(2)>0.1)&&!one.GetRawButton(3)){
-//    outtake.Set(0);
-//    ballStorage.Set(true);
-//    shootTimer.Reset();
-//  }
   // if (one.GetRawButton(3)) {
   //   ballStorage.Set(frc::DoubleSolenoid::Value::kForward);
   // }
@@ -526,54 +456,8 @@ void Robot::TeleopPeriodic() {
   //sensitivity = -two.GetRawAxis(1);
   
   /*
-  if (stick.GetRawButton(9) && sensitivity < 1.0) {
-    sensitivity += 0.01;
-  }
-  else if (stick.GetRawButton(9)) {
-    sensitivity += 0;
-  } 
-  else if (stick.GetRawButton(8) && sensitivity > 0.0) {
-    sensitivity -= 0.01;
-  }
-  else if (stick.GetRawButton(8)) {
-    sensitivity -= 0;
-  }
-  else {
-    sensitivity = sensitivity;
-  }
-  if (sensitivity >= 1.0) {
-    sensitivity = 1.0;
-  }
-  else if (sensitivity <= 0) {
-    sensitivity = 0.0;
-  }
-  else {}
-  
-  
-    //wheel.Set(0.3);
-    //Solenoid.Set
-  
-  //turn with bumpers, too jittery
-  /*if(stick.GetRawButton(7)){
-     turn = (-1 * sensitivity);
-  } else if(stick.GetRawButton(8)){
-     turn = (1 * sensitivity);
-  } else{
-    turn = 0;
-  }
-  */
+
  //sensitivity = one.GetRawAxis(2);
-  /*if(one.GetRawAxis(0)>0.2||one.GetRawAxis(0)<-0.2){
-			tN=one.GetRawAxis(0);
-		}else{
-      tN=0;
-    }
-  if(one.GetRawAxis(1)>0.2||one.GetRawAxis(1)<-0.2){
-			sP=one.GetRawAxis(1);
-  }else{
-    sP=0;
-  }
-  */
 //  if (one.GetPOV(0) && sensitivity < 1.0) {
 //    sensitivity += 0.01;
 //  }
@@ -588,38 +472,14 @@ void Robot::TeleopPeriodic() {
 //  }
   speed = one.GetRawAxis(1);
   turn = one.GetRawAxis(4);
-  /*
-  if (speed >= 0) {
-    turn = ((tN * sensitivity)+(speed/4))+0.1;
-  }
-  else {
-    turn = ((tN*sensitivity)-(speed/4))+0.15;
-  }
-  */
-  myRobot.ArcadeDrive(speed*sensitivity, turn*sensitivity);
 
+  myRobot.ArcadeDrive(speed*sensitivity, turn*sensitivity);
+*/
   pan.Set(trueMap(two.GetRawAxis(0),1,-1,1,0));
   tilt.Set(trueMap(two.GetRawAxis(1),-1,1,1,0));
 }
 
-void Robot::TestPeriodic() {
-  // avgDist = ((double)frontLeft->GetSelectedSensorPosition()+(double)backLeft->GetSelectedSensorPosition()+(double)frontRight->GetSelectedSensorPosition()+(double)backRight->GetSelectedSensorPosition())/4.0;
-  // frc::SmartDashboard::PutNumber("Timer", timer.Get());
-  // frc::SmartDashboard::PutNumber("Average Distance", avgDist);
-  // frc::SmartDashboard::PutNumber("Stage Time: ", currentTime-prevTime);
-  // currentTime = timer.Get();
-  // if (stage % 3 == 0) {
-  //   myRobot.ArcadeDrive(0.2, 0.0);
-  //   if (avgDist >= 5.0) {stage++; prevTime = currentTime;}
-  // }
-  // else if (stage % 3 == 1) {
-  //   if (currentTime-prevTime >= 2.0) {stage++; prevTime = currentTime;}
-  // }
-  // else if (stage % 3 == 2) {
-  //   myRobot.ArcadeDrive(-0.2, 0.0);
-  //   if (avgDist <= 0.0) {stage = 0; prevTime = currentTime;}
-  // }
-}
+void Robot::TestPeriodic() {}
 
 #ifndef RUNNING_FRC_TESTS
 int main() { return frc::StartRobot<Robot>(); }
