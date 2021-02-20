@@ -109,6 +109,19 @@ void resetEncoders() {
   backRight->SetSelectedSensorPosition(0);
 }
 
+int heading() {
+  int z = (int)xyz[2];
+  if (z > 0) {
+    return (z % 360);
+  }
+  else {
+    while (z < 0) {
+      z = z + 360;
+    }
+    return (z % 360);
+  }
+}
+
 double trueMap(double val, double valHigh, double valLow, double newHigh, double newLow)
 {
 	double midVal = ((valHigh - valLow) / 2) + valLow;
@@ -152,6 +165,7 @@ void Robot::RobotInit() {
 
 void Robot::RobotPeriodic() {
   pigeon.GetAccumGyro(xyz);
+  frc::SmartDashboard::PutNumber("Heading z: ", heading());
   frc::SmartDashboard::PutNumber("Timer", timer.Get());
   frc::SmartDashboard::PutNumber("FrontLeft Distance: ", (double)frontLeft->GetSelectedSensorPosition()/6612.5);
   frc::SmartDashboard::PutNumber("FrontRight Distance: ", (double)frontRight->GetSelectedSensorPosition()/6612.5);
@@ -173,24 +187,14 @@ void Robot::AutonomousInit() {
   // outtake.Set(1.0);
   ballStorage.Set(frc::DoubleSolenoid::Value::kOff);
   calibratePigeon();
+  pigeon.SetAccumZAngle(0);
   currentTime = 0;
   prevTime = 0;
   stage = 0;
   resetEncoders();
 }
 
-int heading() {
-  int z = (int)xyz[2];
-  if (z > 0) {
-    return (z % 360);
-  }
-  else {
-    while (z < 0) {
-      z = z + 360;
-    }
-    return (z % 360);
-  }
-}
+
 
 void Robot::AutonomousPeriodic() {
   avgDist = -(-(double)frontLeft->GetSelectedSensorPosition()-(double)backLeft->GetSelectedSensorPosition()+(double)frontRight->GetSelectedSensorPosition()+(double)backRight->GetSelectedSensorPosition())/4.0;
@@ -200,23 +204,55 @@ void Robot::AutonomousPeriodic() {
   frc::SmartDashboard::PutNumber("Stage Time: ", currentTime-prevTime);
   frc::SmartDashboard::PutNumber("Stage: ", stage+1);
   currentTime = timer.Get();
+  // if (stage == 0) {
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 5) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 1) {
+  //   myRobot.ArcadeDrive(0, 0.5);
+  //   if (heading() < 50 && heading() > 40) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 2) {
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 5) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 3) {
+  //   myRobot.ArcadeDrive(0, 0.5);
+  //   if (heading() > 130 && heading() < 140) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 4) {
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 5) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 5) {
+  //   myRobot.ArcadeDrive(0, 0.5);
+  //   if (heading() > 220 && heading() < 230) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 6) {
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 5) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 7) {
+  //   myRobot.ArcadeDrive(0, 0.5);
+  //   if (heading() < 320 && heading() > 310) {stage = 0; prevTime = currentTime; resetEncoders();}
+  // }
   
 
   //The following is the auto for the first Obstacle Course.
   //Uncomment it only when you're about to use it, then comment it out again.
   //Start at (3.625, 8.875) with heading 0
-  /*
+  
   if (stage == 0) {//arrives at position 2 (14.125, 8.875) with heading 0
     myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 10.5) {stage++; prevTime = currentTime; resetEncoders();}
+    if (avgDist >= 8.16200375) {stage++; prevTime = currentTime; resetEncoders();}
   }
   else if (stage == 1) {//face down (turn right)
     myRobot.ArcadeDrive(0.0, autoturn);
-    if (heading() >= 89 && heading() <= 91) {stage++; prevTime = currentTime; resetEncoders();}
+    if (heading() >= 85-45 && heading() <= 95-45) {stage++; prevTime = currentTime; resetEncoders();}
   }
   else if (stage == 2) {//arrives at position 3 (14.125, 3.625) with heading 90
     myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 5.25) {stage++; prevTime = currentTime; resetEncoders();}
+    if (avgDist >= 5.239698) {stage++; prevTime = currentTime; resetEncoders();}
   }
   else if (stage == 3) {//face left (turn right)
     myRobot.ArcadeDrive(0.0, autoturn);
@@ -224,7 +260,7 @@ void Robot::AutonomousPeriodic() {
   }
   else if (stage == 4) {//arrives at position 4 (11.125, 3.625) with heading 180
     myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 3.0) {stage++; prevTime = currentTime; resetEncoders();}
+    if (avgDist >= 3.340756) {stage++; prevTime = currentTime; resetEncoders();}
   }
   else if (stage == 5) {//face up (turn right)
     myRobot.ArcadeDrive(0.0, autoturn);
@@ -232,7 +268,7 @@ void Robot::AutonomousPeriodic() {
   }
   else if (stage == 6) {//arrives at position 5 (11.125, 6.625) with heading 270
     myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 3.0) {stage++; prevTime = currentTime; resetEncoders();}
+    if (avgDist >= 2.907335) {stage++; prevTime = currentTime; resetEncoders();}
   }
   else if (stage == 7) {//face right (turn right)
     myRobot.ArcadeDrive(0.0, autoturn);
@@ -240,7 +276,7 @@ void Robot::AutonomousPeriodic() {
   }
   else if (stage == 8) {//arrives at position 6 (21.375, 6.625) with heading 0
     myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 10.25) {stage++; prevTime = currentTime; resetEncoders();}
+    if (avgDist >= 10.217183) {stage++; prevTime = currentTime; resetEncoders();}
   }
   else if (stage == 9) {//face up (turn left)
     myRobot.ArcadeDrive(0.0, -autoturn);
@@ -248,7 +284,7 @@ void Robot::AutonomousPeriodic() {
   }
   else if (stage == 10) {//arrives at position 7 (21.375, 11.375) with heading 270
     myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 4.75) {stage++; prevTime = currentTime; resetEncoders();}
+    if (avgDist >= 4.842042) {stage++; prevTime = currentTime; resetEncoders();}
   }
   else if (stage == 11) {//face left (turn left)
     myRobot.ArcadeDrive(0.0, -autoturn);
@@ -290,7 +326,7 @@ void Robot::AutonomousPeriodic() {
     myRobot.ArcadeDrive(0.5, 0.0);
     if (avgDist > 30) {stage++; prevTime = currentTime; resetEncoders();}
   }
-*/
+
 
 
   // The following is the auto for the second Obstacle Course.
@@ -388,9 +424,11 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
+  avgDist = -(-(double)frontLeft->GetSelectedSensorPosition()-(double)backLeft->GetSelectedSensorPosition()+(double)frontRight->GetSelectedSensorPosition()+(double)backRight->GetSelectedSensorPosition())/4.0;
+  avgDist /= 6612.5;
+  frc::SmartDashboard::PutNumber("Average Distance:", avgDist);
   frc::SmartDashboard::PutNumber("Heading x: ", xyz[0]);
   frc::SmartDashboard::PutNumber("Heading y: ", xyz[1]);
-  frc::SmartDashboard::PutNumber("Heading z: ", xyz[2]);
   compressor->SetClosedLoopControl(true);
   //increase sensitivity with the right bumper
  //In order to go backwards do piston.Set(DoubleSolenoid::Value::kReverse);
@@ -469,12 +507,12 @@ void Robot::TeleopPeriodic() {
 //  }
 //  else if (one.GetPOV(180) && sensitivity <= 0.0) {
 //    sensitivity = 0.0;
-//  }
+//  }*/
   speed = one.GetRawAxis(1);
   turn = one.GetRawAxis(4);
 
   myRobot.ArcadeDrive(speed*sensitivity, turn*sensitivity);
-*/
+
   pan.Set(trueMap(two.GetRawAxis(0),1,-1,1,0));
   tilt.Set(trueMap(two.GetRawAxis(1),-1,1,1,0));
 }
