@@ -179,6 +179,7 @@ void Robot::RobotPeriodic() {
   // Rainbow();
   // m_led.SetData(m_ledBuffer);
 }
+bool stageDone = false;
 
 void Robot::AutonomousInit() {
   timer.Reset();
@@ -192,6 +193,7 @@ void Robot::AutonomousInit() {
   prevTime = 0;
   stage = 0;
   resetEncoders();
+  stageDone = false;
 }
 
 
@@ -204,128 +206,200 @@ void Robot::AutonomousPeriodic() {
   frc::SmartDashboard::PutNumber("Stage Time: ", currentTime-prevTime);
   frc::SmartDashboard::PutNumber("Stage: ", stage+1);
   currentTime = timer.Get();
-  // if (stage == 0) {
-  //   myRobot.ArcadeDrive(0.5, 0.0);
-  //   if (avgDist >= 5) {stage++; prevTime = currentTime; resetEncoders();}
-  // }
-  // else if (stage == 1) {
-  //   myRobot.ArcadeDrive(0, 0.5);
-  //   if (heading() < 50 && heading() > 40) {stage++; prevTime = currentTime; resetEncoders();}
-  // }
-  // else if (stage == 2) {
-  //   myRobot.ArcadeDrive(0.5, 0.0);
-  //   if (avgDist >= 5) {stage++; prevTime = currentTime; resetEncoders();}
-  // }
-  // else if (stage == 3) {
-  //   myRobot.ArcadeDrive(0, 0.5);
-  //   if (heading() > 130 && heading() < 140) {stage++; prevTime = currentTime; resetEncoders();}
-  // }
-  // else if (stage == 4) {
-  //   myRobot.ArcadeDrive(0.5, 0.0);
-  //   if (avgDist >= 5) {stage++; prevTime = currentTime; resetEncoders();}
-  // }
-  // else if (stage == 5) {
-  //   myRobot.ArcadeDrive(0, 0.5);
-  //   if (heading() > 220 && heading() < 230) {stage++; prevTime = currentTime; resetEncoders();}
-  // }
-  // else if (stage == 6) {
-  //   myRobot.ArcadeDrive(0.5, 0.0);
-  //   if (avgDist >= 5) {stage++; prevTime = currentTime; resetEncoders();}
-  // }
-  // else if (stage == 7) {
-  //   myRobot.ArcadeDrive(0, 0.5);
-  //   if (heading() < 320 && heading() > 310) {stage = 0; prevTime = currentTime; resetEncoders();}
-  // }
+  if (stage == 0) {
+    if (avgDist < 15) {myRobot.ArcadeDrive(0.5, 0.0);}
+    else if (!stageDone) {prevTime = currentTime; resetEncoders(); stageDone = true;}
+    else {
+      myRobot.ArcadeDrive(0.0, 0.0);
+      if (currentTime - prevTime >= 0.5) {stage++; stageDone = false;}
+    }
+  }
+  if (stage == 01) {
+    if (heading() < 40 || heading() > 50) {myRobot.ArcadeDrive(0.0, 0.5);}
+    else if (!stageDone) {prevTime = currentTime; resetEncoders(); stageDone = true;}
+    else {
+      myRobot.ArcadeDrive(0.0, 0.0);
+      if (currentTime - prevTime >= 0.5) {stage++; stageDone = false;}
+    }
+  }
+  if (stage == 2) {
+    if (avgDist < 15) {myRobot.ArcadeDrive(0.5, 0.0);}
+    else if (!stageDone) {prevTime = currentTime; resetEncoders(); stageDone = true;}
+    else {
+      myRobot.ArcadeDrive(0.0, 0.0);
+      if (currentTime - prevTime >= 0.5) {stage++; stageDone = false;}
+    }
+  }
+  if (stage == 03) {
+    if (heading() < 40+90 || heading() > 50+90) {myRobot.ArcadeDrive(0.0, 0.5);}
+    else if (!stageDone) {prevTime = currentTime; resetEncoders(); stageDone = true;}
+    else {
+      myRobot.ArcadeDrive(0.0, 0.0);
+      if (currentTime - prevTime >= 0.5) {stage++; stageDone = false;}
+    }
+  }
+  if (stage == 4) {
+    if (avgDist < 15) {myRobot.ArcadeDrive(0.5, 0.0);}
+    else if (!stageDone) {prevTime = currentTime; resetEncoders(); stageDone = true;}
+    else {
+      myRobot.ArcadeDrive(0.0, 0.0);
+      if (currentTime - prevTime >= 0.5) {stage++; stageDone = false;}
+    }
+  }
+  if (stage == 05) {
+    if (heading() < 40+180 || heading() > 50+180) {myRobot.ArcadeDrive(0.0, 0.5);}
+    else if (!stageDone) {prevTime = currentTime; resetEncoders(); stageDone = true;}
+    else {
+      myRobot.ArcadeDrive(0.0, 0.0);
+      if (currentTime - prevTime >= 0.5) {stage++; stageDone = false;}
+    }
+  }
+  if (stage == 6) {
+    if (avgDist < 15) {myRobot.ArcadeDrive(0.5, 0.0);}
+    else if (!stageDone) {prevTime = currentTime; resetEncoders(); stageDone = true;}
+    else {
+      myRobot.ArcadeDrive(0.0, 0.0);
+      if (currentTime - prevTime >= 0.5) {stage++; stageDone = false;}
+    }
+  }
+  if (stage == 07) {
+    if (heading() < 40+270 || heading() > 50+270) {myRobot.ArcadeDrive(0.0, 0.5);}
+    else if (!stageDone) {prevTime = currentTime; resetEncoders(); stageDone = true;}
+    else {
+      myRobot.ArcadeDrive(0.0, 0.0);
+      if (currentTime - prevTime >= 0.5) {stage++; stageDone = false;}
+    }
+  }
   
 
   //The following is the auto for the first Obstacle Course.
   //Uncomment it only when you're about to use it, then comment it out again.
   //Start at (3.625, 8.875) with heading 0
   
-  if (stage == 0) {//arrives at position 2 (14.125, 8.875) with heading 0
-    myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 8.16200375) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 1) {//face down (turn right)
-    myRobot.ArcadeDrive(0.0, autoturn);
-    if (heading() >= 85-45 && heading() <= 95-45) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 2) {//arrives at position 3 (14.125, 3.625) with heading 90
-    myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 5.239698) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 3) {//face left (turn right)
-    myRobot.ArcadeDrive(0.0, autoturn);
-    if (heading() >= 179 && heading() <= 181) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 4) {//arrives at position 4 (11.125, 3.625) with heading 180
-    myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 3.340756) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 5) {//face up (turn right)
-    myRobot.ArcadeDrive(0.0, autoturn);
-    if (heading() >= 269 && heading() <= 271) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 6) {//arrives at position 5 (11.125, 6.625) with heading 270
-    myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 2.907335) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 7) {//face right (turn right)
-    myRobot.ArcadeDrive(0.0, autoturn);
-    if (heading() <= 1 || heading() >= 359) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 8) {//arrives at position 6 (21.375, 6.625) with heading 0
-    myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 10.217183) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 9) {//face up (turn left)
-    myRobot.ArcadeDrive(0.0, -autoturn);
-    if (heading() <= 271 && heading() >= 269) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 10) {//arrives at position 7 (21.375, 11.375) with heading 270
-    myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 4.842042) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 11) {//face left (turn left)
-    myRobot.ArcadeDrive(0.0, -autoturn);
-    if (heading() <= 181 && heading() >= 179) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 12) {//arrives at position 8 (18.375, 11.375) with heading 180
-    myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 3.0) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 13) {//face down (turn left)
-    myRobot.ArcadeDrive(0.0, -autoturn);
-    if (heading() <= 91 && heading() >= 89) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 14) {//arrives at position 9 (18.375, 3.625) with heading 90
-    myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 7.75) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 15) {//face right (turn left)
-    myRobot.ArcadeDrive(0.0, -autoturn);
-    if (heading() >= 359 || heading() <= 1) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 16) {//arrives at position 10 (26.375, 3.625) with heading 0
-    myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 8.0) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 17) {//face up (turn left)
-    myRobot.ArcadeDrive(0.0, -autoturn);
-    if (heading() >= 269 && heading() <= 271) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 18) {//arrives at position 11 (26.375, 6.625) with heading 270
-    myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist >= 3.0) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 19) {//face left (turn left)
-    myRobot.ArcadeDrive(0.0, -autoturn);
-    if (heading() <= 181 && heading() >= 179) {stage++; prevTime = currentTime; resetEncoders();}
-  }
-  else if (stage == 20) {//arrive at the end, finally victorious (with heading 180)
-    myRobot.ArcadeDrive(0.5, 0.0);
-    if (avgDist > 30) {stage++; prevTime = currentTime; resetEncoders();}
-  }
+  // if (stage == 0) {//arrives at position 2 (14.125, 8.875) with heading 0
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 8.16200375+1) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 1) {//face down (turn right)
+  //   myRobot.ArcadeDrive(0.0, autoturn);
+  //   if (heading() >= 85-45 && heading() <= 95-45) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 2) {//arrives at position 3 (14.125, 3.625) with heading 90
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 5.239698-2) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 3) {//face left (turn right)
+  //   myRobot.ArcadeDrive(0.0, autoturn);
+  //   if (heading() >= 175-45 && heading() <= 185-45) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 4) {//arrives at position 4 (11.125, 3.625) with heading 180
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 3.340756) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 5) {//face up (turn right)
+  //   myRobot.ArcadeDrive(0.0, autoturn);
+  //   if (heading() >= 265-45 && heading() <= 275-45) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 6) {//arrives at position 5 (11.125, 6.625) with heading 270
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 2.907335+0.5) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 7) {//face right (turn right)
+  //   myRobot.ArcadeDrive(0.0, autoturn);
+  //   if (heading() <= 365-45 && heading() >= 355-45) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 8) {//arrives at position 6 (21.375, 6.625) with heading 0
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 10.217183) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 9) {//face up (turn left)
+  //   myRobot.ArcadeDrive(0.0, -autoturn);
+  //   if (heading() <= 275+46 && heading() >= 265+46) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 10) {//arrives at position 7 (21.375, 11.375) with heading 270
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 4.842042-1) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 11) {//face up (turn left)
+  //   myRobot.ArcadeDrive(0.0, -autoturn);
+  //   if (heading() <= 185+47.5 && heading() >= 175+47.5) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 12) {//arrives at position 7 (21.375, 11.375) with heading 270
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 4) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 13) {//face up (turn left)
+  //   myRobot.ArcadeDrive(0.0, -autoturn);
+  //   if (heading() <= 95+47 && heading() >= 85+47) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 14) {//arrives at position 7 (21.375, 11.375) with heading 270
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 8) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 15) {//face up (turn left)
+  //   myRobot.ArcadeDrive(0.0, -autoturn);
+  //   if (heading() <= 50 && heading() >= 40) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 16) {
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 9) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 17) {
+  //   myRobot.ArcadeDrive(0.0, -autoturn);
+  //   if (heading() <= 280+45 && heading() >= 270+45) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 18) {
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 3) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 19) {
+  //   myRobot.ArcadeDrive(0.0, -autoturn);
+  //   if (heading() <= 185+45 && heading() >= 175+45) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 20) {
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 30) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 11) {//face left (turn left)
+  //   myRobot.ArcadeDrive(0.0, -autoturn);
+  //   if (heading() <= 181 && heading() >= 179) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 12) {//arrives at position 8 (18.375, 11.375) with heading 180
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 3.0) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 13) {//face down (turn left)
+  //   myRobot.ArcadeDrive(0.0, -autoturn);
+  //   if (heading() <= 91 && heading() >= 89) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 14) {//arrives at position 9 (18.375, 3.625) with heading 90
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 7.75) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 15) {//face right (turn left)
+  //   myRobot.ArcadeDrive(0.0, -autoturn);
+  //   if (heading() >= 359 || heading() <= 1) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 16) {//arrives at position 10 (26.375, 3.625) with heading 0
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 8.0) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 17) {//face up (turn left)
+  //   myRobot.ArcadeDrive(0.0, -autoturn);
+  //   if (heading() >= 269 && heading() <= 271) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 18) {//arrives at position 11 (26.375, 6.625) with heading 270
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist >= 3.0) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 19) {//face left (turn left)
+  //   myRobot.ArcadeDrive(0.0, -autoturn);
+  //   if (heading() <= 181 && heading() >= 179) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
+  // else if (stage == 20) {//arrive at the end, finally victorious (with heading 180)
+  //   myRobot.ArcadeDrive(0.5, 0.0);
+  //   if (avgDist > 30) {stage++; prevTime = currentTime; resetEncoders();}
+  // }
 
 
 

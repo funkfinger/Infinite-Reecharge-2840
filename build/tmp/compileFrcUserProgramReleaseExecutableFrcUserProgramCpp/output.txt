@@ -29,7 +29,7 @@ C:\Users\tomto\.gradle\caches\transforms-2\files-2.1\7a3d48d1725fcfa11eafd707625
    RobotDrive(SpeedController& frontLeftMotor, SpeedController& rearLeftMotor,
    ^~~~~~~~~~
 C:\Users\tomto\Desktop\Infinite Recharge\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp: In member function 'virtual void Robot::TeleopPeriodic()':
-C:\Users\tomto\Desktop\Infinite Recharge\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:456:9: warning: unused variable 'outtakeSpeed' [-Wunused-variable]
+C:\Users\tomto\Desktop\Infinite Recharge\Infinite-Reecharge-2840\src\main\cpp\Robot.cpp:530:9: warning: unused variable 'outtakeSpeed' [-Wunused-variable]
   double outtakeSpeed = -1.0;
          ^~~~~~~~~~~~
 
