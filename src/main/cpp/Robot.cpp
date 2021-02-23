@@ -185,7 +185,7 @@ void Robot::AutonomousInit() {
     m_autonomousCommand->Schedule();
   }
 }
-
+//77777
 void Robot::AutonomousPeriodic() {
   // turn = -trueMap(pigeon.GetAbsoluteCompassHeading()-180, 180, -180, 1.0, -1.0); //set the robot to turn against the strafe
   // if(timer.Get() < 0.2) {
