@@ -11,13 +11,8 @@
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/.factorypath": true
+    "**/.factorypath": true,
+    "**/*~": true
   },
-  "files.associations": {
-    "*.inc": "cpp",
-    "xstring": "cpp",
-    "optional": "cpp",
-    "array": "cpp"
-  },
-  "C_Cpp.errorSquiggles": "Enabled"
+  "C_Cpp.default.configurationProvider": "vscode-wpilib"
 }
